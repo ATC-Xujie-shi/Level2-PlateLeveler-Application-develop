@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\Level2.PlateLeveler.DataFunction\Level2.PlateLeveler.DataFunction.csproj"/>
+    <ProjectReference Include="..\Level2.PlateLeveler.DataTypes\Level2.PlateLeveler.DataTypes.csproj"/>
+    <ProjectReference Include="..\Level2.PlateLeveler.ErrorHandler\Level2.PlateLeveler.ErrorHandler.csproj"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="snap7.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+</Project>

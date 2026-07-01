@@ -1,0 +1,368 @@
+﻿<Page x:Class="Level2.PlateLeveler.Client.pageActualValues"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ig="http://schemas.infragistics.com/xaml"
+    xmlns:Custom="http://infragistics.com/DataPresenter"
+    xmlns:my="clr-namespace:Level2.PlateLeveler.Client"
+    xmlns:igEditors="http://infragistics.com/Editors"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:type="clr-namespace:Level2.PlateLeveler.DataTypes;assembly=Level2.PlateLeveler.DataTypes"
+    x:Name="pageActValues"
+      mc:Ignorable="d"
+    d:DesignHeight="1000" d:DesignWidth="1920" >
+
+    <Page.Resources>
+        <CollectionViewSource x:Name="ActualValuesReportSource" x:Key="ActualValuesDataViewSource" d:DesignSource="{d:DesignInstance {x:Type type:ActualValue}, CreateList=True}"/>
+        <CollectionViewSource x:Name="PDISource" x:Key="PDIDataViewSource" d:DesignSource="{d:DesignInstance {x:Type type:PDI}, CreateList=True}"/>
+      <Custom:FieldSettings  AllowRecordFiltering="True"  EditorStyle="{DynamicResource XamGridTimeEditorStyle}" AllowEdit="False" x:Key="DateTimeColumn"/>
+   </Page.Resources>
+    <Page.Background>
+        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+         <GradientStop Color="White" Offset="0.007"/>
+            <GradientStop Color="White" Offset="1"/>
+        </LinearGradientBrush>
+    </Page.Background>
+    <Grid Visibility="Visible" ShowGridLines="false" >
+        <Grid ShowGridLines="false" Margin="8,8,8,0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+            <Grid  Margin="10"  Grid.Row="0" ShowGridLines="false" IsEnabled="True" Background="{x:Null}" DataContext="{StaticResource PDIDataViewSource}">
+               <StackPanel Orientation="Horizontal">
+                  <StackPanel Orientation="Vertical">
+                  <Label x:Name="lblFrom" Content="{Binding Path=From, Mode=OneWay, Source={StaticResource Resources}}" Margin="5"/>
+                  <Label x:Name="lblTo" Content="{Binding Path=To, Mode=OneWay, Source={StaticResource Resources}}" Margin="5"/>
+               </StackPanel>
+                  <StackPanel Orientation="Vertical">
+                     <DatePicker x:Name="dtFrom" IsDropDownOpen="False" SelectedDateChanged="dtFrom_SelectedDateChanged" Width="Auto"  Margin="5"/>
+                     <DatePicker x:Name="dtTo" IsDropDownOpen="False" SelectedDateChanged="dtTo_SelectedDateChanged" Width="Auto"  Margin="5"/>
+                  </StackPanel>
+                  <StackPanel Orientation="Vertical" Width="20"></StackPanel>
+                  <StackPanel Orientation="Vertical">
+                     <RadioButton x:Name="rbPreview" Content="Preview" IsChecked="True" Checked="rbPreview_Checked"  Margin="5"/>
+                     <RadioButton x:Name="rbPrint" Content="Print"  Checked="rbPrint_Checked"  Margin="5"/>
+                     <RadioButton x:Name="rbExport" Content="Export" Checked="rbExport_Checked"  Margin="5"/>
+                  </StackPanel>
+                  <StackPanel Orientation="Vertical" Width="20"></StackPanel>
+                  <StackPanel Orientation="Vertical">
+                     <Label Content="Select plate" HorizontalContentAlignment="Center"/>
+                     <ComboBox x:Name="cboReport" Margin="7"  IsEnabled="True" SelectionChanged="cboReport_SelectionChanged" />
+                     <Button x:Name="btnReport" Margin="7" Content="{Binding Path=rbPrint, Mode=OneWay, Source={StaticResource Resources}}" IsEnabled="False" Click="btnReport_Click" Width="150"/>
+               </StackPanel>
+              </StackPanel>
+            <!--<StackPanel Orientation="Horizontal" Background="{x:Null}" Margin="0,10,0,0" >
+                    <StackPanel Orientation="Horizontal" Background="{x:Null}" Margin="0,10,0,0" >
+                        <StackPanel Orientation="Vertical">
+                            <Label x:Name="lblFrom" Content="{Binding Path=From, Mode=OneWay, Source={StaticResource Resources}}"/>
+                            <Label x:Name="lblTo" Content="{Binding Path=To, Mode=OneWay, Source={StaticResource Resources}}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <DatePicker x:Name="dtFrom" IsDropDownOpen="False"  Margin="10,3,0,0" Width="181" SelectedDateChanged="dtFrom_SelectedDateChanged"/>
+                            <DatePicker x:Name="dtTo" IsDropDownOpen="False" Margin="10,3,0,0" Width="181" SelectedDateChanged="dtTo_SelectedDateChanged"/>
+                            <Label  Content=" " Height="31"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <Label  Content="               " Height="31"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <Label x:Name="lblReport" Foreground="White" Content="{Binding Path=lblReport, Mode=OneWay, Source={StaticResource Resources}}"/>
+                            <Label  Content=" "/>
+                            <Button x:Name="btnReport" Content="{Binding Path=rbPrint, Mode=OneWay, Source={StaticResource Resources}}" IsEnabled="False" Click="btnReport_Click"/>
+                            <Label  Content=" "/>
+                            <ComboBox Margin="10,3,0,0" x:Name="cboReport"   IsEnabled="True" SelectionChanged="cboReport_SelectionChanged" />
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <Label  Content="               " Height="31"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Width="170">
+                            <Label  Content=" "/>
+                            <Label  Content=" "/>
+                            <RadioButton x:Name="rbPreview" Content="Preview" IsChecked="True" Checked="rbPreview_Checked" />
+                            <RadioButton x:Name="rbPrint" Content="Print" Checked="rbPrint_Checked" />
+                            <RadioButton x:Name="rbExport" Content="Export" Checked="rbExport_Checked" />
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>-->
+            </Grid>
+            <Grid Grid.Row="1"  Margin="10,10,10,0" ShowGridLines="false" IsEnabled="True" Background="{x:Null}"  DataContext="{StaticResource ActualValuesDataViewSource}">
+            <Custom:XamDataGrid x:Name="gridActualValues" DataSource="{Binding}" Background="White" SelectedItemsChanged="gridActualValues_SelectedItemsChanged">
+                    <Custom:XamDataGrid.ViewSettings>
+                        <Custom:GridViewSettings/>
+                    </Custom:XamDataGrid.ViewSettings>
+                    <Custom:XamDataGrid.FieldLayoutSettings>
+                        <Custom:FieldLayoutSettings AutoGenerateFields="False" HeaderPrefixAreaDisplayMode="FieldChooserButton"/>
+                    </Custom:XamDataGrid.FieldLayoutSettings>
+                    <Custom:XamDataGrid.FieldSettings>
+                       <Custom:FieldSettings AllowEdit="false" AllowCrossFieldRecordFiltering="false" AllowRecordFiltering="true" DataValueChangedHistoryLimit="0" Width="Auto"/>
+                    </Custom:XamDataGrid.FieldSettings>
+                    <Custom:XamDataGrid.FieldLayouts>
+                        <Custom:FieldLayout >
+                            <Custom:FieldLayout.Settings>
+                                <Custom:FieldLayoutSettings/>
+                            </Custom:FieldLayout.Settings>
+                            <Custom:Field Name="PlateID" Label="{Binding Path=lblPlateID, Mode=OneWay, Source={StaticResource Resources}}">
+                                <Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True"/>
+                                </Custom:Field.Settings>
+                            </Custom:Field>
+                            <Custom:Field Name="Pos" Label="{Binding Path=Pos, Mode=OneWay, Source={StaticResource Resources}}">
+                                <Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True"/>
+                                </Custom:Field.Settings>
+                            </Custom:Field>
+                            <Custom:Field Name="Date" Settings="{StaticResource DateTimeColumn}"  Label="{Binding Path=lblDate, Mode=OneWay, Source={StaticResource Resources}}">
+                                <!--<Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True"/>
+                                </Custom:Field.Settings>-->
+                            </Custom:Field>
+                            <Custom:Field Name="ActHeadPos" Label="{Binding Path=ActHeadPos, Mode=OneWay, Source={StaticResource Resources}}">
+                                <Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True"/>
+                                </Custom:Field.Settings>
+                            </Custom:Field>
+                            <Custom:Field Name="ActLevelerInlet" Label="{Binding Path=ActLevelerInlet, Mode=OneWay, Source={StaticResource Resources}}" >
+                                <Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                                </Custom:Field.Settings>
+                            </Custom:Field>
+                            <Custom:Field Name="ActLevelerOutlet" Label="{Binding Path=ActLevelerOutlet, Mode=OneWay, Source={StaticResource Resources}}">
+                                <Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                                </Custom:Field.Settings>
+                            </Custom:Field>
+                            <Custom:Field Name="ActTiltLeft" Label="{Binding Path=ActTiltLeft, Mode=OneWay, Source={StaticResource Resources}}" >
+                                <Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                                </Custom:Field.Settings>
+                            </Custom:Field>
+                            <Custom:Field Name="ActTiltRight" Label="{Binding Path=ActTiltRight, Mode=OneWay, Source={StaticResource Resources}}" >
+                                <Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                                </Custom:Field.Settings>
+                            </Custom:Field>
+                            <Custom:Field Name="ActMiddleHeight" Label="{Binding Path=ActMiddleHeight, Mode=OneWay, Source={StaticResource Resources}}" >
+                                <Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                                </Custom:Field.Settings>
+                            </Custom:Field>
+                            <Custom:Field Name="ActCurveProfile" Label="{Binding Path=ActCurveProfile, Mode=OneWay, Source={StaticResource Resources}}" >
+                                <Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                                </Custom:Field.Settings>
+                            </Custom:Field>
+                            <!--<Custom:Field Name="ActPowerDrive1" Label="{Binding Path=ActPowerDrive, Mode=OneWay, Source={StaticResource Resources}}" >
+                                <Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True"/>
+                                </Custom:Field.Settings>
+                            </Custom:Field>
+                            <Custom:Field Name="ActPowerDrive2" Label="{Binding Path=ActPowerDrive, Mode=OneWay, Source={StaticResource Resources}}"  >
+                                <Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True"/>
+                                </Custom:Field.Settings>
+                            </Custom:Field>
+                            <Custom:Field Name="ActPowerDrive3" Label="{Binding Path=ActPowerDrive, Mode=OneWay, Source={StaticResource Resources}}">
+                                <Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True"/>
+                                </Custom:Field.Settings>
+                            </Custom:Field>
+                     <Custom:Field Name="ActPowerDrive4" Label="{Binding Path=ActPowerDrive, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True"/>
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActPowerDrive5" Label="{Binding Path=ActPowerDrive, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True"/>
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActPowerDrive6" Label="{Binding Path=ActPowerDrive, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True"/>
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActPowerDrive7" Label="{Binding Path=ActPowerDrive, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True"/>
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActPowerDrive7" Label="{Binding Path=ActPowerDrive, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True"/>
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActPowerDrive8" Label="{Binding Path=ActPowerDrive, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True"/>
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActPowerDrive9" Label="{Binding Path=ActPowerDrive, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True"/>
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActPowerDrive10" Label="{Binding Path=ActPowerDrive, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True"/>
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActPowerDrive11" Label="{Binding Path=ActPowerDrive, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True"/>
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActPowerDrive12" Label="{Binding Path=ActPowerDrive, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True"/>
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActPowerDrive13" Label="{Binding Path=ActPowerDrive, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True"/>
+                        </Custom:Field.Settings>
+                     </Custom:Field>-->
+                            <Custom:Field Name="ActTorqueDrive1" Label="{Binding Path=ActTorqueDrive1, Mode=OneWay, Source={StaticResource Resources}}" >
+                                <Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                                </Custom:Field.Settings>
+                            </Custom:Field>
+                            <Custom:Field Name="ActTorqueDrive2" Label="{Binding Path=ActTorqueDrive2, Mode=OneWay, Source={StaticResource Resources}}">
+                                <Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                                </Custom:Field.Settings>
+                            </Custom:Field>
+                            <Custom:Field Name="ActTorqueDrive3" Label="{Binding Path=ActTorqueDrive3, Mode=OneWay, Source={StaticResource Resources}}">
+                                <Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                                </Custom:Field.Settings>
+                            </Custom:Field>
+                            <Custom:Field Name="ActTorqueDrive4" Label="{Binding Path=ActTorqueDrive4, Mode=OneWay, Source={StaticResource Resources}}" >
+                                <Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True" />
+                                </Custom:Field.Settings>
+                            </Custom:Field>
+                     <Custom:Field Name="ActTorqueDrive5" Label="{Binding Path=ActTorqueDrive5, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActTorqueDrive6" Label="{Binding Path=ActTorqueDrive6, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActTorqueDrive7" Label="{Binding Path=ActTorqueDrive7, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActTorqueDrive8" Label="{Binding Path=ActTorqueDrive8, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActTorqueDrive9" Label="{Binding Path=ActTorqueDrive9, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActTorqueDrive10" Label="{Binding Path=ActTorqueDrive10, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActTorqueDrive11" Label="{Binding Path=ActTorqueDrive11, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActTorqueDrive12" Label="{Binding Path=ActTorqueDrive12, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActTorqueDrive13" Label="{Binding Path=ActTorqueDrive13, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActCurrentDrive1" Label="{Binding Path=ActCurrentDrive1, Mode=OneWay, Source={StaticResource Resources}}">
+                                <Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True" />
+                                </Custom:Field.Settings>
+                            </Custom:Field>
+                            <Custom:Field Name="ActCurrentDrive2" Label="{Binding Path=ActCurrentDrive2, Mode=OneWay, Source={StaticResource Resources}}">
+                                <Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True" />
+                                </Custom:Field.Settings>
+                            </Custom:Field>
+                            <Custom:Field Name="ActCurrentDrive3" Label="{Binding Path=ActCurrentDrive3, Mode=OneWay, Source={StaticResource Resources}}" >
+                                <Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True" />
+                                </Custom:Field.Settings>
+                            </Custom:Field>
+                            <Custom:Field Name="ActCurrentDrive4" Label="{Binding Path=ActCurrentDrive4, Mode=OneWay, Source={StaticResource Resources}}" >
+                                <Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False"  AllowRecordFiltering="True" />
+                                </Custom:Field.Settings>
+                            </Custom:Field>
+                     <Custom:Field Name="ActCurrentDrive5" Label="{Binding Path=ActCurrentDrive5, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActCurrentDrive6" Label="{Binding Path=ActCurrentDrive6, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActCurrentDrive7" Label="{Binding Path=ActCurrentDrive7, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActCurrentDrive8" Label="{Binding Path=ActCurrentDrive8, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActCurrentDrive9" Label="{Binding Path=ActCurrentDrive9, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActCurrentDrive10" Label="{Binding Path=ActCurrentDrive10, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActCurrentDrive11" Label="{Binding Path=ActCurrentDrive11, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActCurrentDrive12" Label="{Binding Path=ActCurrentDrive12, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActCurrentDrive13" Label="{Binding Path=ActCurrentDrive13, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActSpeed" Label="{Binding Path=ActSpeed, Mode=OneWay, Source={StaticResource Resources}}">
+                                <Custom:Field.Settings>
+                                    <Custom:FieldSettings AllowEdit="False"  AllowRecordFiltering="True" />
+                                </Custom:Field.Settings>
+                            </Custom:Field>
+                        </Custom:FieldLayout>
+                    </Custom:XamDataGrid.FieldLayouts>
+                </Custom:XamDataGrid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

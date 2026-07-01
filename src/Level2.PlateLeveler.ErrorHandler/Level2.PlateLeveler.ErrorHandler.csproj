@@ -1,0 +1,5 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\Level2.PlateLeveler.DataFunction\Level2.PlateLeveler.DataFunction.csproj"/>
+  </ItemGroup>
+</Project>

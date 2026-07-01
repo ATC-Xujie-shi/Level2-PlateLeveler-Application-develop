@@ -1,0 +1,117 @@
+<Project>
+  <PropertyGroup>
+    <Company>Andritz Metals Germany GmbH</Company>
+    <Authors>Andritz Metals Germany GmbH</Authors>
+    <PackageProjectUrl>https://www.andritz.com</PackageProjectUrl>
+    <Copyright>Copyright © 2025 Andritz Metals Germany GmbH</Copyright>
+  </PropertyGroup>
+  
+  <!-- .net and language version -->
+  <PropertyGroup>
+    <VersionTargetFramework>net462</VersionTargetFramework>
+    <VersionLangVersion>preview</VersionLangVersion>
+
+    <TargetFramework>$(VersionTargetFramework)</TargetFramework>
+    <LangVersion>$(VersionLangVersion)</LangVersion>
+
+
+	  <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+
+  <!-- analyzer versions & imports -->
+  <PropertyGroup>
+    <VersionNetAnalyzers>9.0.0</VersionNetAnalyzers>
+    <VersionCSharpCodeStyle>4.14.0</VersionCSharpCodeStyle>
+  </PropertyGroup>
+  
+   <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.CodeStyle" Version="$(VersionCSharpCodeStyle)">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="$(VersionNetAnalyzers)">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup> 
+
+  <!-- dependency versions -->
+  <PropertyGroup>
+    <VersionAvalonia>11.3.0</VersionAvalonia>
+    <VersionLog4Net>3.1.0</VersionLog4Net>
+    <VersionCommunityToolkitMvvm>8.4.0</VersionCommunityToolkitMvvm>
+    <VersionNinject>3.3.6</VersionNinject>
+    <VersionNinjectFactory>3.3.3</VersionNinjectFactory>
+    <VersionCommandLineParser>2.9.1</VersionCommandLineParser>
+  </PropertyGroup>
+
+  <!-- test dependencies & imports -->
+  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch($(MSBuildProjectName), '^[a-zA-Z\.]*\.Tests$'))">
+    <VersionFluentAssertions>8.2.0</VersionFluentAssertions>
+    <VersionNUnit>4.3.2</VersionNUnit>
+    <VersionNUnit3TestAdapter>5.0.0</VersionNUnit3TestAdapter>
+    <VersionNSubstitute>5.3.0</VersionNSubstitute>
+    <VersionNSubstituteAnalyzers>1.0.17</VersionNSubstituteAnalyzers>
+    <VersionMicrosoftNetTestSdk>17.14.0</VersionMicrosoftNetTestSdk>
+    <VersionNUnitAnalyzers>4.7.0</VersionNUnitAnalyzers>
+    <VersionCoverletCollector>6.0.4</VersionCoverletCollector>
+    <VersionReportGenerator>5.4.7</VersionReportGenerator>
+  </PropertyGroup>
+  
+  <ItemGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch($(MSBuildProjectName), '^[a-zA-Z\.]*\.Tests$'))">
+    <!-- packages are only imported if project name ends in ".Tests" -->
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(VersionMicrosoftNetTestSdk)" />
+    <PackageReference Include="NUnit" Version="$(VersionNUnit)" />
+    <PackageReference Include="NUnit3TestAdapter" Version="$(VersionNUnit3TestAdapter)" />
+    <PackageReference Include="NUnit.Analyzers" Version="$(VersionNUnitAnalyzers)" />
+    <PackageReference Include="FluentAssertions" Version="$(VersionFluentAssertions)" />
+    <PackageReference Include="NSubstitute" Version="$(VersionNSubstitute)" />
+    <PackageReference Include="coverlet.collector" Version="$(VersionCoverletCollector)" />
+    <PackageReference Include="NSubstitute.Analyzers.CSharp" Version="$(VersionNSubstituteAnalyzers)" />
+    <PackageReference Include="ReportGenerator" Version="$(VersionReportGenerator)" />
+  </ItemGroup>
+
+  <!-- test dependencies & imports -->
+  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch($(MSBuildProjectName), '^[a-zA-Z\.]*\.Tests$'))">
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <!-- general settings and metadata -->
+  <PropertyGroup>
+    
+    <!-- language features -->
+    <Nullable>disable</Nullable>
+    <TopLevelStatements>false</TopLevelStatements>
+    <ImplicitUsings>disable</ImplicitUsings>
+
+    <!-- output path for binaries, pdbs and intermediate files -->
+    <BaseOutputPath>$(MSBuildProjectDirectory)\..\..\artifacts\bin\$(MSBuildProjectName)\</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(MSBuildProjectDirectory)\..\..\artifacts\obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+
+    <!-- disable analyzers included in SDK, as we are referencing the analyzer nuget packages -->
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+    <AnalysisLevel>8</AnalysisLevel>
+    <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <WarningsAsErrors></WarningsAsErrors>
+    <WarningsNotAsErrors></WarningsNotAsErrors>
+
+    <IsAotCompatible>false</IsAotCompatible>
+    <RunAOTCompilation>false</RunAOTCompilation>
+
+    <PublishTrimmed>false</PublishTrimmed>
+    <TrimMode>partial</TrimMode>
+
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+  </PropertyGroup>
+</Project>

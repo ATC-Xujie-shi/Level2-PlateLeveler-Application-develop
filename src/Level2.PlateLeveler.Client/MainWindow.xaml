@@ -1,0 +1,158 @@
+﻿<Window x:Class="Level2.PlateLeveler.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Hot and Cold Leveler Client - Level 2" Width="1980" Height="1020" Left="0" Top="0" WindowState="Maximized" Closed="Window_Closed" ResizeMode="CanResize" MinHeight="1000" MinWidth="1900" >
+   <Grid>
+      <Grid.ColumnDefinitions>
+         <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+         <RowDefinition Height="Auto"/>
+         <RowDefinition Height="6"/>
+         <RowDefinition />
+         <RowDefinition Height="20"/>
+      </Grid.RowDefinitions>
+      <!-- Upper Grid Row -->
+      <Grid Grid.Row="0" Background="White">
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+         </Grid.ColumnDefinitions>
+         <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+         </Grid.RowDefinitions>
+
+         <Menu Background="White" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10" IsMainMenu="True" BorderThickness="2" Width="Auto">
+            <Menu.BorderBrush>
+               <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                  <GradientStop Color="LightGray" Offset="0.0" />
+                  <GradientStop Color="Gray" Offset="0.5" />
+               </LinearGradientBrush>
+            </Menu.BorderBrush>
+            <Menu.Effect>
+               <DropShadowEffect ShadowDepth="5" Direction="330" Color="Black" Opacity="0.5" BlurRadius="4"/>
+            </Menu.Effect>
+
+            <MenuItem Header="Navigation▾" FontSize="16" Foreground="Black" Opacity="0.75" VerticalAlignment="Center">
+               <MenuItem Header="PDI" x:Name="mnuPDI" Click="mnuPDI_Click" />
+               <!--<MenuItem Header="Temperature" x:Name="mnuTemp" Click="mnuTemp_Click" />-->
+               <MenuItem Header="Cassette" x:Name="mnuCassette" Click="mnuCassette_Click"  />
+               <MenuItem Header="PreSettings" x:Name="mnuPreSettings" Click="mnuPreSettings_Click" />
+               <MenuItem Header="PreSettings Outlet" x:Name="mnuPreSettingsOutlet" Click="mnuPreSettingsOutlet_Click" />
+               <!--<MenuItem Header="Fault Compensation" x:Name="mnuFaultCompensation" Click="mnuFaultCompensation_Click" />-->
+               <MenuItem Header="Production Report" x:Name="mnuProductionReport" Click="mnuProductionReport_Click" />
+               <MenuItem Header="Line State" x:Name="mnuLineState" Click="mnuLineState_Click" />
+               <MenuItem Header="Actual Values" x:Name="mnuActualValues" Click="mnuActualValues_Click"/>
+            </MenuItem>
+
+            <ComboBox IsSynchronizedWithCurrentItem="True" VerticalAlignment="Center" x:Name="cbLanguages" ItemsSource="{Binding Path=SupportedCultures, Mode=OneWay, Source={StaticResource CultureResourcesDS}}" FontSize="14" HorizontalAlignment="Stretch" Width="Auto" Grid.Column="1" Grid.Row="1" SelectionChanged="cbLanguages_SelectionChanged"/>
+         </Menu>
+
+         <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="2" HorizontalAlignment="Center">
+            <Label x:Name="lblNavigation" Content="{Binding Path=PDI, Mode=OneWay, Source={StaticResource Resources}}" Width="417" FontSize="22" FontFamily="Arial" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+         </StackPanel>
+
+         <Image Grid.Column="2" HorizontalAlignment="Left" Height="99" Margin="10" VerticalAlignment="Center" Width="270" Source="Pictures/ANDRITZ.png"/>
+      </Grid>
+      <!-- Middle Grid Row -->
+
+      <Grid Grid.Row="1" Background="#003a70"/>
+
+      <Frame Grid.Row="2" Margin="0,0,0,0" NavigationUIVisibility="Hidden" Background="White" Name="frame_INIUInterface"/>
+      <!-- Lower Grid Row -->
+      <DockPanel Margin="0,0,0,0" Grid.Row="3" VerticalAlignment="Bottom" Height="20" LastChildFill="False" Background="#D3D0CB" HorizontalAlignment="Stretch">
+         <TextBlock x:Name="txtBlock_ConnectionL1" Foreground="Black" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" TextAlignment="Right" Margin="35,0,0,0" RenderTransformOrigin="1.049,0.607"><Bold FontWeight="ExtraBold" FontSize="14">Level 1:</Bold></TextBlock>
+         <Ellipse Name="ellipse_Connection_L1" Width="15" Height="15" Fill="Red" Margin="5,0,0,0" Stroke="Black" StrokeThickness="0.5" RenderTransformOrigin="1.867,0.6">
+            <Ellipse.Triggers>
+               <EventTrigger RoutedEvent="Ellipse.TextInput">
+                  <BeginStoryboard>
+                     <Storyboard Name="Ellipse_ConnectionPOS_Story">
+                        <ColorAnimation
+                                    Storyboard.TargetName="ellipse_Connection_POS"
+                                    Storyboard.TargetProperty="(Ellipse.Fill).(SolidColorBrush.Color)"
+                                    From="White" To="Red" Duration="0:0:1"
+                                    RepeatBehavior="Forever"
+                                    />
+                     </Storyboard>
+                  </BeginStoryboard>
+               </EventTrigger>
+            </Ellipse.Triggers>
+         </Ellipse>
+
+         <TextBlock x:Name="txtBlock_ConnectionL2" Foreground="Black" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" TextAlignment="Right" Margin="20,0,0,0"><Bold FontWeight="ExtraBold" FontSize="14">Level 3:</Bold></TextBlock>
+         <Ellipse Name="ellipse_Connection_L2"  Width="15" Height="15" Fill="Red" Margin="10,0,0,0" Stroke="Black" StrokeThickness="0.5">
+            <Ellipse.Triggers>
+               <EventTrigger RoutedEvent="Ellipse.TextInput">
+                  <BeginStoryboard>
+                     <Storyboard Name="Ellipse_ConnectionMMS_Story">
+                        <ColorAnimation
+                                    Storyboard.TargetName="ellipse_Connection_MMS"
+                                    Storyboard.TargetProperty="(Ellipse.Fill).(SolidColorBrush.Color)"
+                                    From="White" To="Red" Duration="0:0:1" FillBehavior="HoldEnd"
+                                    RepeatBehavior="Forever"
+                                    />
+                     </Storyboard>
+                  </BeginStoryboard>
+               </EventTrigger>
+            </Ellipse.Triggers>
+         </Ellipse>
+
+         <TextBlock x:Name="txtBlock_ConnectionServer" Foreground="Black" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" TextAlignment="Right" Margin="20,0,0,0"><Bold FontWeight="ExtraBold" FontSize="14">Server:</Bold></TextBlock>
+         <Ellipse Name="ellipse_Connection_Server" Width="15" Height="15" Fill="Red" Margin="5,0,0,0" Stroke="Black" StrokeThickness="0.5">
+            <Ellipse.Triggers>
+               <EventTrigger RoutedEvent="Ellipse.TextInput">
+                  <BeginStoryboard>
+                     <Storyboard Name="Ellipse_ConnectionPLC_Story">
+                        <ColorAnimation
+                                    Storyboard.TargetName="ellipse_Connection_PLC"
+                                    Storyboard.TargetProperty="(Ellipse.Fill).(SolidColorBrush.Color)"
+                                    From="White" To="Red" Duration="0:0:1" FillBehavior="HoldEnd"
+                                    RepeatBehavior="Forever"
+                                    />
+                     </Storyboard>
+                  </BeginStoryboard>
+               </EventTrigger>
+            </Ellipse.Triggers>
+         </Ellipse>
+
+         <TextBlock x:Name="txtBlock_ConnectionDB" Foreground="Black" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" TextAlignment="Right" Margin="20,0,0,0"><Bold FontWeight="ExtraBold" FontSize="14">DB:</Bold></TextBlock>
+         <Ellipse Name="ellipse_Connection_DB" Width="15" Height="15" Fill="Red" Margin="5,0,0,0" Stroke="Black" StrokeThickness="0.5">
+            <Ellipse.Triggers>
+               <EventTrigger RoutedEvent="Ellipse.TextInput">
+                  <BeginStoryboard>
+                     <Storyboard Name="Ellipse_ConnectionDB">
+                        <ColorAnimation
+                                    Storyboard.TargetName="ellipse_Connection_DB"
+                                    Storyboard.TargetProperty="(Ellipse.Fill).(SolidColorBrush.Color)"
+                                    From="White" To="Red" Duration="0:0:1" FillBehavior="HoldEnd"
+                                    RepeatBehavior="Forever"
+                                    />
+                     </Storyboard>
+                  </BeginStoryboard>
+               </EventTrigger>
+            </Ellipse.Triggers>
+         </Ellipse>
+
+         <!--<TextBlock x:Name="txtBlock_ConnectionFM" Foreground="Black" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" TextAlignment="Right" Margin="20,0,0,0"><Bold FontWeight="ExtraBold" FontSize="14">FM:</Bold></TextBlock>
+            <Ellipse Name="ellipse_Connection_FM" Width="15" Height="15" Fill="Red" Margin="5,2,0,2" Stroke="Black" StrokeThickness="0.5" RenderTransformOrigin="5.467,0.4">
+                <Ellipse.Triggers>
+                    <EventTrigger RoutedEvent="Ellipse.TextInput">
+                        <BeginStoryboard>
+                            <Storyboard Name="Ellipse_ConnectionFM">
+                                <ColorAnimation
+                                    Storyboard.TargetName="ellipse_Connection_FM"
+                                    Storyboard.TargetProperty="(Ellipse.Fill).(SolidColorBrush.Color)"
+                                    From="White" To="Red" Duration="0:0:1" FillBehavior="HoldEnd"
+                                    RepeatBehavior="Forever"
+                                    />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Ellipse.Triggers>
+            </Ellipse>-->
+         <TextBlock  Margin="2,2,5,0" DockPanel.Dock="Right"  x:Name="txtBottom" Foreground="Black" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextAlignment="Right"><Bold FontWeight="ExtraBold" FontSize="12" Foreground="red"><Run Text="Leveler Client"/></Bold><Italic><Run FontSize="10" Text=" © ANDRITZ Metals Germany GmbH"/></Italic></TextBlock>
+      </DockPanel>
+
+   </Grid>
+</Window>

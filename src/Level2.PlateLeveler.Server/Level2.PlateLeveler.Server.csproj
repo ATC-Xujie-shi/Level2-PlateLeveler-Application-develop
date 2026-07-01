@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+	  <OutputType>Exe</OutputType>
+    <ApplicationIcon>A.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Init.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Telegram.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="A.ico" />
+    <Content Include="Init.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Telegram.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Level2.PlateLeveler.DataAccess\Level2.PlateLeveler.DataAccess.csproj" />
+    <ProjectReference Include="..\Level2.PlateLeveler.DataCommunication\Level2.PlateLeveler.DataCommunication.csproj" />
+    <ProjectReference Include="..\Level2.PlateLeveler.DataConverter\Level2.PlateLeveler.DataConverter.csproj" />
+    <ProjectReference Include="..\Level2.PlateLeveler.DataFunction\Level2.PlateLeveler.DataFunction.csproj" />
+    <ProjectReference Include="..\Level2.PlateLeveler.DataProvider\Level2.PlateLeveler.DataProvider.csproj" />
+    <ProjectReference Include="..\Level2.PlateLeveler.DataTypes\Level2.PlateLeveler.DataTypes.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Level2.PlateLeveler.Model.Interface">
+      <HintPath>..\..\lib\Level2.PlateLeveler.Model.Interface\Level2.PlateLeveler.Model.Interface.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+</Project>

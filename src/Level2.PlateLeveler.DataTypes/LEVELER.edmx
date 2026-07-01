@@ -1,0 +1,1143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LEVELERModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ActualValue">
+          <Key>
+            <PropertyRef Name="Pkey_ActVal" />
+          </Key>
+          <Property Name="Pkey_ActVal" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlateID" Type="varchar" MaxLength="20" />
+          <Property Name="MaterialID" Type="varchar" MaxLength="20" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Pos" Type="int" />
+          <Property Name="ActHeadPos" Type="real" />
+          <Property Name="ActLevelerInlet" Type="real" />
+          <Property Name="ActLevelerOutlet" Type="real" />
+          <Property Name="ActTiltLeft" Type="real" />
+          <Property Name="ActTiltRight" Type="real" />
+          <Property Name="ActMiddleHeight" Type="real" />
+          <Property Name="ActCurveProfile" Type="real" />
+          <Property Name="ActPowerDrive1" Type="real" />
+          <Property Name="ActPowerDrive2" Type="real" />
+          <Property Name="ActPowerDrive3" Type="real" />
+          <Property Name="ActPowerDrive4" Type="real" />
+          <Property Name="ActTorqueDrive1" Type="real" />
+          <Property Name="ActTorqueDrive2" Type="real" />
+          <Property Name="ActTorqueDrive3" Type="real" />
+          <Property Name="ActTorqueDrive4" Type="real" />
+          <Property Name="ActCurrentDrive1" Type="real" />
+          <Property Name="ActCurrentDrive2" Type="real" />
+          <Property Name="ActCurrentDrive3" Type="real" />
+          <Property Name="ActCurrentDrive4" Type="real" />
+          <Property Name="ActSpeed" Type="real" />
+        </EntityType>
+        <EntityType Name="AuxVariable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Variable" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VariableValue" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cassette">
+          <Key>
+            <PropertyRef Name="CassetteNo" />
+          </Key>
+          <Property Name="CassetteNo" Type="int" Nullable="false" />
+          <Property Name="NoOfRolls" Type="int" />
+          <Property Name="BearingDiameter" Type="real" />
+          <Property Name="PitchOfRolls" Type="int" />
+          <Property Name="DistanceA" Type="real" />
+          <Property Name="DistanceB" Type="real" />
+          <Property Name="DistanceC" Type="real" />
+          <Property Name="MaxMotorPower" Type="real" />
+          <Property Name="MaxMotorTorque" Type="real" />
+          <Property Name="MinThicknessPlate" Type="real" />
+          <Property Name="MaxThicknessPlate" Type="real" />
+          <Property Name="MaxAdjustment" Type="real" />
+          <Property Name="MaxCenterHeightBending" Type="real" />
+          <Property Name="MinCenterHeightBending" Type="real" />
+          <Property Name="MaxCrossTiltLeft" Type="real" />
+          <Property Name="MinCrossTiltLeft" Type="real" />
+          <Property Name="MaxCrossTiltRight" Type="real" />
+          <Property Name="MinCrossTiltRight" Type="real" />
+          <Property Name="RollDiameter" Type="real" />
+          <Property Name="MaxLevelingPressure" Type="real" />
+          <Property Name="Active" Type="int" />
+          <Property Name="MaxSelectThickness" Type="real" />
+        </EntityType>
+        <EntityType Name="FaultCompensation">
+          <Key>
+            <PropertyRef Name="PKEY_FC" />
+          </Key>
+          <Property Name="PKEY_FC" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EdgeWave" Type="int" />
+          <Property Name="CenterWave" Type="int" />
+          <Property Name="Ski" Type="int" />
+          <Property Name="Tilting" Type="int" />
+          <Property Name="CassetteNo" Type="int" />
+          <Property Name="MaxHeightEdgeWave" Type="real" />
+          <Property Name="EvaluationEdgeWave" Type="real" />
+          <Property Name="EvaluationTilting" Type="real" />
+          <Property Name="MaxHeightCenterWave" Type="real" />
+          <Property Name="EvaluationCenterWave" Type="real" />
+          <Property Name="MaxSki" Type="real" />
+          <Property Name="EvaluationSki" Type="real" />
+          <Property Name="MaxTilting" Type="real" />
+        </EntityType>
+        <EntityType Name="Flatness">
+          <Key>
+            <PropertyRef Name="Pkey_Flatness" />
+          </Key>
+          <Property Name="Pkey_Flatness" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlateID" Type="varchar" MaxLength="20" />
+          <Property Name="MaterialID" Type="varchar" MaxLength="20" />
+          <Property Name="PlateInTol" Type="int" Nullable="false" />
+          <Property Name="MeasuringCode" Type="int" Nullable="false" />
+          <Property Name="MeasuringRange" Type="int" Nullable="false" />
+          <Property Name="MeanAmpWaveLeft" Type="real" Nullable="false" />
+          <Property Name="MeanAmpWaveCenter" Type="real" Nullable="false" />
+          <Property Name="MeanAmpRight" Type="real" Nullable="false" />
+          <Property Name="SkiHead" Type="real" Nullable="false" />
+          <Property Name="SkiTail" Type="real" Nullable="false" />
+          <Property Name="HeightWaveLeft" Type="real" Nullable="false" />
+          <Property Name="YPosWaveLeft" Type="real" Nullable="false" />
+          <Property Name="LengthWaveLeft" Type="real" Nullable="false" />
+          <Property Name="NumberWaveLeft" Type="int" Nullable="false" />
+          <Property Name="HeightWaveQuarterLeft" Type="real" Nullable="false" />
+          <Property Name="YPosWaveQuarterLeft" Type="real" Nullable="false" />
+          <Property Name="LengthWaveQuarterLeft" Type="real" Nullable="false" />
+          <Property Name="NumberWaveQuarterLeft" Type="int" Nullable="false" />
+          <Property Name="HeightWaveCenter" Type="real" Nullable="false" />
+          <Property Name="YPosWaveCenter" Type="real" Nullable="false" />
+          <Property Name="LengthWaveCenter" Type="real" Nullable="false" />
+          <Property Name="NumberWaveCenter" Type="int" Nullable="false" />
+          <Property Name="HeightWaveQuarterRight" Type="real" Nullable="false" />
+          <Property Name="YPosWaveQuarterRight" Type="real" Nullable="false" />
+          <Property Name="LengthWaveQuarterRight" Type="real" Nullable="false" />
+          <Property Name="NumberWaveQuarterRight" Type="int" Nullable="false" />
+          <Property Name="HeightWaveRight" Type="real" Nullable="false" />
+          <Property Name="YPosWaveRight" Type="real" Nullable="false" />
+          <Property Name="LengthWaveRight" Type="real" Nullable="false" />
+          <Property Name="NumberWaveRight" Type="int" Nullable="false" />
+          <Property Name="GapLengthBow" Type="real" Nullable="false" />
+          <Property Name="MaxGapLengthBow" Type="real" Nullable="false" />
+          <Property Name="XPosLengthBow" Type="real" Nullable="false" />
+          <Property Name="YPosLengthBow" Type="real" Nullable="false" />
+          <Property Name="GapCrossBow" Type="real" Nullable="false" />
+          <Property Name="MaxGapCrossBow" Type="real" Nullable="false" />
+          <Property Name="XPosCrossBow" Type="real" Nullable="false" />
+          <Property Name="YPosCrossBow" Type="real" Nullable="false" />
+          <Property Name="Ruler1MCross" Type="real" Nullable="false" />
+          <Property Name="ActRuler1MCross" Type="real" Nullable="false" />
+          <Property Name="XPosRuler1MCross" Type="real" Nullable="false" />
+          <Property Name="YPosRuler1MCross" Type="real" Nullable="false" />
+          <Property Name="Ruler1MLength" Type="real" Nullable="false" />
+          <Property Name="ActRuler1MLength" Type="real" Nullable="false" />
+          <Property Name="XPosRuler1MLength" Type="real" Nullable="false" />
+          <Property Name="YPosRuler1MLength" Type="real" Nullable="false" />
+          <Property Name="Ruler2MLength" Type="real" Nullable="false" />
+          <Property Name="ActRuler2MLength" Type="real" Nullable="false" />
+          <Property Name="XPosRuler2MLength" Type="real" Nullable="false" />
+          <Property Name="YPosRuler2MLength" Type="real" Nullable="false" />
+          <Property Name="MaxPlateWidth" Type="real" Nullable="false" />
+          <Property Name="MinPlateWidth" Type="real" Nullable="false" />
+          <Property Name="MeanPlateWidth" Type="real" Nullable="false" />
+          <Property Name="MaxDeviationOfCenterLine" Type="real" Nullable="false" />
+        </EntityType>
+        <EntityType Name="L2_MODEL_L3_PLATE_REPORT">
+          <Key>
+            <PropertyRef Name="PKEY_PROD" />
+          </Key>
+          <Property Name="PKEY_PROD" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProdDateTime" Type="datetime2" Precision="7" />
+          <Property Name="PlateID" Type="varchar" MaxLength="20" />
+          <Property Name="MaterialID" Type="varchar" MaxLength="50" />
+          <Property Name="Leveling" Type="int" />
+          <Property Name="State" Type="int" />
+          <Property Name="NoOfLeveling" Type="int" />
+          <Property Name="CassetteNo" Type="int" />
+          <Property Name="SetLevelerInlet" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="SetLevelerOutlet" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="SetTiltLeft" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="SetTiltRight" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="SetMiddleHeight" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="SetCurveProfile" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="ActLevelerInlet" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="ActLevelerOutlet" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="ActTiltLeft" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="ActTiltRight" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="ActMiddleHeight" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="ActCurveProfile" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="TensileStrength" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="Temperature" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="ActTemperature" Type="decimal" Precision="10" Scale="6" />
+        </EntityType>
+        <EntityType Name="L2_MODEL_L3_TRACKING">
+          <Key>
+            <PropertyRef Name="PKEY_PDI" />
+          </Key>
+          <Property Name="PKEY_PDI" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InsertDateTime" Type="datetime2" Precision="7" />
+          <Property Name="UpdateDateTime" Type="datetime2" Precision="7" />
+          <Property Name="PlateID" Type="varchar" MaxLength="20" />
+          <Property Name="Location" Type="smallint" />
+        </EntityType>
+        <EntityType Name="L3_L2_MODEL_PDI">
+          <Key>
+            <PropertyRef Name="PKEY_PDI" />
+          </Key>
+          <Property Name="PKEY_PDI" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InsertDateTime" Type="datetime2" Precision="7" />
+          <Property Name="UpdateDateTime" Type="datetime2" Precision="7" />
+          <Property Name="PlateID" Type="varchar" MaxLength="20" />
+          <Property Name="MaterialID" Type="varchar" MaxLength="20" />
+          <Property Name="SteelGrade" Type="varchar" MaxLength="20" />
+          <Property Name="PlateLength" Type="decimal" Precision="10" Scale="5" Nullable="false" />
+          <Property Name="PlateWidth" Type="decimal" Precision="10" Scale="6" Nullable="false" />
+          <Property Name="PlateThickness" Type="decimal" Precision="10" Scale="6" Nullable="false" />
+          <Property Name="YieldPoint" Type="decimal" Precision="10" Scale="6" Nullable="false" />
+          <Property Name="TensileStrength" Type="decimal" Precision="10" Scale="6" Nullable="false" />
+          <Property Name="Ruler1MCross" Type="decimal" Precision="10" Scale="6" Nullable="false" />
+          <Property Name="Ruler1MLength" Type="decimal" Precision="10" Scale="6" Nullable="false" />
+          <Property Name="Ruler2MLength" Type="decimal" Precision="10" Scale="6" Nullable="false" />
+          <Property Name="EModule" Type="decimal" Precision="10" Scale="6" Nullable="false" />
+          <Property Name="Leveling" Type="smallint" Nullable="false" />
+          <Property Name="Location" Type="smallint" Nullable="false" />
+          <Property Name="State" Type="int" Nullable="false" />
+          <Property Name="ErrorMessage" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Limitation">
+          <Key>
+            <PropertyRef Name="Pkey_Limitation" />
+          </Key>
+          <Property Name="Pkey_Limitation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Limit" Type="varchar" MaxLength="50" />
+          <Property Name="Value" Type="real" />
+        </EntityType>
+        <EntityType Name="LineState">
+          <Key>
+            <PropertyRef Name="Pkey_State" />
+          </Key>
+          <Property Name="Pkey_State" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="State" Type="int" />
+        </EntityType>
+        <EntityType Name="PDI">
+          <Key>
+            <PropertyRef Name="PKEY_PDI" />
+          </Key>
+          <Property Name="PKEY_PDI" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlateID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaterialID" Type="varchar" MaxLength="20" />
+          <Property Name="SteelGrade" Type="varchar" MaxLength="20" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Length" Type="real" />
+          <Property Name="Width" Type="real" />
+          <Property Name="Thickness" Type="real" />
+          <Property Name="YieldPoint" Type="real" />
+          <Property Name="TensileStrength" Type="real" />
+          <Property Name="MeasuringCode" Type="smallint" />
+          <Property Name="Ruler1MCrossPDI" Type="real" />
+          <Property Name="Ruler1MLengthPDI" Type="real" />
+          <Property Name="Ruler2MLengthPDI" Type="real" />
+          <Property Name="EModule" Type="real" />
+          <Property Name="Leveling" Type="smallint" />
+          <Property Name="GapLengthBow" Type="real" />
+          <Property Name="GapCrossBow" Type="real" />
+          <Property Name="Manual" Type="smallint" />
+          <Property Name="Location" Type="smallint" />
+          <Property Name="State" Type="int" />
+        </EntityType>
+        <EntityType Name="PreSetting">
+          <Key>
+            <PropertyRef Name="PKEY_SETTINGS" />
+          </Key>
+          <Property Name="PKEY_SETTINGS" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaterialID" Type="nvarchar" MaxLength="20" />
+          <Property Name="CassetteNo" Type="int" />
+          <Property Name="Enable" Type="int" Nullable="false" />
+          <Property Name="StartRangeThickness" Type="real" />
+          <Property Name="EndRangeThickness" Type="real" />
+          <Property Name="StartRangeWidth" Type="real" />
+          <Property Name="EndRangeWidth" Type="real" />
+          <Property Name="CorrPlastification" Type="real" />
+          <Property Name="CenterHeightBending" Type="real" />
+          <Property Name="CurveProfile" Type="real" />
+          <Property Name="TiltingLeft" Type="real" />
+          <Property Name="TiltingRight" Type="real" />
+        </EntityType>
+        <EntityType Name="PreSettingsOutlet">
+          <Key>
+            <PropertyRef Name="Pkey_SettingsOutlet" />
+          </Key>
+          <Property Name="Pkey_SettingsOutlet" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StartRangeThickness" Type="real" />
+          <Property Name="EndRangeThickness" Type="real" />
+          <Property Name="StartRangeActYieldPoint" Type="real" />
+          <Property Name="EndRangeActYieldPoint" Type="real" />
+          <Property Name="Offset" Type="real" />
+        </EntityType>
+        <EntityType Name="ProductionReport">
+          <Key>
+            <PropertyRef Name="PKEY_PROD" />
+          </Key>
+          <Property Name="PKEY_PROD" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProdDate" Type="datetime" />
+          <Property Name="PlateID" Type="varchar" MaxLength="20" />
+          <Property Name="MaterialID" Type="varchar" MaxLength="20" />
+          <Property Name="Leveling" Type="int" />
+          <Property Name="State" Type="int" />
+          <Property Name="NoOfLeveling" Type="int" />
+          <Property Name="CassetteNo" Type="int" />
+          <Property Name="SetLevelerInlet" Type="real" />
+          <Property Name="SetLevelerOutlet" Type="real" />
+          <Property Name="SetTiltLeft" Type="real" />
+          <Property Name="SetTiltRight" Type="real" />
+          <Property Name="SetMiddleHeight" Type="real" />
+          <Property Name="SetCurveProfile" Type="real" />
+          <Property Name="ActLevelerInlet" Type="real" />
+          <Property Name="ActLevelerOutlet" Type="real" />
+          <Property Name="ActTiltLeft" Type="real" />
+          <Property Name="ActTiltRight" Type="real" />
+          <Property Name="ActMiddleHeight" Type="real" />
+          <Property Name="ActCurveProfile" Type="real" />
+          <Property Name="ActEdgeWaveLeft" Type="real" />
+          <Property Name="ActNoEdgeWaveLeft" Type="int" />
+          <Property Name="ActEdgeWaveRight" Type="real" />
+          <Property Name="ActNoEdgeWaveRight" Type="int" />
+          <Property Name="ActCenterWave" Type="real" />
+          <Property Name="ActNoCenterWave" Type="int" />
+          <Property Name="SkiHead" Type="real" />
+          <Property Name="SkiTail" Type="real" />
+          <Property Name="TensileStrength" Type="real" />
+          <Property Name="MeasuringCode" Type="int" />
+          <Property Name="Set1MRulerCross" Type="real" />
+          <Property Name="Act1MRulerCross" Type="real" />
+          <Property Name="Set1MRulerLength" Type="real" />
+          <Property Name="Act1MRulerLength" Type="real" />
+          <Property Name="Set2MRulerLength" Type="real" />
+          <Property Name="Act2MRulerLength" Type="real" />
+          <Property Name="GapLengthBow" Type="real" />
+          <Property Name="ActGapLengthBow" Type="real" />
+          <Property Name="GapCrossBow" Type="real" />
+          <Property Name="ActGapCrossBow" Type="real" />
+          <Property Name="Temperature" Type="real" />
+          <Property Name="ActTemperature" Type="real" />
+        </EntityType>
+        <EntityType Name="Produkt">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProduktName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Discontinued" Type="int" />
+        </EntityType>
+        <EntityType Name="Steelgrade">
+          <Key>
+            <PropertyRef Name="Pkey_SG" />
+          </Key>
+          <Property Name="Pkey_SG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SteelGrade" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Temp">
+          <Key>
+            <PropertyRef Name="PKEY_TEMP" />
+          </Key>
+          <Property Name="PKEY_TEMP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Steelgrade" Type="varchar" MaxLength="50" />
+          <Property Name="Temperature" Type="real" />
+          <Property Name="YieldPoint" Type="real" />
+          <Property Name="EModule" Type="real" />
+        </EntityType>
+        <EntityContainer Name="LEVELERModelStoreContainer">
+          <EntitySet Name="ActualValue" EntityType="Self.ActualValue" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AuxVariable" EntityType="Self.AuxVariable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cassette" EntityType="Self.Cassette" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FaultCompensation" EntityType="Self.FaultCompensation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Flatness" EntityType="Self.Flatness" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="L2_MODEL_L3_PLATE_REPORT" EntityType="Self.L2_MODEL_L3_PLATE_REPORT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="L2_MODEL_L3_TRACKING" EntityType="Self.L2_MODEL_L3_TRACKING" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="L3_L2_MODEL_PDI" EntityType="Self.L3_L2_MODEL_PDI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Limitation" EntityType="Self.Limitation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LineState" EntityType="Self.LineState" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PDI" EntityType="Self.PDI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PreSetting" EntityType="Self.PreSetting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PreSettingsOutlet" EntityType="Self.PreSettingsOutlet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductionReport" EntityType="Self.ProductionReport" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Produkt" EntityType="Self.Produkt" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Steelgrade" EntityType="Self.Steelgrade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Temp" EntityType="Self.Temp" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Level2.PlateLeveler.DataTypes" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ActualValue">
+          <Key>
+            <PropertyRef Name="Pkey_ActVal" />
+          </Key>
+          <Property Name="Pkey_ActVal" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlateID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MaterialID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Pos" Type="Int32" />
+          <Property Name="ActHeadPos" Type="Single" />
+          <Property Name="ActLevelerInlet" Type="Single" />
+          <Property Name="ActLevelerOutlet" Type="Single" />
+          <Property Name="ActTiltLeft" Type="Single" />
+          <Property Name="ActTiltRight" Type="Single" />
+          <Property Name="ActMiddleHeight" Type="Single" />
+          <Property Name="ActCurveProfile" Type="Single" />
+          <Property Name="ActPowerDrive1" Type="Single" />
+          <Property Name="ActPowerDrive2" Type="Single" />
+          <Property Name="ActPowerDrive3" Type="Single" />
+          <Property Name="ActPowerDrive4" Type="Single" />
+          <Property Name="ActTorqueDrive1" Type="Single" />
+          <Property Name="ActTorqueDrive2" Type="Single" />
+          <Property Name="ActTorqueDrive3" Type="Single" />
+          <Property Name="ActTorqueDrive4" Type="Single" />
+          <Property Name="ActCurrentDrive1" Type="Single" />
+          <Property Name="ActCurrentDrive2" Type="Single" />
+          <Property Name="ActCurrentDrive3" Type="Single" />
+          <Property Name="ActCurrentDrive4" Type="Single" />
+          <Property Name="ActSpeed" Type="Single" />
+        </EntityType>
+        <EntityType Name="Cassette">
+          <Key>
+            <PropertyRef Name="CassetteNo" />
+          </Key>
+          <Property Name="CassetteNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NoOfRolls" Type="Int32" />
+          <Property Name="BearingDiameter" Type="Single" />
+          <Property Name="PitchOfRolls" Type="Int32" />
+          <Property Name="DistanceA" Type="Single" />
+          <Property Name="DistanceB" Type="Single" />
+          <Property Name="DistanceC" Type="Single" />
+          <Property Name="MaxMotorPower" Type="Single" />
+          <Property Name="MaxMotorTorque" Type="Single" />
+          <Property Name="MinThicknessPlate" Type="Single" />
+          <Property Name="MaxThicknessPlate" Type="Single" />
+          <Property Name="MaxAdjustment" Type="Single" />
+          <Property Name="MaxCenterHeightBending" Type="Single" />
+          <Property Name="MinCenterHeightBending" Type="Single" />
+          <Property Name="MaxCrossTiltLeft" Type="Single" />
+          <Property Name="MinCrossTiltLeft" Type="Single" />
+          <Property Name="MaxCrossTiltRight" Type="Single" />
+          <Property Name="MinCrossTiltRight" Type="Single" />
+          <Property Name="RollDiameter" Type="Single" />
+          <Property Name="MaxLevelingPressure" Type="Single" />
+          <Property Name="Active" Type="Int32" />
+          <Property Name="MaxSelectThickness" Type="Single" />
+        </EntityType>
+        <EntityType Name="FaultCompensation">
+          <Key>
+            <PropertyRef Name="PKEY_FC" />
+          </Key>
+          <Property Name="PKEY_FC" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EdgeWave" Type="Int32" />
+          <Property Name="CenterWave" Type="Int32" />
+          <Property Name="Ski" Type="Int32" />
+          <Property Name="Tilting" Type="Int32" />
+          <Property Name="CassetteNo" Type="Int32" />
+          <Property Name="MaxHeightEdgeWave" Type="Single" />
+          <Property Name="EvaluationEdgeWave" Type="Single" />
+          <Property Name="EvaluationTilting" Type="Single" />
+          <Property Name="MaxHeightCenterWave" Type="Single" />
+          <Property Name="EvaluationCenterWave" Type="Single" />
+          <Property Name="MaxSki" Type="Single" />
+          <Property Name="EvaluationSki" Type="Single" />
+          <Property Name="MaxTilting" Type="Single" />
+        </EntityType>
+        <EntityType Name="Flatness">
+          <Key>
+            <PropertyRef Name="Pkey_Flatness" />
+          </Key>
+          <Property Name="Pkey_Flatness" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlateID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MaterialID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PlateInTol" Type="Int32" Nullable="false" />
+          <Property Name="MeasuringCode" Type="Int32" Nullable="false" />
+          <Property Name="MeasuringRange" Type="Int32" Nullable="false" />
+          <Property Name="MeanAmpWaveLeft" Type="Single" Nullable="false" />
+          <Property Name="MeanAmpWaveCenter" Type="Single" Nullable="false" />
+          <Property Name="MeanAmpRight" Type="Single" Nullable="false" />
+          <Property Name="SkiHead" Type="Single" Nullable="false" />
+          <Property Name="SkiTail" Type="Single" Nullable="false" />
+          <Property Name="HeightWaveLeft" Type="Single" Nullable="false" />
+          <Property Name="YPosWaveLeft" Type="Single" Nullable="false" />
+          <Property Name="LengthWaveLeft" Type="Single" Nullable="false" />
+          <Property Name="NumberWaveLeft" Type="Int32" Nullable="false" />
+          <Property Name="HeightWaveQuarterLeft" Type="Single" Nullable="false" />
+          <Property Name="YPosWaveQuarterLeft" Type="Single" Nullable="false" />
+          <Property Name="LengthWaveQuarterLeft" Type="Single" Nullable="false" />
+          <Property Name="NumberWaveQuarterLeft" Type="Int32" Nullable="false" />
+          <Property Name="HeightWaveCenter" Type="Single" Nullable="false" />
+          <Property Name="YPosWaveCenter" Type="Single" Nullable="false" />
+          <Property Name="LengthWaveCenter" Type="Single" Nullable="false" />
+          <Property Name="NumberWaveCenter" Type="Int32" Nullable="false" />
+          <Property Name="HeightWaveQuarterRight" Type="Single" Nullable="false" />
+          <Property Name="YPosWaveQuarterRight" Type="Single" Nullable="false" />
+          <Property Name="LengthWaveQuarterRight" Type="Single" Nullable="false" />
+          <Property Name="NumberWaveQuarterRight" Type="Int32" Nullable="false" />
+          <Property Name="HeightWaveRight" Type="Single" Nullable="false" />
+          <Property Name="YPosWaveRight" Type="Single" Nullable="false" />
+          <Property Name="LengthWaveRight" Type="Single" Nullable="false" />
+          <Property Name="NumberWaveRight" Type="Int32" Nullable="false" />
+          <Property Name="GapLengthBow" Type="Single" Nullable="false" />
+          <Property Name="MaxGapLengthBow" Type="Single" Nullable="false" />
+          <Property Name="XPosLengthBow" Type="Single" Nullable="false" />
+          <Property Name="YPosLengthBow" Type="Single" Nullable="false" />
+          <Property Name="GapCrossBow" Type="Single" Nullable="false" />
+          <Property Name="MaxGapCrossBow" Type="Single" Nullable="false" />
+          <Property Name="XPosCrossBow" Type="Single" Nullable="false" />
+          <Property Name="YPosCrossBow" Type="Single" Nullable="false" />
+          <Property Name="Ruler1MCross" Type="Single" Nullable="false" />
+          <Property Name="ActRuler1MCross" Type="Single" Nullable="false" />
+          <Property Name="XPosRuler1MCross" Type="Single" Nullable="false" />
+          <Property Name="YPosRuler1MCross" Type="Single" Nullable="false" />
+          <Property Name="Ruler1MLength" Type="Single" Nullable="false" />
+          <Property Name="ActRuler1MLength" Type="Single" Nullable="false" />
+          <Property Name="XPosRuler1MLength" Type="Single" Nullable="false" />
+          <Property Name="YPosRuler1MLength" Type="Single" Nullable="false" />
+          <Property Name="Ruler2MLength" Type="Single" Nullable="false" />
+          <Property Name="ActRuler2MLength" Type="Single" Nullable="false" />
+          <Property Name="XPosRuler2MLength" Type="Single" Nullable="false" />
+          <Property Name="YPosRuler2MLength" Type="Single" Nullable="false" />
+          <Property Name="MaxPlateWidth" Type="Single" Nullable="false" />
+          <Property Name="MinPlateWidth" Type="Single" Nullable="false" />
+          <Property Name="MeanPlateWidth" Type="Single" Nullable="false" />
+          <Property Name="MaxDeviationOfCenterLine" Type="Single" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Limitation">
+          <Key>
+            <PropertyRef Name="Pkey_Limitation" />
+          </Key>
+          <Property Name="Pkey_Limitation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Limit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Value" Type="Single" />
+        </EntityType>
+        <EntityType Name="LineState">
+          <Key>
+            <PropertyRef Name="Pkey_State" />
+          </Key>
+          <Property Name="Pkey_State" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="State" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PDI">
+          <Key>
+            <PropertyRef Name="PKEY_PDI" />
+          </Key>
+          <Property Name="PKEY_PDI" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlateID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaterialID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SteelGrade" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Length" Type="Single" />
+          <Property Name="Width" Type="Single" />
+          <Property Name="Thickness" Type="Single" />
+          <Property Name="YieldPoint" Type="Single" />
+          <Property Name="TensileStrength" Type="Single" />
+          <Property Name="MeasuringCode" Type="Int16" />
+          <Property Name="Ruler1MCrossPDI" Type="Single" />
+          <Property Name="Ruler1MLengthPDI" Type="Single" />
+          <Property Name="Ruler2MLengthPDI" Type="Single" />
+          <Property Name="EModule" Type="Single" />
+          <Property Name="Leveling" Type="Int16" />
+          <Property Name="GapLengthBow" Type="Single" />
+          <Property Name="GapCrossBow" Type="Single" />
+          <Property Name="Manual" Type="Int16" />
+          <Property Name="Location" Type="Int16" />
+          <Property Name="State" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PreSetting">
+          <Key>
+            <PropertyRef Name="PKEY_SETTINGS" />
+          </Key>
+          <Property Name="PKEY_SETTINGS" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaterialID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CassetteNo" Type="Int32" />
+          <Property Name="Enable" Type="Int32" Nullable="false" />
+          <Property Name="StartRangeThickness" Type="Single" />
+          <Property Name="EndRangeThickness" Type="Single" />
+          <Property Name="StartRangeWidth" Type="Single" />
+          <Property Name="EndRangeWidth" Type="Single" />
+          <Property Name="CorrPlastification" Type="Single" />
+          <Property Name="CenterHeightBending" Type="Single" />
+          <Property Name="CurveProfile" Type="Single" />
+          <Property Name="TiltingLeft" Type="Single" />
+          <Property Name="TiltingRight" Type="Single" />
+        </EntityType>
+        <EntityType Name="PreSettingsOutlet">
+          <Key>
+            <PropertyRef Name="Pkey_SettingsOutlet" />
+          </Key>
+          <Property Name="Pkey_SettingsOutlet" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StartRangeThickness" Type="Single" />
+          <Property Name="EndRangeThickness" Type="Single" />
+          <Property Name="StartRangeActYieldPoint" Type="Single" />
+          <Property Name="EndRangeActYieldPoint" Type="Single" />
+          <Property Name="Offset" Type="Single" />
+        </EntityType>
+        <EntityType Name="ProductionReport">
+          <Key>
+            <PropertyRef Name="PKEY_PROD" />
+          </Key>
+          <Property Name="PKEY_PROD" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProdDate" Type="DateTime" Precision="3" />
+          <Property Name="PlateID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MaterialID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Leveling" Type="Int32" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="NoOfLeveling" Type="Int32" />
+          <Property Name="CassetteNo" Type="Int32" />
+          <Property Name="SetLevelerInlet" Type="Single" />
+          <Property Name="SetLevelerOutlet" Type="Single" />
+          <Property Name="SetTiltLeft" Type="Single" />
+          <Property Name="SetTiltRight" Type="Single" />
+          <Property Name="SetMiddleHeight" Type="Single" />
+          <Property Name="SetCurveProfile" Type="Single" />
+          <Property Name="ActLevelerInlet" Type="Single" />
+          <Property Name="ActLevelerOutlet" Type="Single" />
+          <Property Name="ActTiltLeft" Type="Single" />
+          <Property Name="ActTiltRight" Type="Single" />
+          <Property Name="ActMiddleHeight" Type="Single" />
+          <Property Name="ActCurveProfile" Type="Single" />
+          <Property Name="ActEdgeWaveLeft" Type="Single" />
+          <Property Name="ActNoEdgeWaveLeft" Type="Int32" />
+          <Property Name="ActEdgeWaveRight" Type="Single" />
+          <Property Name="ActNoEdgeWaveRight" Type="Int32" />
+          <Property Name="ActCenterWave" Type="Single" />
+          <Property Name="ActNoCenterWave" Type="Int32" />
+          <Property Name="SkiHead" Type="Single" />
+          <Property Name="SkiTail" Type="Single" />
+          <Property Name="TensileStrength" Type="Single" />
+          <Property Name="MeasuringCode" Type="Int32" />
+          <Property Name="Set1MRulerCross" Type="Single" />
+          <Property Name="Act1MRulerCross" Type="Single" />
+          <Property Name="Set1MRulerLength" Type="Single" />
+          <Property Name="Act1MRulerLength" Type="Single" />
+          <Property Name="Set2MRulerLength" Type="Single" />
+          <Property Name="Act2MRulerLength" Type="Single" />
+          <Property Name="GapLengthBow" Type="Single" />
+          <Property Name="ActGapLengthBow" Type="Single" />
+          <Property Name="GapCrossBow" Type="Single" />
+          <Property Name="ActGapCrossBow" Type="Single" />
+          <Property Name="Temperature" Type="Single" />
+          <Property Name="ActTemperature" Type="Single" />
+        </EntityType>
+        <EntityType Name="Produkt">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProduktName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Discontinued" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Steelgrade" Abstract="false">
+          <Key>
+            <PropertyRef Name="Pkey_SG" />
+          </Key>
+          <Property Name="Pkey_SG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SteelGrade" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Temp">
+          <Key>
+            <PropertyRef Name="PKEY_TEMP" />
+          </Key>
+          <Property Name="PKEY_TEMP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Steelgrade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Temperature" Type="Single" />
+          <Property Name="YieldPoint" Type="Single" />
+          <Property Name="EModule" Type="Single" />
+        </EntityType>
+        <EntityContainer Name="LEVELEREntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ActualValues" EntityType="Level2.PlateLeveler.DataTypes.ActualValue" />
+          <EntitySet Name="Cassettes" EntityType="Level2.PlateLeveler.DataTypes.Cassette" />
+          <EntitySet Name="FaultCompensations" EntityType="Self.FaultCompensation" />
+          <EntitySet Name="Flatnesses" EntityType="Self.Flatness" />
+          <EntitySet Name="Limitation" EntityType="Self.Limitation" />
+          <EntitySet Name="LineStates" EntityType="Self.LineState" />
+          <EntitySet Name="PDIs" EntityType="Self.PDI" />
+          <EntitySet Name="PreSettings" EntityType="Level2.PlateLeveler.DataTypes.PreSetting" />
+          <EntitySet Name="PreSettingsOutlets" EntityType="Self.PreSettingsOutlet" />
+          <EntitySet Name="ProductionReports" EntityType="Self.ProductionReport" />
+          <EntitySet Name="Produkts" EntityType="Self.Produkt" />
+          <EntitySet Name="Temps" EntityType="Self.Temp" />
+          <EntitySet Name="AuxVariables" EntityType="Level2.PlateLeveler.DataTypes.AuxVariable" />
+          <EntitySet Name="L3_L2_MODEL_PDI" EntityType="Level2.PlateLeveler.DataTypes.L3_L2_MODEL_PDI" />
+          <EntitySet Name="L2_MODEL_L3_TRACKING" EntityType="Level2.PlateLeveler.DataTypes.L2_MODEL_L3_TRACKING" />
+          <EntitySet Name="L2_MODEL_L3_PLATE_REPORT" EntityType="Level2.PlateLeveler.DataTypes.L2_MODEL_L3_PLATE_REPORT" />
+          <EntitySet Name="Steelgrades" EntityType="Level2.PlateLeveler.DataTypes.Steelgrade" />
+        </EntityContainer>
+        <EntityType Name="AuxVariable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Variable" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VariableValue" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="L3_L2_MODEL_PDI">
+          <Key>
+            <PropertyRef Name="PKEY_PDI" />
+          </Key>
+          <Property Name="PKEY_PDI" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InsertDateTime" Type="DateTime" Precision="7" />
+          <Property Name="UpdateDateTime" Type="DateTime" Precision="7" />
+          <Property Name="PlateID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MaterialID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SteelGrade" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PlateLength" Type="Decimal" Nullable="false" Precision="10" Scale="6" />
+          <Property Name="PlateWidth" Type="Decimal" Nullable="false" Precision="10" Scale="6" />
+          <Property Name="PlateThickness" Type="Decimal" Nullable="false" Precision="10" Scale="6" />
+          <Property Name="YieldPoint" Type="Decimal" Nullable="false" Precision="10" Scale="6" />
+          <Property Name="TensileStrength" Type="Decimal" Nullable="false" Precision="10" Scale="6" />
+          <Property Name="Ruler1MCross" Type="Decimal" Nullable="false" Precision="10" Scale="6" />
+          <Property Name="Ruler1MLength" Type="Decimal" Nullable="false" Precision="10" Scale="6" />
+          <Property Name="Ruler2MLength" Type="Decimal" Nullable="false" Precision="10" Scale="6" />
+          <Property Name="EModule" Type="Decimal" Nullable="false" Precision="10" Scale="6" />
+          <Property Name="Leveling" Type="Int16" Nullable="false" />
+          <Property Name="Location" Type="Int16" Nullable="false" />
+          <Property Name="State" Type="Int32" Nullable="false" />
+          <Property Name="ErrorMessage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="L2_MODEL_L3_TRACKING">
+          <Key>
+            <PropertyRef Name="PKEY_PDI" />
+          </Key>
+          <Property Name="PKEY_PDI" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InsertDateTime" Type="DateTime" Precision="7" />
+          <Property Name="UpdateDateTime" Type="DateTime" Precision="7" />
+          <Property Name="PlateID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Location" Type="Int16" />
+        </EntityType>
+        <EntityType Name="L2_MODEL_L3_PLATE_REPORT">
+          <Key>
+            <PropertyRef Name="PKEY_PROD" />
+          </Key>
+          <Property Name="PKEY_PROD" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProdDateTime" Type="DateTime" Precision="7" />
+          <Property Name="PlateID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MaterialID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Leveling" Type="Int32" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="NoOfLeveling" Type="Int32" />
+          <Property Name="CassetteNo" Type="Int32" />
+          <Property Name="SetLevelerInlet" Type="Decimal" Precision="10" Scale="6" />
+          <Property Name="SetLevelerOutlet" Type="Decimal" Precision="10" Scale="6" />
+          <Property Name="SetTiltLeft" Type="Decimal" Precision="10" Scale="6" />
+          <Property Name="SetTiltRight" Type="Decimal" Precision="10" Scale="6" />
+          <Property Name="SetMiddleHeight" Type="Decimal" Precision="10" Scale="6" />
+          <Property Name="SetCurveProfile" Type="Decimal" Precision="10" Scale="6" />
+          <Property Name="ActLevelerInlet" Type="Decimal" Precision="10" Scale="6" />
+          <Property Name="ActLevelerOutlet" Type="Decimal" Precision="10" Scale="6" />
+          <Property Name="ActTiltLeft" Type="Decimal" Precision="10" Scale="6" />
+          <Property Name="ActTiltRight" Type="Decimal" Precision="10" Scale="6" />
+          <Property Name="ActMiddleHeight" Type="Decimal" Precision="10" Scale="6" />
+          <Property Name="ActCurveProfile" Type="Decimal" Precision="10" Scale="6" />
+          <Property Name="TensileStrength" Type="Decimal" Precision="10" Scale="6" />
+          <Property Name="Temperature" Type="Decimal" Precision="10" Scale="6" />
+          <Property Name="ActTemperature" Type="Decimal" Precision="10" Scale="6" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LEVELERModelStoreContainer" CdmEntityContainer="LEVELEREntities">
+          <EntitySetMapping Name="FaultCompensations">
+            <EntityTypeMapping TypeName="Level2.PlateLeveler.DataTypes.FaultCompensation">
+              <MappingFragment StoreEntitySet="FaultCompensation">
+                <ScalarProperty Name="PKEY_FC" ColumnName="PKEY_FC" />
+                <ScalarProperty Name="EdgeWave" ColumnName="EdgeWave" />
+                <ScalarProperty Name="CenterWave" ColumnName="CenterWave" />
+                <ScalarProperty Name="Ski" ColumnName="Ski" />
+                <ScalarProperty Name="Tilting" ColumnName="Tilting" />
+                <ScalarProperty Name="CassetteNo" ColumnName="CassetteNo" />
+                <ScalarProperty Name="MaxHeightEdgeWave" ColumnName="MaxHeightEdgeWave" />
+                <ScalarProperty Name="EvaluationEdgeWave" ColumnName="EvaluationEdgeWave" />
+                <ScalarProperty Name="EvaluationTilting" ColumnName="EvaluationTilting" />
+                <ScalarProperty Name="MaxHeightCenterWave" ColumnName="MaxHeightCenterWave" />
+                <ScalarProperty Name="EvaluationCenterWave" ColumnName="EvaluationCenterWave" />
+                <ScalarProperty Name="MaxSki" ColumnName="MaxSki" />
+                <ScalarProperty Name="EvaluationSki" ColumnName="EvaluationSki" />
+                <ScalarProperty Name="MaxTilting" ColumnName="MaxTilting" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Flatnesses">
+            <EntityTypeMapping TypeName="Level2.PlateLeveler.DataTypes.Flatness">
+              <MappingFragment StoreEntitySet="Flatness">
+                <ScalarProperty Name="Pkey_Flatness" ColumnName="Pkey_Flatness" />
+                <ScalarProperty Name="PlateID" ColumnName="PlateID" />
+                <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+                <ScalarProperty Name="PlateInTol" ColumnName="PlateInTol" />
+                <ScalarProperty Name="MeasuringCode" ColumnName="MeasuringCode" />
+                <ScalarProperty Name="MeasuringRange" ColumnName="MeasuringRange" />
+                <ScalarProperty Name="MeanAmpWaveLeft" ColumnName="MeanAmpWaveLeft" />
+                <ScalarProperty Name="MeanAmpWaveCenter" ColumnName="MeanAmpWaveCenter" />
+                <ScalarProperty Name="MeanAmpRight" ColumnName="MeanAmpRight" />
+                <ScalarProperty Name="SkiHead" ColumnName="SkiHead" />
+                <ScalarProperty Name="SkiTail" ColumnName="SkiTail" />
+                <ScalarProperty Name="HeightWaveLeft" ColumnName="HeightWaveLeft" />
+                <ScalarProperty Name="YPosWaveLeft" ColumnName="YPosWaveLeft" />
+                <ScalarProperty Name="LengthWaveLeft" ColumnName="LengthWaveLeft" />
+                <ScalarProperty Name="NumberWaveLeft" ColumnName="NumberWaveLeft" />
+                <ScalarProperty Name="HeightWaveQuarterLeft" ColumnName="HeightWaveQuarterLeft" />
+                <ScalarProperty Name="YPosWaveQuarterLeft" ColumnName="YPosWaveQuarterLeft" />
+                <ScalarProperty Name="LengthWaveQuarterLeft" ColumnName="LengthWaveQuarterLeft" />
+                <ScalarProperty Name="NumberWaveQuarterLeft" ColumnName="NumberWaveQuarterLeft" />
+                <ScalarProperty Name="HeightWaveCenter" ColumnName="HeightWaveCenter" />
+                <ScalarProperty Name="YPosWaveCenter" ColumnName="YPosWaveCenter" />
+                <ScalarProperty Name="LengthWaveCenter" ColumnName="LengthWaveCenter" />
+                <ScalarProperty Name="NumberWaveCenter" ColumnName="NumberWaveCenter" />
+                <ScalarProperty Name="HeightWaveQuarterRight" ColumnName="HeightWaveQuarterRight" />
+                <ScalarProperty Name="YPosWaveQuarterRight" ColumnName="YPosWaveQuarterRight" />
+                <ScalarProperty Name="LengthWaveQuarterRight" ColumnName="LengthWaveQuarterRight" />
+                <ScalarProperty Name="NumberWaveQuarterRight" ColumnName="NumberWaveQuarterRight" />
+                <ScalarProperty Name="HeightWaveRight" ColumnName="HeightWaveRight" />
+                <ScalarProperty Name="YPosWaveRight" ColumnName="YPosWaveRight" />
+                <ScalarProperty Name="LengthWaveRight" ColumnName="LengthWaveRight" />
+                <ScalarProperty Name="NumberWaveRight" ColumnName="NumberWaveRight" />
+                <ScalarProperty Name="GapLengthBow" ColumnName="GapLengthBow" />
+                <ScalarProperty Name="MaxGapLengthBow" ColumnName="MaxGapLengthBow" />
+                <ScalarProperty Name="XPosLengthBow" ColumnName="XPosLengthBow" />
+                <ScalarProperty Name="YPosLengthBow" ColumnName="YPosLengthBow" />
+                <ScalarProperty Name="GapCrossBow" ColumnName="GapCrossBow" />
+                <ScalarProperty Name="MaxGapCrossBow" ColumnName="MaxGapCrossBow" />
+                <ScalarProperty Name="XPosCrossBow" ColumnName="XPosCrossBow" />
+                <ScalarProperty Name="YPosCrossBow" ColumnName="YPosCrossBow" />
+                <ScalarProperty Name="Ruler1MCross" ColumnName="Ruler1MCross" />
+                <ScalarProperty Name="ActRuler1MCross" ColumnName="ActRuler1MCross" />
+                <ScalarProperty Name="XPosRuler1MCross" ColumnName="XPosRuler1MCross" />
+                <ScalarProperty Name="YPosRuler1MCross" ColumnName="YPosRuler1MCross" />
+                <ScalarProperty Name="Ruler1MLength" ColumnName="Ruler1MLength" />
+                <ScalarProperty Name="ActRuler1MLength" ColumnName="ActRuler1MLength" />
+                <ScalarProperty Name="XPosRuler1MLength" ColumnName="XPosRuler1MLength" />
+                <ScalarProperty Name="YPosRuler1MLength" ColumnName="YPosRuler1MLength" />
+                <ScalarProperty Name="Ruler2MLength" ColumnName="Ruler2MLength" />
+                <ScalarProperty Name="ActRuler2MLength" ColumnName="ActRuler2MLength" />
+                <ScalarProperty Name="XPosRuler2MLength" ColumnName="XPosRuler2MLength" />
+                <ScalarProperty Name="YPosRuler2MLength" ColumnName="YPosRuler2MLength" />
+                <ScalarProperty Name="MaxPlateWidth" ColumnName="MaxPlateWidth" />
+                <ScalarProperty Name="MinPlateWidth" ColumnName="MinPlateWidth" />
+                <ScalarProperty Name="MeanPlateWidth" ColumnName="MeanPlateWidth" />
+                <ScalarProperty Name="MaxDeviationOfCenterLine" ColumnName="MaxDeviationOfCenterLine" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LineStates">
+            <EntityTypeMapping TypeName="Level2.PlateLeveler.DataTypes.LineState">
+              <MappingFragment StoreEntitySet="LineState">
+                <ScalarProperty Name="Pkey_State" ColumnName="Pkey_State" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="State" ColumnName="State" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PDIs">
+            <EntityTypeMapping TypeName="Level2.PlateLeveler.DataTypes.PDI">
+              <MappingFragment StoreEntitySet="PDI">
+                <ScalarProperty Name="PKEY_PDI" ColumnName="PKEY_PDI" />
+                <ScalarProperty Name="PlateID" ColumnName="PlateID" />
+                <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+                <ScalarProperty Name="SteelGrade" ColumnName="SteelGrade" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+                <ScalarProperty Name="YieldPoint" ColumnName="YieldPoint" />
+                <ScalarProperty Name="TensileStrength" ColumnName="TensileStrength" />
+                <ScalarProperty Name="MeasuringCode" ColumnName="MeasuringCode" />
+                <ScalarProperty Name="Ruler1MCrossPDI" ColumnName="Ruler1MCrossPDI" />
+                <ScalarProperty Name="Ruler1MLengthPDI" ColumnName="Ruler1MLengthPDI" />
+                <ScalarProperty Name="Ruler2MLengthPDI" ColumnName="Ruler2MLengthPDI" />
+                <ScalarProperty Name="EModule" ColumnName="EModule" />
+                <ScalarProperty Name="Leveling" ColumnName="Leveling" />
+                <ScalarProperty Name="GapLengthBow" ColumnName="GapLengthBow" />
+                <ScalarProperty Name="GapCrossBow" ColumnName="GapCrossBow" />
+                <ScalarProperty Name="Manual" ColumnName="Manual" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="State" ColumnName="State" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PreSettingsOutlets">
+            <EntityTypeMapping TypeName="Level2.PlateLeveler.DataTypes.PreSettingsOutlet">
+              <MappingFragment StoreEntitySet="PreSettingsOutlet">
+                <ScalarProperty Name="Pkey_SettingsOutlet" ColumnName="Pkey_SettingsOutlet" />
+                <ScalarProperty Name="StartRangeThickness" ColumnName="StartRangeThickness" />
+                <ScalarProperty Name="EndRangeThickness" ColumnName="EndRangeThickness" />
+                <ScalarProperty Name="StartRangeActYieldPoint" ColumnName="StartRangeActYieldPoint" />
+                <ScalarProperty Name="EndRangeActYieldPoint" ColumnName="EndRangeActYieldPoint" />
+                <ScalarProperty Name="Offset" ColumnName="Offset" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductionReports">
+            <EntityTypeMapping TypeName="Level2.PlateLeveler.DataTypes.ProductionReport">
+              <MappingFragment StoreEntitySet="ProductionReport">
+                <ScalarProperty Name="PKEY_PROD" ColumnName="PKEY_PROD" />
+                <ScalarProperty Name="ProdDate" ColumnName="ProdDate" />
+                <ScalarProperty Name="PlateID" ColumnName="PlateID" />
+                <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+                <ScalarProperty Name="Leveling" ColumnName="Leveling" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="NoOfLeveling" ColumnName="NoOfLeveling" />
+                <ScalarProperty Name="CassetteNo" ColumnName="CassetteNo" />
+                <ScalarProperty Name="SetLevelerInlet" ColumnName="SetLevelerInlet" />
+                <ScalarProperty Name="SetLevelerOutlet" ColumnName="SetLevelerOutlet" />
+                <ScalarProperty Name="SetTiltLeft" ColumnName="SetTiltLeft" />
+                <ScalarProperty Name="SetTiltRight" ColumnName="SetTiltRight" />
+                <ScalarProperty Name="SetMiddleHeight" ColumnName="SetMiddleHeight" />
+                <ScalarProperty Name="SetCurveProfile" ColumnName="SetCurveProfile" />
+                <ScalarProperty Name="ActLevelerInlet" ColumnName="ActLevelerInlet" />
+                <ScalarProperty Name="ActLevelerOutlet" ColumnName="ActLevelerOutlet" />
+                <ScalarProperty Name="ActTiltLeft" ColumnName="ActTiltLeft" />
+                <ScalarProperty Name="ActTiltRight" ColumnName="ActTiltRight" />
+                <ScalarProperty Name="ActMiddleHeight" ColumnName="ActMiddleHeight" />
+                <ScalarProperty Name="ActCurveProfile" ColumnName="ActCurveProfile" />
+                <ScalarProperty Name="ActEdgeWaveLeft" ColumnName="ActEdgeWaveLeft" />
+                <ScalarProperty Name="ActNoEdgeWaveLeft" ColumnName="ActNoEdgeWaveLeft" />
+                <ScalarProperty Name="ActEdgeWaveRight" ColumnName="ActEdgeWaveRight" />
+                <ScalarProperty Name="ActNoEdgeWaveRight" ColumnName="ActNoEdgeWaveRight" />
+                <ScalarProperty Name="ActCenterWave" ColumnName="ActCenterWave" />
+                <ScalarProperty Name="ActNoCenterWave" ColumnName="ActNoCenterWave" />
+                <ScalarProperty Name="SkiHead" ColumnName="SkiHead" />
+                <ScalarProperty Name="SkiTail" ColumnName="SkiTail" />
+                <ScalarProperty Name="TensileStrength" ColumnName="TensileStrength" />
+                <ScalarProperty Name="MeasuringCode" ColumnName="MeasuringCode" />
+                <ScalarProperty Name="Set1MRulerCross" ColumnName="Set1MRulerCross" />
+                <ScalarProperty Name="Act1MRulerCross" ColumnName="Act1MRulerCross" />
+                <ScalarProperty Name="Set1MRulerLength" ColumnName="Set1MRulerLength" />
+                <ScalarProperty Name="Act1MRulerLength" ColumnName="Act1MRulerLength" />
+                <ScalarProperty Name="Set2MRulerLength" ColumnName="Set2MRulerLength" />
+                <ScalarProperty Name="Act2MRulerLength" ColumnName="Act2MRulerLength" />
+                <ScalarProperty Name="GapLengthBow" ColumnName="GapLengthBow" />
+                <ScalarProperty Name="ActGapLengthBow" ColumnName="ActGapLengthBow" />
+                <ScalarProperty Name="GapCrossBow" ColumnName="GapCrossBow" />
+                <ScalarProperty Name="ActGapCrossBow" ColumnName="ActGapCrossBow" />
+                <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+                <ScalarProperty Name="ActTemperature" ColumnName="ActTemperature" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Produkts">
+            <EntityTypeMapping TypeName="Level2.PlateLeveler.DataTypes.Produkt">
+              <MappingFragment StoreEntitySet="Produkt">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProduktName" ColumnName="ProduktName" />
+                <ScalarProperty Name="Discontinued" ColumnName="Discontinued" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Temps">
+            <EntityTypeMapping TypeName="Level2.PlateLeveler.DataTypes.Temp">
+              <MappingFragment StoreEntitySet="Temp">
+                <ScalarProperty Name="PKEY_TEMP" ColumnName="PKEY_TEMP" />
+                <ScalarProperty Name="Steelgrade" ColumnName="Steelgrade" />
+                <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+                <ScalarProperty Name="YieldPoint" ColumnName="YieldPoint" />
+                <ScalarProperty Name="EModule" ColumnName="EModule" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="L3_L2_MODEL_PDI">
+            <EntityTypeMapping TypeName="IsTypeOf(Level2.PlateLeveler.DataTypes.L3_L2_MODEL_PDI)">
+              <MappingFragment StoreEntitySet="L3_L2_MODEL_PDI">
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Leveling" ColumnName="Leveling" />
+                <ScalarProperty Name="EModule" ColumnName="EModule" />
+                <ScalarProperty Name="Ruler2MLength" ColumnName="Ruler2MLength" />
+                <ScalarProperty Name="Ruler1MLength" ColumnName="Ruler1MLength" />
+                <ScalarProperty Name="Ruler1MCross" ColumnName="Ruler1MCross" />
+                <ScalarProperty Name="TensileStrength" ColumnName="TensileStrength" />
+                <ScalarProperty Name="YieldPoint" ColumnName="YieldPoint" />
+                <ScalarProperty Name="PlateThickness" ColumnName="PlateThickness" />
+                <ScalarProperty Name="PlateWidth" ColumnName="PlateWidth" />
+                <ScalarProperty Name="PlateLength" ColumnName="PlateLength" />
+                <ScalarProperty Name="SteelGrade" ColumnName="SteelGrade" />
+                <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+                <ScalarProperty Name="PlateID" ColumnName="PlateID" />
+                <ScalarProperty Name="UpdateDateTime" ColumnName="UpdateDateTime" />
+                <ScalarProperty Name="InsertDateTime" ColumnName="InsertDateTime" />
+                <ScalarProperty Name="PKEY_PDI" ColumnName="PKEY_PDI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="L2_MODEL_L3_TRACKING">
+            <EntityTypeMapping TypeName="IsTypeOf(Level2.PlateLeveler.DataTypes.L2_MODEL_L3_TRACKING)">
+              <MappingFragment StoreEntitySet="L2_MODEL_L3_TRACKING">
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="PlateID" ColumnName="PlateID" />
+                <ScalarProperty Name="UpdateDateTime" ColumnName="UpdateDateTime" />
+                <ScalarProperty Name="InsertDateTime" ColumnName="InsertDateTime" />
+                <ScalarProperty Name="PKEY_PDI" ColumnName="PKEY_PDI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="L2_MODEL_L3_PLATE_REPORT">
+            <EntityTypeMapping TypeName="IsTypeOf(Level2.PlateLeveler.DataTypes.L2_MODEL_L3_PLATE_REPORT)">
+              <MappingFragment StoreEntitySet="L2_MODEL_L3_PLATE_REPORT">
+                <ScalarProperty Name="ActTemperature" ColumnName="ActTemperature" />
+                <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+                <ScalarProperty Name="TensileStrength" ColumnName="TensileStrength" />
+                <ScalarProperty Name="ActCurveProfile" ColumnName="ActCurveProfile" />
+                <ScalarProperty Name="ActMiddleHeight" ColumnName="ActMiddleHeight" />
+                <ScalarProperty Name="ActTiltRight" ColumnName="ActTiltRight" />
+                <ScalarProperty Name="ActTiltLeft" ColumnName="ActTiltLeft" />
+                <ScalarProperty Name="ActLevelerOutlet" ColumnName="ActLevelerOutlet" />
+                <ScalarProperty Name="ActLevelerInlet" ColumnName="ActLevelerInlet" />
+                <ScalarProperty Name="SetCurveProfile" ColumnName="SetCurveProfile" />
+                <ScalarProperty Name="SetMiddleHeight" ColumnName="SetMiddleHeight" />
+                <ScalarProperty Name="SetTiltRight" ColumnName="SetTiltRight" />
+                <ScalarProperty Name="SetTiltLeft" ColumnName="SetTiltLeft" />
+                <ScalarProperty Name="SetLevelerOutlet" ColumnName="SetLevelerOutlet" />
+                <ScalarProperty Name="SetLevelerInlet" ColumnName="SetLevelerInlet" />
+                <ScalarProperty Name="CassetteNo" ColumnName="CassetteNo" />
+                <ScalarProperty Name="NoOfLeveling" ColumnName="NoOfLeveling" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Leveling" ColumnName="Leveling" />
+                <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+                <ScalarProperty Name="PlateID" ColumnName="PlateID" />
+                <ScalarProperty Name="ProdDateTime" ColumnName="ProdDateTime" />
+                <ScalarProperty Name="PKEY_PROD" ColumnName="PKEY_PROD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Steelgrades">
+            <EntityTypeMapping TypeName="IsTypeOf(Level2.PlateLeveler.DataTypes.Steelgrade)">
+              <MappingFragment StoreEntitySet="Steelgrade">
+                <ScalarProperty Name="SteelGrade" ColumnName="SteelGrade" />
+                <ScalarProperty Name="Pkey_SG" ColumnName="Pkey_SG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PreSettings">
+            <EntityTypeMapping TypeName="IsTypeOf(Level2.PlateLeveler.DataTypes.PreSetting)">
+              <MappingFragment StoreEntitySet="PreSetting">
+                <ScalarProperty Name="TiltingRight" ColumnName="TiltingRight" />
+                <ScalarProperty Name="TiltingLeft" ColumnName="TiltingLeft" />
+                <ScalarProperty Name="CurveProfile" ColumnName="CurveProfile" />
+                <ScalarProperty Name="CenterHeightBending" ColumnName="CenterHeightBending" />
+                <ScalarProperty Name="CorrPlastification" ColumnName="CorrPlastification" />
+                <ScalarProperty Name="EndRangeWidth" ColumnName="EndRangeWidth" />
+                <ScalarProperty Name="StartRangeWidth" ColumnName="StartRangeWidth" />
+                <ScalarProperty Name="EndRangeThickness" ColumnName="EndRangeThickness" />
+                <ScalarProperty Name="StartRangeThickness" ColumnName="StartRangeThickness" />
+                <ScalarProperty Name="Enable" ColumnName="Enable" />
+                <ScalarProperty Name="CassetteNo" ColumnName="CassetteNo" />
+                <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+                <ScalarProperty Name="PKEY_SETTINGS" ColumnName="PKEY_SETTINGS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cassettes">
+            <EntityTypeMapping TypeName="IsTypeOf(Level2.PlateLeveler.DataTypes.Cassette)">
+              <MappingFragment StoreEntitySet="Cassette">
+                <ScalarProperty Name="MaxSelectThickness" ColumnName="MaxSelectThickness" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="MaxLevelingPressure" ColumnName="MaxLevelingPressure" />
+                <ScalarProperty Name="RollDiameter" ColumnName="RollDiameter" />
+                <ScalarProperty Name="MinCrossTiltRight" ColumnName="MinCrossTiltRight" />
+                <ScalarProperty Name="MaxCrossTiltRight" ColumnName="MaxCrossTiltRight" />
+                <ScalarProperty Name="MinCrossTiltLeft" ColumnName="MinCrossTiltLeft" />
+                <ScalarProperty Name="MaxCrossTiltLeft" ColumnName="MaxCrossTiltLeft" />
+                <ScalarProperty Name="MinCenterHeightBending" ColumnName="MinCenterHeightBending" />
+                <ScalarProperty Name="MaxCenterHeightBending" ColumnName="MaxCenterHeightBending" />
+                <ScalarProperty Name="MaxAdjustment" ColumnName="MaxAdjustment" />
+                <ScalarProperty Name="MaxThicknessPlate" ColumnName="MaxThicknessPlate" />
+                <ScalarProperty Name="MinThicknessPlate" ColumnName="MinThicknessPlate" />
+                <ScalarProperty Name="MaxMotorTorque" ColumnName="MaxMotorTorque" />
+                <ScalarProperty Name="MaxMotorPower" ColumnName="MaxMotorPower" />
+                <ScalarProperty Name="DistanceC" ColumnName="DistanceC" />
+                <ScalarProperty Name="DistanceB" ColumnName="DistanceB" />
+                <ScalarProperty Name="DistanceA" ColumnName="DistanceA" />
+                <ScalarProperty Name="PitchOfRolls" ColumnName="PitchOfRolls" />
+                <ScalarProperty Name="BearingDiameter" ColumnName="BearingDiameter" />
+                <ScalarProperty Name="NoOfRolls" ColumnName="NoOfRolls" />
+                <ScalarProperty Name="CassetteNo" ColumnName="CassetteNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActualValues">
+            <EntityTypeMapping TypeName="IsTypeOf(Level2.PlateLeveler.DataTypes.ActualValue)">
+              <MappingFragment StoreEntitySet="ActualValue">
+                <ScalarProperty Name="ActSpeed" ColumnName="ActSpeed" />
+                <ScalarProperty Name="ActCurrentDrive4" ColumnName="ActCurrentDrive4" />
+                <ScalarProperty Name="ActCurrentDrive3" ColumnName="ActCurrentDrive3" />
+                <ScalarProperty Name="ActCurrentDrive2" ColumnName="ActCurrentDrive2" />
+                <ScalarProperty Name="ActCurrentDrive1" ColumnName="ActCurrentDrive1" />
+                <ScalarProperty Name="ActTorqueDrive4" ColumnName="ActTorqueDrive4" />
+                <ScalarProperty Name="ActTorqueDrive3" ColumnName="ActTorqueDrive3" />
+                <ScalarProperty Name="ActTorqueDrive2" ColumnName="ActTorqueDrive2" />
+                <ScalarProperty Name="ActTorqueDrive1" ColumnName="ActTorqueDrive1" />
+                <ScalarProperty Name="ActPowerDrive4" ColumnName="ActPowerDrive4" />
+                <ScalarProperty Name="ActPowerDrive3" ColumnName="ActPowerDrive3" />
+                <ScalarProperty Name="ActPowerDrive2" ColumnName="ActPowerDrive2" />
+                <ScalarProperty Name="ActPowerDrive1" ColumnName="ActPowerDrive1" />
+                <ScalarProperty Name="ActCurveProfile" ColumnName="ActCurveProfile" />
+                <ScalarProperty Name="ActMiddleHeight" ColumnName="ActMiddleHeight" />
+                <ScalarProperty Name="ActTiltRight" ColumnName="ActTiltRight" />
+                <ScalarProperty Name="ActTiltLeft" ColumnName="ActTiltLeft" />
+                <ScalarProperty Name="ActLevelerOutlet" ColumnName="ActLevelerOutlet" />
+                <ScalarProperty Name="ActLevelerInlet" ColumnName="ActLevelerInlet" />
+                <ScalarProperty Name="ActHeadPos" ColumnName="ActHeadPos" />
+                <ScalarProperty Name="Pos" ColumnName="Pos" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+                <ScalarProperty Name="PlateID" ColumnName="PlateID" />
+                <ScalarProperty Name="Pkey_ActVal" ColumnName="Pkey_ActVal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuxVariables">
+            <EntityTypeMapping TypeName="IsTypeOf(Level2.PlateLeveler.DataTypes.AuxVariable)">
+              <MappingFragment StoreEntitySet="AuxVariable">
+                <ScalarProperty Name="VariableValue" ColumnName="VariableValue" />
+                <ScalarProperty Name="Variable" ColumnName="Variable" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Limitation">
+            <EntityTypeMapping TypeName="IsTypeOf(Level2.PlateLeveler.DataTypes.Limitation)">
+              <MappingFragment StoreEntitySet="Limitation">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Limit" ColumnName="Limit" />
+                <ScalarProperty Name="Pkey_Limitation" ColumnName="Pkey_Limitation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

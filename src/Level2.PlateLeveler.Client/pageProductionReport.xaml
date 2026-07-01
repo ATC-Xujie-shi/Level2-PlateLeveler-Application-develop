@@ -1,0 +1,199 @@
+﻿<Page x:Class="Level2.PlateLeveler.Client.pageProductionReport"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ig="http://schemas.infragistics.com/xaml"
+    xmlns:Custom="http://infragistics.com/DataPresenter"
+    xmlns:type="clr-namespace:Level2.PlateLeveler.DataTypes;assembly=Level2.PlateLeveler.DataTypes"
+	x:Name="pageProdReport"
+    mc:Ignorable="d"
+    d:DesignHeight="1000" d:DesignWidth="1920" >
+
+   <Page.Resources>
+      <CollectionViewSource x:Name="ProductionReportSource" x:Key="ProductionReportDataViewSource" d:DesignSource="{d:DesignInstance {x:Type type:ProductionReport}, CreateList=True}"/>
+      <CollectionViewSource x:Key="ProductionReportControlDataViewSource" d:DesignSource="{d:DesignInstance {x:Type type:ProductionReport}, CreateList=True}"/>
+   </Page.Resources>
+   <Page.Background>
+      <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+         <GradientStop Color="White" Offset="0.007"/>
+         <GradientStop Color="White" Offset="1"/>
+      </LinearGradientBrush>
+   </Page.Background>
+   <Grid Visibility="Visible" ShowGridLines="false"  DataContext="{StaticResource ProductionReportControlDataViewSource}">
+      <Grid ShowGridLines="false" Margin="8,8,8,0" >
+         <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+         </Grid.RowDefinitions>
+         <Grid  Margin="10" Grid.Row="0" ShowGridLines="false" IsEnabled="True" Background="{x:Null}" Width="Auto">
+            <StackPanel Orientation="Horizontal">
+               <StackPanel Orientation="Vertical">
+                  <Label x:Name="lblFrom" Content="{Binding From, Mode=OneWay, Source={StaticResource Resources}}" Margin="5"/>
+                  <Label x:Name="lblTo" Content="{Binding To, Mode=OneWay, Source={StaticResource Resources}}" Margin="5"/>
+               </StackPanel>
+               <StackPanel Orientation="Vertical">
+                  <DatePicker x:Name="dtFrom" IsDropDownOpen="False" SelectedDateChanged="dtFrom_SelectedDateChanged" Width="Auto"  Margin="5"/>
+                  <DatePicker x:Name="dtTo" IsDropDownOpen="False" SelectedDateChanged="dtTo_SelectedDateChanged" Width="Auto"  Margin="5"/>
+               </StackPanel>
+               <StackPanel Orientation="Vertical" Width="20"></StackPanel>
+               <StackPanel Orientation="Vertical">
+                  <RadioButton x:Name="rbPreview" Content="Preview" IsChecked="True" Checked="rbPreview_Checked"  Margin="5"/>
+                  <RadioButton x:Name="rbPrint" Content="Print"  Checked="rbPrint_Checked"  Margin="5"/>
+                  <RadioButton x:Name="rbExport" Content="Export" Checked="rbExport_Checked"  Margin="5"/>
+               </StackPanel>
+               <StackPanel Orientation="Vertical" Width="20"></StackPanel>
+               <StackPanel Orientation="Vertical">
+                  <Button x:Name="btnReport" Margin="7" Content="{Binding btnReport, Mode=OneWay, Source={StaticResource Resources}}" Click="btnReport_Click" IsEnabled="False" Width="150"/>
+                  <Button x:Name="btnPlateReport" Margin="7" Content="{Binding btnPlateReport, Mode=OneWay, Source={StaticResource Resources}}" IsEnabled="False" Click="btnPlateReport_Click" Width="150"/>
+               </StackPanel>
+            </StackPanel>
+         </Grid>
+         <Grid Grid.Row="1"  Margin="10" ShowGridLines="false" IsEnabled="True" Background="{x:Null}" Height="Auto" DataContext="{StaticResource ProductionReportDataViewSource}">
+            <Custom:XamDataGrid x:Name="gridProductionReport" DataSource="{Binding}" Background="White" SelectedItemsChanged="gridProductionReport_SelectedItemsChanged">
+               <Custom:XamDataGrid.ViewSettings>
+                  <Custom:GridViewSettings/>
+               </Custom:XamDataGrid.ViewSettings>
+               <Custom:XamDataGrid.FieldLayoutSettings>
+                  <Custom:FieldLayoutSettings AutoGenerateFields="False" HeaderPrefixAreaDisplayMode="FieldChooserButton"/>
+               </Custom:XamDataGrid.FieldLayoutSettings>
+               <Custom:XamDataGrid.FieldLayouts>
+                  <Custom:FieldLayout >
+                     <Custom:FieldLayout.Settings>
+                        <Custom:FieldLayoutSettings/>
+                     </Custom:FieldLayout.Settings>
+                     <Custom:Field Name="PlateID" Label="{Binding Path=lblPlateID, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True"/>
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="MaterialID" Label="{Binding Path=MaterialID, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True"/>
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="Width" Label="{Binding Path=lblWidth, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True"/>
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="Thickness" Label="{Binding Path=lblThickness, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True"/>
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="YieldPoint" Label="{Binding Path=lblYieldPoint, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True"/>
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="RollDiameter" Label="{Binding Path=lblRollDiameter, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True"/>
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="NoOfLeveling" Label="{Binding Path=NoOfLeveling, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True"/>
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="SetLevelerInlet" Label="{Binding Path=SetLevelerInlet, Mode=OneWay, Source={StaticResource Resources}}"  >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True"/>
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="SetLevelerOutlet" Label="{Binding Path=SetLevelerOutlet, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True"/>
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="SetTiltLeft" Label="{Binding Path=SetTiltLeft, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" >
+                           </Custom:FieldSettings>
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="SetTiltRight" Label="{Binding Path=SetTiltRight, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="SetMiddleHeight" Label="{Binding Path=SetMiddleHeight, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="SetCurveProfile" Label="{Binding Path=SetCurveProfile, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActLevelerInlet" Label="{Binding Path=ActLevelerInlet, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActLevelerOutlet" Label="{Binding Path=ActLevelerOutlet, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActTiltLeft" Label="{Binding Path=ActTiltLeft, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActTiltRight" Label="{Binding Path=ActTiltRight, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActMiddleHeight" Label="{Binding Path=ActMiddleHeight, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="ActCurveProfile" Label="{Binding Path=ActCurveProfile, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit1Style}" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <!--<Custom:Field Name="Set1MRulerCross" Label="{Binding Path=Set1MRulerCross, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="Act1MRulerCross" Label="{Binding Path=Act1MRulerCross, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="Set1MRulerLength" Label="{Binding Path=Set1MRulerLength, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="Act1MRulerLength" Label="{Binding Path=Act1MRulerLength, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False" AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="Set2MRulerLength" Label="{Binding Path=Set2MRulerLength, Mode=OneWay, Source={StaticResource Resources}}" >
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False"  AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>
+                     <Custom:Field Name="Act2MRulerLength" Label="{Binding Path=Act2MRulerLength, Mode=OneWay, Source={StaticResource Resources}}">
+                        <Custom:Field.Settings>
+                           <Custom:FieldSettings AllowEdit="False"  AllowRecordFiltering="True" />
+                        </Custom:Field.Settings>
+                     </Custom:Field>-->
+                  </Custom:FieldLayout>
+               </Custom:XamDataGrid.FieldLayouts>
+            </Custom:XamDataGrid>
+         </Grid>
+         <Grid Grid.Row="2"></Grid>
+      </Grid>
+   </Grid>
+</Page>

@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Active" xml:space="preserve">
+    <value>Aktiv</value>
+  </data>
+  <data name="btnCancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="btnCreate" xml:space="preserve">
+    <value>Neu</value>
+  </data>
+  <data name="btnDelete" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="btnEdit" xml:space="preserve">
+    <value>Bearbeiten</value>
+  </data>
+  <data name="btnSave" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="Centering1" xml:space="preserve">
+    <value>Zentrierung #1</value>
+  </data>
+  <data name="Centering2" xml:space="preserve">
+    <value>Zentrierung #2</value>
+  </data>
+  <data name="lblActiveCassette" xml:space="preserve">
+    <value>Aktive Kassette</value>
+  </data>
+  <data name="lblBearingDiameter" xml:space="preserve">
+    <value>Lagerduchmesser</value>
+  </data>
+  <data name="lblDistanceA" xml:space="preserve">
+    <value>Abstand A</value>
+  </data>
+  <data name="lblDistanceB" xml:space="preserve">
+    <value>Abstand B</value>
+  </data>
+  <data name="lblDistanceC" xml:space="preserve">
+    <value>Abstand C</value>
+  </data>
+  <data name="lblEvaluationCenterWave" xml:space="preserve">
+    <value>Korrektur Mittlere Welle</value>
+  </data>
+  <data name="lblEvaluationEdgeWave" xml:space="preserve">
+    <value>Korrektur Randwelle</value>
+  </data>
+  <data name="lblEvaluationSki" xml:space="preserve">
+    <value>Korrektur Ski</value>
+  </data>
+  <data name="lblEvaluationTilting" xml:space="preserve">
+    <value>Korrektur Schwenken</value>
+  </data>
+  <data name="lblGapCrossBow" xml:space="preserve">
+    <value>Abstand Querbogen</value>
+  </data>
+  <data name="lblGapLengthBow" xml:space="preserve">
+    <value>Abstand Längsbogen</value>
+  </data>
+  <data name="lblLength" xml:space="preserve">
+    <value>Länge</value>
+  </data>
+  <data name="lblLeveling" xml:space="preserve">
+    <value>Richten</value>
+  </data>
+  <data name="lblMaterialID" xml:space="preserve">
+    <value>Material-Nr</value>
+  </data>
+  <data name="lblMaxAdjustment" xml:space="preserve">
+    <value>Maximale Zustellung</value>
+  </data>
+  <data name="lblMaxCenterHeightBending" xml:space="preserve">
+    <value>Maximale mittlere Biegehöhe</value>
+  </data>
+  <data name="lblMaxCrossTiltLeft" xml:space="preserve">
+    <value>Maximaler Querschwenkwert links</value>
+  </data>
+  <data name="lblMaxCrossTiltRight" xml:space="preserve">
+    <value>Maximaler Querschwenkwert rechts</value>
+  </data>
+  <data name="lblMaxHeightCenterWave" xml:space="preserve">
+    <value>Maximale Höhe mittlere Welle</value>
+  </data>
+  <data name="lblMaxHeightEdgeWave" xml:space="preserve">
+    <value>Maximale Randwellenhöhe</value>
+  </data>
+  <data name="lblMaxLevelingPressure" xml:space="preserve">
+    <value>Maximaler Richtdruck</value>
+  </data>
+  <data name="lblMaxMotorPower" xml:space="preserve">
+    <value>Maximale Motorleistung</value>
+  </data>
+  <data name="lblMaxMotorTorque" xml:space="preserve">
+    <value>Maximale Motordrehmoment</value>
+  </data>
+  <data name="lblMaxSki" xml:space="preserve">
+    <value>Maximale Ski</value>
+  </data>
+  <data name="lblMaxThicknessPlate" xml:space="preserve">
+    <value>Maximale Plattendicke</value>
+  </data>
+  <data name="lblMaxTilting" xml:space="preserve">
+    <value>Maximale Schwenken</value>
+  </data>
+  <data name="lblMinCenterHeightBending" xml:space="preserve">
+    <value>Minimale mittlere Biegehöhe</value>
+  </data>
+  <data name="lblMinCrossTiltLeft" xml:space="preserve">
+    <value>Mindest Querschwenkwert links</value>
+  </data>
+  <data name="lblMinCrossTiltRight" xml:space="preserve">
+    <value>Mindest Querschwenkwert rechts</value>
+  </data>
+  <data name="lblMinThicknessPlate" xml:space="preserve">
+    <value>Mindestplattendicke</value>
+  </data>
+  <data name="lblNoOfRolls" xml:space="preserve">
+    <value>Anzahl Rollen</value>
+  </data>
+  <data name="lblPitchOfRolls" xml:space="preserve">
+    <value>Rollenabstand</value>
+  </data>
+  <data name="lblPlateID" xml:space="preserve">
+    <value>Platten-Nr</value>
+  </data>
+  <data name="lblPlateLength" xml:space="preserve">
+    <value>Plattenlänge</value>
+  </data>
+  <data name="lblPlateThickness" xml:space="preserve">
+    <value>Plattendicke</value>
+  </data>
+  <data name="lblPlateWidth" xml:space="preserve">
+    <value>Plattenbreite</value>
+  </data>
+  <data name="lblRollDiameter" xml:space="preserve">
+    <value>Rollendurchmesser</value>
+  </data>
+  <data name="lblRuler1MCross" xml:space="preserve">
+    <value>1M Querlineal</value>
+  </data>
+  <data name="lblRuler1MLength" xml:space="preserve">
+    <value>1M Längslineal</value>
+  </data>
+  <data name="lblRuler2MLength" xml:space="preserve">
+    <value>2m Längslineal</value>
+  </data>
+  <data name="lblSteelgrade" xml:space="preserve">
+    <value>Stahlsorte</value>
+  </data>
+  <data name="lblTensileStrength" xml:space="preserve">
+    <value>Zugfestigkeit</value>
+  </data>
+  <data name="lblThickness" xml:space="preserve">
+    <value>Dicke</value>
+  </data>
+  <data name="lblWidth" xml:space="preserve">
+    <value>Breite</value>
+  </data>
+  <data name="lblYieldPoint" xml:space="preserve">
+    <value>Streckgrenze</value>
+  </data>
+  <data name="Leveler" xml:space="preserve">
+    <value>Richtmaschine</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Ort</value>
+  </data>
+  <data name="LocationState" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="Measuring" xml:space="preserve">
+    <value>Messeinheit</value>
+  </data>
+  <data name="MeasuringCode" xml:space="preserve">
+    <value>Messcode</value>
+  </data>
+  <data name="Out" xml:space="preserve">
+    <value>Ausgang</value>
+  </data>
+  <data name="PlateTracking" xml:space="preserve">
+    <value>Plattenverfolgung</value>
+  </data>
+  <data name="Priorities" xml:space="preserve">
+    <value>Priorities</value>
+  </data>
+  <data name="Priority" xml:space="preserve">
+    <value>Priority</value>
+  </data>
+  <data name="PriorityID" xml:space="preserve">
+    <value>Priority ID</value>
+  </data>
+  <data name="btnReport" xml:space="preserve">
+    <value>Produktion</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>Aktivieren</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>Ende</value>
+  </data>
+  <data name="FaultCompensation" xml:space="preserve">
+    <value>Fehlerkompensation</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>Von</value>
+  </data>
+  <data name="Item0" xml:space="preserve">
+    <value>Alle</value>
+  </data>
+  <data name="Item1" xml:space="preserve">
+    <value>Linie aus</value>
+  </data>
+  <data name="Item2" xml:space="preserve">
+    <value>Manueller Modus</value>
+  </data>
+  <data name="Item3" xml:space="preserve">
+    <value>Automatikmodus</value>
+  </data>
+  <data name="Item4" xml:space="preserve">
+    <value>In Produktion</value>
+  </data>
+  <data name="Item5" xml:space="preserve">
+    <value>umgekehrte Richtung</value>
+  </data>
+  <data name="Item6" xml:space="preserve">
+    <value>Fehler 1</value>
+  </data>
+  <data name="Item7" xml:space="preserve">
+    <value>Fehler 2</value>
+  </data>
+  <data name="Item8" xml:space="preserve">
+    <value>Fehler 3</value>
+  </data>
+  <data name="lblCassetteNo" xml:space="preserve">
+    <value>Kassetten-Nr</value>
+  </data>
+  <data name="lblCenterHeightBending" xml:space="preserve">
+    <value>Mittlere Biegung</value>
+  </data>
+  <data name="lblCorrPlastification" xml:space="preserve">
+    <value>Korrektur Plastifizierung</value>
+  </data>
+  <data name="lblCurveProfile" xml:space="preserve">
+    <value>Kurvenprofil</value>
+  </data>
+  <data name="lblEndRangeThickness" xml:space="preserve">
+    <value>Endbereich Dicke</value>
+  </data>
+  <data name="lblEndRangeWidth" xml:space="preserve">
+    <value>Endbereich Breite</value>
+  </data>
+  <data name="lblLimitation" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
+  <data name="lblStartRangeThickness" xml:space="preserve">
+    <value>Startbereich Dicke</value>
+  </data>
+  <data name="lblStartRangeWidth" xml:space="preserve">
+    <value>Startbereich Breite</value>
+  </data>
+  <data name="lblTiltLeft" xml:space="preserve">
+    <value>Schwenken links</value>
+  </data>
+  <data name="lblTiltRight" xml:space="preserve">
+    <value>Schwenken rechts</value>
+  </data>
+  <data name="lblValue" xml:space="preserve">
+    <value>Grenzwert</value>
+  </data>
+  <data name="Limitation" xml:space="preserve">
+    <value>Begrenzungen</value>
+  </data>
+  <data name="lblStartRangeActYieldPoint" xml:space="preserve">
+    <value>Startbereich Akt Streckgrenze</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Startdatum</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>Nach</value>
+  </data>
+  <data name="Act1MRulerCross" xml:space="preserve">
+    <value>Akt 1m Querlineal</value>
+  </data>
+  <data name="Act1MRulerLength" xml:space="preserve">
+    <value>Akt 1m Längslineal</value>
+  </data>
+  <data name="Act2MRulerLength" xml:space="preserve">
+    <value>Akt 2m Längslineal</value>
+  </data>
+  <data name="ActCurveProfile" xml:space="preserve">
+    <value>Akt Curve Profile</value>
+  </data>
+  <data name="ActLevelerInlet" xml:space="preserve">
+    <value>Akt  Einlaufwert</value>
+  </data>
+  <data name="ActLevelerOutlet" xml:space="preserve">
+    <value>Akt Auslaufwert</value>
+  </data>
+  <data name="ActMiddleHeight" xml:space="preserve">
+    <value>Akt Mittlere Höhe</value>
+  </data>
+  <data name="ActTiltLeft" xml:space="preserve">
+    <value>Akt Schwenken links</value>
+  </data>
+  <data name="ActTiltRight" xml:space="preserve">
+    <value>Akt Schwenken rechts</value>
+  </data>
+  <data name="Cassette" xml:space="preserve">
+    <value>Kassette</value>
+  </data>
+  <data name="lblEModule" xml:space="preserve">
+    <value>EModul</value>
+  </data>
+  <data name="lblEndRangeActYieldPoint" xml:space="preserve">
+    <value>Endbereich akt Streckgrenze</value>
+  </data>
+  <data name="lblOffset" xml:space="preserve">
+    <value>Auslaufkompensation</value>
+  </data>
+  <data name="NoOfLeveling" xml:space="preserve">
+    <value>Anzahl Richtprozesse</value>
+  </data>
+  <data name="PDI" xml:space="preserve">
+    <value>PDI Daten</value>
+  </data>
+  <data name="Presettings" xml:space="preserve">
+    <value>Voreinstellungen</value>
+  </data>
+  <data name="PresettingsOutlet" xml:space="preserve">
+    <value>Auslaufvoreinstellungen</value>
+  </data>
+  <data name="Set1MRulerCross" xml:space="preserve">
+    <value>1m Querlineal</value>
+  </data>
+  <data name="Set1MRulerLength" xml:space="preserve">
+    <value>1m Längslineal</value>
+  </data>
+  <data name="Set2MRulerLength" xml:space="preserve">
+    <value>2m Längslineal</value>
+  </data>
+  <data name="SetCurveProfile" xml:space="preserve">
+    <value>VE Kurvenprofil</value>
+  </data>
+  <data name="SetLevelerInlet" xml:space="preserve">
+    <value>VE Einlaufwert</value>
+  </data>
+  <data name="SetLevelerOutlet" xml:space="preserve">
+    <value>VE Auslaufwert</value>
+  </data>
+  <data name="SetMiddleHeight" xml:space="preserve">
+    <value>VE mittlere Höhe</value>
+  </data>
+  <data name="SetTiltLeft" xml:space="preserve">
+    <value>VE Schwenken links</value>
+  </data>
+  <data name="SetTiltRight" xml:space="preserve">
+    <value>VE Schwenken rechts</value>
+  </data>
+  <data name="Temperature" xml:space="preserve">
+    <value>Temperatur</value>
+  </data>
+  <data name="EndTime" xml:space="preserve">
+    <value>Endzeit</value>
+  </data>
+  <data name="lblMinHeightCenterWave" xml:space="preserve">
+    <value>Mindesthöhe mittlere Welle</value>
+  </data>
+  <data name="lblMinHeightEdgeWave" xml:space="preserve">
+    <value>Minimale  Randwellenhöhe</value>
+  </data>
+  <data name="LineState" xml:space="preserve">
+    <value>Maschinenstatus</value>
+  </data>
+  <data name="ProductionReport" xml:space="preserve">
+    <value>Produktionsbericht</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>Startzeit</value>
+  </data>
+  <data name="btnCopy" xml:space="preserve">
+    <value>Kopieren</value>
+  </data>
+  <data name="rbPreview" xml:space="preserve">
+    <value>Vorschau</value>
+  </data>
+  <data name="rbPrint" xml:space="preserve">
+    <value>Drucken</value>
+  </data>
+  <data name="btnRefresh" xml:space="preserve">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="btnPlateReport" xml:space="preserve">
+    <value>Plattenbericht</value>
+  </data>
+  <data name="lblReport" xml:space="preserve">
+    <value>Berichte drucken</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Maschinendaten</value>
+  </data>
+  <data name="Plastification" xml:space="preserve">
+    <value>Plastifizierung</value>
+  </data>
+  <data name="lblDate" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+</root>

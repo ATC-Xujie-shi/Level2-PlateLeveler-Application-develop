@@ -1,0 +1,1573 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Level2.PlateLeveler.Model.Interface</name>
+    </assembly>
+    <members>
+        <member name="T:Level2.PlateLeveler.DataTypes.ICassette">
+            <summary>
+            Represents the interface for cassette data in the plate leveler.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.Active">
+            <summary>
+            Gets or sets the active flag.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.BearingDiameter">
+            <summary>
+            Gets or sets the bearing diameter [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.CassetteNo">
+            <summary>
+            Gets or sets the cassette number.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.DistanceA">
+            <summary>
+            Gets or sets the distance A [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.DistanceB">
+            <summary>
+            Gets or sets the distance B [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.DistanceC">
+            <summary>
+            Gets or sets the distance C [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.MaxAdjustment">
+            <summary>
+            Gets or sets the maximum adjustment [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.MaxCenterHeightBending">
+            <summary>
+            Gets or sets the maximum center height bending [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.MaxCrossTiltLeft">
+            <summary>
+            Gets or sets the maximum cross tilt left [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.MaxCrossTiltRight">
+            <summary>
+            Gets or sets the maximum cross tilt right [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.MaxLevelingPressure">
+            <summary>
+            Gets or sets the maximum leveling pressure [kN].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.MaxMotorPower">
+            <summary>
+            Gets or sets the maximum motor power [kW].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.MaxMotorTorque">
+            <summary>
+            Gets or sets the maximum motor torque [Nm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.MaxSelectThickness">
+            <summary>
+            Gets or sets the maximum selectable thickness [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.MaxThicknessPlate">
+            <summary>
+            Gets or sets the maximum plate thickness [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.MinCenterHeightBending">
+            <summary>
+            Gets or sets the minimum center height bending [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.MinCrossTiltLeft">
+            <summary>
+            Gets or sets the minimum cross tilt left [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.MinCrossTiltRight">
+            <summary>
+            Gets or sets the minimum cross tilt right [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.MinThicknessPlate">
+            <summary>
+            Gets or sets the minimum plate thickness [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.NoOfRolls">
+            <summary>
+            Gets or sets the number of rolls.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.PitchOfRolls">
+            <summary>
+            Gets or sets the pitch of rolls [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassette.RollDiameter">
+            <summary>
+            Gets or sets the roll diameter [mm].
+            </summary>
+        </member>
+        <member name="T:Level2.PlateLeveler.DataTypes.ICassetteData">
+            <summary>
+            Represents the interface for cassette data with detailed properties.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.BearingDiameter">
+            <summary>
+            Gets or sets the bearing diameter [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.CassetteNo">
+            <summary>
+            Gets or sets the cassette number.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.DistanceA">
+            <summary>
+            Gets or sets the distance A [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.DistanceB">
+            <summary>
+            Gets or sets the distance B [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.DistanceC">
+            <summary>
+            Gets or sets the distance C [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.Fields">
+            <summary>
+            Gets the list of field names.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.FieldsActive">
+            <summary>
+            Gets the list of active field names.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.MaxAdjustment">
+            <summary>
+            Gets or sets the maximum adjustment [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.MaxCenterHeightBending">
+            <summary>
+            Gets or sets the maximum center height bending [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.MaxCrossTiltLeft">
+            <summary>
+            Gets or sets the maximum cross tilt left [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.MaxCrossTiltRight">
+            <summary>
+            Gets or sets the maximum cross tilt right [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.MaxLevelingPressure">
+            <summary>
+            Gets or sets the maximum leveling pressure [kN].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.MaxMotorPower">
+            <summary>
+            Gets or sets the maximum motor power [kW].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.MaxMotorTorque">
+            <summary>
+            Gets or sets the maximum motor torque [Nm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.MaxThicknessPlate">
+            <summary>
+            Gets or sets the maximum plate thickness [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.MinCenterHeightBending">
+            <summary>
+            Gets or sets the minimum center height bending [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.MinCrossTiltLeft">
+            <summary>
+            Gets or sets the minimum cross tilt left [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.MinCrossTiltRight">
+            <summary>
+            Gets or sets the minimum cross tilt right [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.MinThicknessPlate">
+            <summary>
+            Gets or sets the minimum plate thickness [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.NoOfRolls">
+            <summary>
+            Gets or sets the number of rolls.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.PitchOfRolls">
+            <summary>
+            Gets or sets the pitch of rolls [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.RollDiameter">
+            <summary>
+            Gets or sets the roll diameter [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.Values">
+            <summary>
+            Gets the list of values.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ICassetteData.ValuesActive">
+            <summary>
+            Gets the list of active values.
+            </summary>
+        </member>
+        <member name="T:Level2.PlateLeveler.DataTypes.IFaultCompensation">
+            <summary>
+            Represents the interface for fault compensation data.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFaultCompensation.CassetteNo">
+            <summary>
+            Gets or sets the cassette number.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFaultCompensation.CenterWave">
+            <summary>
+            Gets or sets the number of center waves.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFaultCompensation.EdgeWave">
+            <summary>
+            Gets or sets the number of edge waves.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFaultCompensation.EvaluationCenterWave">
+            <summary>
+            Gets or sets the evaluation value for center wave [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFaultCompensation.EvaluationEdgeWave">
+            <summary>
+            Gets or sets the evaluation value for edge wave [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFaultCompensation.EvaluationSki">
+            <summary>
+            Gets or sets the evaluation value for ski [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFaultCompensation.EvaluationTilting">
+            <summary>
+            Gets or sets the evaluation value for tilting [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFaultCompensation.MaxHeightCenterWave">
+            <summary>
+            Gets or sets the maximum height of center wave [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFaultCompensation.MaxHeightEdgeWave">
+            <summary>
+            Gets or sets the maximum height of edge wave [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFaultCompensation.MaxSki">
+            <summary>
+            Gets or sets the maximum ski [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFaultCompensation.MaxTilting">
+            <summary>
+            Gets or sets the maximum tilting [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFaultCompensation.PKEY_FC">
+            <summary>
+            Gets or sets the primary key for fault compensation.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFaultCompensation.Priorities">
+            <summary>
+            Gets or sets the priority list.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFaultCompensation.Ski">
+            <summary>
+            Gets or sets the ski value.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFaultCompensation.Tilting">
+            <summary>
+            Gets or sets the tilting value.
+            </summary>
+        </member>
+        <member name="E:Level2.PlateLeveler.DataTypes.IFaultCompensation.PropertyChanged">
+            <summary>
+            Occurs when a property value changes.
+            </summary>
+        </member>
+        <member name="T:Level2.PlateLeveler.DataTypes.IFlatness">
+            <summary>
+            Represents the interface for flatness data of a plate.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.ActRuler1MCross">
+            <summary>
+            Gets or sets the actual 1m ruler cross [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.ActRuler1MLength">
+            <summary>
+            Gets or sets the actual 1m ruler length [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.ActRuler2MLength">
+            <summary>
+            Gets or sets the actual 2m ruler length [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.GapCrossBow">
+            <summary>
+            Gets or sets the gap cross bow [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.GapLengthBow">
+            <summary>
+            Gets or sets the gap length bow [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.HeightWaveCenter">
+            <summary>
+            Gets or sets the height of the center wave [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.HeightWaveLeft">
+            <summary>
+            Gets or sets the height of the left wave [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.HeightWaveQuarterLeft">
+            <summary>
+            Gets or sets the height of the quarter left wave [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.HeightWaveQuarterRight">
+            <summary>
+            Gets or sets the height of the quarter right wave [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.HeightWaveRight">
+            <summary>
+            Gets or sets the height of the right wave [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.LengthWaveCenter">
+            <summary>
+            Gets or sets the length of the center wave [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.LengthWaveLeft">
+            <summary>
+            Gets or sets the length of the left wave [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.LengthWaveQuarterLeft">
+            <summary>
+            Gets or sets the length of the quarter left wave [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.LengthWaveQuarterRight">
+            <summary>
+            Gets or sets the length of the quarter right wave [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.LengthWaveRight">
+            <summary>
+            Gets or sets the length of the right wave [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.MaterialID">
+            <summary>
+            Gets or sets the material ID.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.MaxDeviationOfCenterLine">
+            <summary>
+            Gets or sets the maximum deviation of the center line [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.MaxGapCrossBow">
+            <summary>
+            Gets or sets the maximum gap cross bow [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.MaxGapLengthBow">
+            <summary>
+            Gets or sets the maximum gap length bow [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.MaxPlateWidth">
+            <summary>
+            Gets or sets the maximum plate width [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.MeanAmpRight">
+            <summary>
+            Gets or sets the mean amplitude right [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.MeanAmpWaveCenter">
+            <summary>
+            Gets or sets the mean amplitude of the center wave [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.MeanAmpWaveLeft">
+            <summary>
+            Gets or sets the mean amplitude of the left wave [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.MeanPlateWidth">
+            <summary>
+            Gets or sets the mean plate width [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.MeasuringCode">
+            <summary>
+            Gets or sets the measuring code.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.MeasuringRange">
+            <summary>
+            Gets or sets the measuring range [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.MinPlateWidth">
+            <summary>
+            Gets or sets the minimum plate width [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.NumberWaveCenter">
+            <summary>
+            Gets or sets the number of center waves.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.NumberWaveLeft">
+            <summary>
+            Gets or sets the number of left waves.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.NumberWaveQuarterLeft">
+            <summary>
+            Gets or sets the number of quarter left waves.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.NumberWaveQuarterRight">
+            <summary>
+            Gets or sets the number of quarter right waves.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.NumberWaveRight">
+            <summary>
+            Gets or sets the number of right waves.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.Pkey_Flatness">
+            <summary>
+            Gets or sets the primary key for flatness.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.PlateID">
+            <summary>
+            Gets or sets the plate ID.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.PlateInTol">
+            <summary>
+            Gets or sets the plate in tolerance flag.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.Ruler1MCross">
+            <summary>
+            Gets or sets the 1m ruler cross [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.Ruler1MLength">
+            <summary>
+            Gets or sets the 1m ruler length [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.Ruler2MLength">
+            <summary>
+            Gets or sets the 2m ruler length [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.SkiHead">
+            <summary>
+            Gets or sets the ski head [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.SkiTail">
+            <summary>
+            Gets or sets the ski tail [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.XPosCrossBow">
+            <summary>
+            Gets or sets the X position of cross bow [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.XPosLengthBow">
+            <summary>
+            Gets or sets the X position of length bow [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.XPosRuler1MCross">
+            <summary>
+            Gets or sets the X position of 1m ruler cross [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.XPosRuler1MLength">
+            <summary>
+            Gets or sets the X position of 1m ruler length [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.XPosRuler2MLength">
+            <summary>
+            Gets or sets the X position of 2m ruler length [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.YPosCrossBow">
+            <summary>
+            Gets or sets the Y position of cross bow [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.YPosLengthBow">
+            <summary>
+            Gets or sets the Y position of length bow [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.YPosRuler1MCross">
+            <summary>
+            Gets or sets the Y position of 1m ruler cross [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.YPosRuler1MLength">
+            <summary>
+            Gets or sets the Y position of 1m ruler length [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.YPosRuler2MLength">
+            <summary>
+            Gets or sets the Y position of 2m ruler length [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.YPosWaveCenter">
+            <summary>
+            Gets or sets the Y position of the center wave [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.YPosWaveLeft">
+            <summary>
+            Gets or sets the Y position of the left wave [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.YPosWaveQuarterLeft">
+            <summary>
+            Gets or sets the Y position of the quarter left wave [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.YPosWaveQuarterRight">
+            <summary>
+            Gets or sets the Y position of the quarter right wave [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IFlatness.YPosWaveRight">
+            <summary>
+            Gets or sets the Y position of the right wave [mm].
+            </summary>
+        </member>
+        <member name="T:Level2.PlateLeveler.DataTypes.ILevelerData">
+            <summary>
+            Represents the interface for leveler data, including process and plate properties.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILevelerData.CurveProfile">
+            <summary>
+            Gets or sets the curve profile [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILevelerData.Elongation">
+            <summary>
+            Gets or sets the elongation [%].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILevelerData.FieldsLS">
+            <summary>
+            Gets the list of field names for leveler settings.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILevelerData.LevelerInlet">
+            <summary>
+            Gets or sets the leveler inlet [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILevelerData.LevelerOutlet">
+            <summary>
+            Gets or sets the leveler outlet [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILevelerData.MiddleHeight">
+            <summary>
+            Gets or sets the middle height [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILevelerData.NoOfLeveling">
+            <summary>
+            Gets or sets the number of leveling passes.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILevelerData.Plastification">
+            <summary>
+            Gets or sets the plastification [%].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILevelerData.Temperature">
+            <summary>
+            Gets or sets the temperature [°C].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILevelerData.TiltLeft">
+            <summary>
+            Gets or sets the tilt left [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILevelerData.TiltRight">
+            <summary>
+            Gets or sets the tilt right [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILevelerData.ValuesLS">
+            <summary>
+            Gets the list of values for leveler settings.
+            </summary>
+        </member>
+        <member name="T:Level2.PlateLeveler.DataTypes.ILimitationData">
+            <summary>
+            Represents limitation data for the plate leveler.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILimitationData.ConveyorSpeed">
+            <summary>
+            Gets or sets the conveyor speed [m/min].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILimitationData.Drive">
+            <summary>
+            Gets or sets the drive value [kW].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILimitationData.EModule">
+            <summary>
+            Gets or sets the elastic modulus [MPa].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILimitationData.FrictionCoefficient">
+            <summary>
+            Gets or sets the friction coefficient [-].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILimitationData.GearEfficiencyFactor">
+            <summary>
+            Gets or sets the gear efficiency factor [-].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILimitationData.IsFaultCompensation">
+            <summary>
+            Gets or sets a value indicating whether fault compensation is enabled.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILimitationData.MaxWidth">
+            <summary>
+            Gets or sets the maximum width [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILimitationData.MaxYieldPoint">
+            <summary>
+            Gets or sets the maximum yield point [MPa].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILimitationData.MinCoilLength">
+            <summary>
+            Gets or sets the minimum coil length [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILimitationData.MinPlastification">
+            <summary>
+            Gets or sets the minimum plastification [%].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILimitationData.MinWidth">
+            <summary>
+            Gets or sets the minimum width [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILimitationData.Plastification">
+            <summary>
+            Gets or sets the plastification [%].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILimitationData.RollFrictionCoefficient">
+            <summary>
+            Gets or sets the roll friction coefficient [-].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ILimitationData.RollFrictionMoment">
+            <summary>
+            Gets or sets the roll friction moment [Nm].
+            </summary>
+        </member>
+        <member name="E:Level2.PlateLeveler.DataTypes.ILimitationData.PropertyChanged">
+            <summary>
+            Occurs when a property value changes.
+            </summary>
+        </member>
+        <member name="T:Level2.PlateLeveler.DataTypes.IPDI">
+            <summary>
+            Represents the interface for PDI (Plate Data Input) data.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.Date">
+            <summary>
+            Gets or sets the date of the PDI.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.EModule">
+            <summary>
+            Gets or sets the elastic modulus [MPa].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.GapCrossBow">
+            <summary>
+            Gets or sets the gap cross bow [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.GapLengthBow">
+            <summary>
+            Gets or sets the gap length bow [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.Length">
+            <summary>
+            Gets or sets the length [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.Leveling">
+            <summary>
+            Gets or sets the leveling code.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.Location">
+            <summary>
+            Gets or sets the location code.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.LocationState">
+            <summary>
+            Gets the location state.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.Manual">
+            <summary>
+            Gets or sets the manual flag.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.MaterialID">
+            <summary>
+            Gets or sets the material ID.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.MeasuringCode">
+            <summary>
+            Gets or sets the measuring code.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.PKEY_PDI">
+            <summary>
+            Gets or sets the primary key for PDI.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.PlateID">
+            <summary>
+            Gets or sets the plate ID.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.Ruler1MCrossPDI">
+            <summary>
+            Gets or sets the 1m ruler cross PDI [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.Ruler1MLengthPDI">
+            <summary>
+            Gets or sets the 1m ruler length PDI [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.Ruler2MLengthPDI">
+            <summary>
+            Gets or sets the 2m ruler length PDI [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.State">
+            <summary>
+            Gets or sets the state code.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.SteelGrade">
+            <summary>
+            Gets or sets the steel grade.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.TensileStrength">
+            <summary>
+            Gets or sets the tensile strength [MPa].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.Thickness">
+            <summary>
+            Gets or sets the thickness [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.Width">
+            <summary>
+            Gets or sets the width [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPDI.YieldPoint">
+            <summary>
+            Gets or sets the yield point [MPa].
+            </summary>
+        </member>
+        <member name="E:Level2.PlateLeveler.DataTypes.IPDI.PropertyChanged">
+            <summary>
+            Occurs when a property value changes.
+            </summary>
+        </member>
+        <member name="T:Level2.PlateLeveler.DataTypes.IPlateData">
+            <summary>
+            Represents the interface for plate data, including physical and material properties.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPlateData.EModule">
+            <summary>
+            Gets or sets the elastic modulus [MPa].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPlateData.GapCrossBow">
+            <summary>
+            Gets or sets the gap cross bow [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPlateData.GapLengthBow">
+            <summary>
+            Gets or sets the gap length bow [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPlateData.ID">
+            <summary>
+            Gets the unique identifier.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPlateData.Length">
+            <summary>
+            Gets or sets the length [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPlateData.Leveling">
+            <summary>
+            Gets or sets the leveling code.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPlateData.Location">
+            <summary>
+            Gets or sets the location code.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPlateData.Manual">
+            <summary>
+            Gets or sets the manual flag.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPlateData.MaterialID">
+            <summary>
+            Gets or sets the material ID.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPlateData.MeasuringCode">
+            <summary>
+            Gets or sets the measuring code.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPlateData.Pkey_PDI">
+            <summary>
+            Gets or sets the primary key for PDI.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPlateData.PlateID">
+            <summary>
+            Gets or sets the plate ID.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPlateData.Ruler1MCrossPDI">
+            <summary>
+            Gets or sets the 1m ruler cross PDI [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPlateData.Ruler1MLengthPDI">
+            <summary>
+            Gets or sets the 1m ruler length PDI [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPlateData.Ruler2MLengthPDI">
+            <summary>
+            Gets or sets the 2m ruler length PDI [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPlateData.State">
+            <summary>
+            Gets or sets the state code.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPlateData.SteelGrade">
+            <summary>
+            Gets or sets the steel grade.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPlateData.TensileStrength">
+            <summary>
+            Gets or sets the tensile strength [MPa].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPlateData.Thickness">
+            <summary>
+            Gets or sets the thickness [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPlateData.Width">
+            <summary>
+            Gets or sets the width [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPlateData.YieldPoint">
+            <summary>
+            Gets or sets the yield point [MPa].
+            </summary>
+        </member>
+        <member name="T:Level2.PlateLeveler.DataTypes.IPreSetting">
+            <summary>
+            Defines the interface for pre-setting data for the plate leveler.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPreSetting.CassetteNo">
+            <summary>
+            Gets or sets the cassette number.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPreSetting.CenterHeightBending">
+            <summary>
+            Gets or sets the center height bending [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPreSetting.CorrPlastification">
+            <summary>
+            Gets or sets the correction plastification [%].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPreSetting.CurveProfile">
+            <summary>
+            Gets or sets the curve profile [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPreSetting.Enable">
+            <summary>
+            Gets or sets the enable flag.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPreSetting.EndRangeThickness">
+            <summary>
+            Gets or sets the end range thickness [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPreSetting.EndRangeWidth">
+            <summary>
+            Gets or sets the end range width [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPreSetting.MaterialID">
+            <summary>
+            Gets or sets the material ID.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPreSetting.PKEY_SETTINGS">
+            <summary>
+            Gets or sets the primary key for settings.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPreSetting.StartRangeThickness">
+            <summary>
+            Gets or sets the start range thickness [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPreSetting.StartRangeWidth">
+            <summary>
+            Gets or sets the start range width [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPreSetting.TiltingLeft">
+            <summary>
+            Gets or sets the tilting left [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPreSetting.TiltingRight">
+            <summary>
+            Gets or sets the tilting right [mm].
+            </summary>
+        </member>
+        <member name="T:Level2.PlateLeveler.DataTypes.IPreSettingsOutlet">
+            <summary>
+            Represents the interface for pre-settings outlet data.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPreSettingsOutlet.EndRangeActYieldPoint">
+            <summary>
+            Gets or sets the end range actual yield point [MPa].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPreSettingsOutlet.EndRangeThickness">
+            <summary>
+            Gets or sets the end range thickness [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPreSettingsOutlet.Offset">
+            <summary>
+            Gets or sets the offset [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPreSettingsOutlet.Pkey_SettingsOutlet">
+            <summary>
+            Gets or sets the primary key for settings outlet.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPreSettingsOutlet.StartRangeActYieldPoint">
+            <summary>
+            Gets or sets the start range actual yield point [MPa].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPreSettingsOutlet.StartRangeThickness">
+            <summary>
+            Gets or sets the start range thickness [mm].
+            </summary>
+        </member>
+        <member name="T:Level2.PlateLeveler.DataTypes.IPriorityList">
+            <summary>
+            Represents a list of priority data.
+            </summary>
+        </member>
+        <member name="M:Level2.PlateLeveler.DataTypes.IPriorityList.SortList">
+            <summary>
+            Sorts the priority list.
+            </summary>
+        </member>
+        <member name="T:Level2.PlateLeveler.DataTypes.IProductionReport">
+            <summary>
+            Represents the interface for a production report.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.Act1MRulerCross">
+            <summary>
+            Gets or sets the actual 1m ruler cross [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.Act1MRulerLength">
+            <summary>
+            Gets or sets the actual 1m ruler length [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.Act2MRulerLength">
+            <summary>
+            Gets or sets the actual 2m ruler length [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.ActCenterWave">
+            <summary>
+            Gets or sets the actual center wave [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.ActCurveProfile">
+            <summary>
+            Gets or sets the actual curve profile [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.ActEdgeWaveLeft">
+            <summary>
+            Gets or sets the actual edge wave left [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.ActEdgeWaveRight">
+            <summary>
+            Gets or sets the actual edge wave right [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.ActGapCrossBow">
+            <summary>
+            Gets or sets the actual gap cross bow [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.ActGapLengthBow">
+            <summary>
+            Gets or sets the actual gap length bow [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.ActLevelerInlet">
+            <summary>
+            Gets or sets the actual leveler inlet [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.ActLevelerOutlet">
+            <summary>
+            Gets or sets the actual leveler outlet [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.ActMiddleHeight">
+            <summary>
+            Gets or sets the actual middle height [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.ActNoCenterWave">
+            <summary>
+            Gets or sets the actual number of center waves.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.ActNoEdgeWaveLeft">
+            <summary>
+            Gets or sets the actual number of edge waves left.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.ActNoEdgeWaveRight">
+            <summary>
+            Gets or sets the actual number of edge waves right.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.ActTemperature">
+            <summary>
+            Gets or sets the actual temperature [°C].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.ActTiltLeft">
+            <summary>
+            Gets or sets the actual tilt left [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.ActTiltRight">
+            <summary>
+            Gets or sets the actual tilt right [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.CassetteNo">
+            <summary>
+            Gets or sets the cassette number.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.GapCrossBow">
+            <summary>
+            Gets or sets the gap cross bow [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.GapLengthBow">
+            <summary>
+            Gets or sets the gap length bow [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.Leveling">
+            <summary>
+            Gets or sets the leveling code.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.MaterialID">
+            <summary>
+            Gets or sets the material ID.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.MeasuringCode">
+            <summary>
+            Gets or sets the measuring code.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.NoOfLeveling">
+            <summary>
+            Gets or sets the number of leveling passes.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.PKEY_PROD">
+            <summary>
+            Gets or sets the primary key for production.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.PlateID">
+            <summary>
+            Gets or sets the plate ID.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.ProdDate">
+            <summary>
+            Gets or sets the production date.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.Set1MRulerCross">
+            <summary>
+            Gets or sets the set 1m ruler cross [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.Set1MRulerLength">
+            <summary>
+            Gets or sets the set 1m ruler length [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.Set2MRulerLength">
+            <summary>
+            Gets or sets the set 2m ruler length [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.SetCurveProfile">
+            <summary>
+            Gets or sets the set curve profile [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.SetLevelerInlet">
+            <summary>
+            Gets or sets the set leveler inlet [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.SetLevelerOutlet">
+            <summary>
+            Gets or sets the set leveler outlet [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.SetMiddleHeight">
+            <summary>
+            Gets or sets the set middle height [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.SetTiltLeft">
+            <summary>
+            Gets or sets the set tilt left [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.SetTiltRight">
+            <summary>
+            Gets or sets the set tilt right [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.SkiHead">
+            <summary>
+            Gets or sets the ski head [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.SkiTail">
+            <summary>
+            Gets or sets the ski tail [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.State">
+            <summary>
+            Gets or sets the state code.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.Temperature">
+            <summary>
+            Gets or sets the temperature [°C].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IProductionReport.TensileStrength">
+            <summary>
+            Gets or sets the tensile strength [MPa].
+            </summary>
+        </member>
+        <member name="M:Level2.PlateLeveler.DataTypes.IProductionReport.SetFlatnessData(Level2.PlateLeveler.DataTypes.IFlatness)">
+            <summary>
+            Sets the flatness data.
+            </summary>
+            <param name="flat">Flatness data.</param>
+        </member>
+        <member name="M:Level2.PlateLeveler.DataTypes.IProductionReport.SetLevelerData(Level2.PlateLeveler.DataTypes.ILevelerData)">
+            <summary>
+            Sets the leveler data.
+            </summary>
+            <param name="data">Leveler data.</param>
+        </member>
+        <member name="M:Level2.PlateLeveler.DataTypes.IProductionReport.SetPlateData(Level2.PlateLeveler.DataTypes.IPDI)">
+            <summary>
+            Sets the plate data.
+            </summary>
+            <param name="pdi">PDI data.</param>
+        </member>
+        <member name="M:Level2.PlateLeveler.DataTypes.IProductionReport.SetSettingsData(Level2.PlateLeveler.DataTypes.ISettingsData)">
+            <summary>
+            Sets the settings data.
+            </summary>
+            <param name="settings">Settings data.</param>
+        </member>
+        <member name="T:Level2.PlateLeveler.DataTypes.ISettingsData">
+            <summary>
+            Represents the interface for settings data in the plate leveler.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ISettingsData.CassetteNo">
+            <summary>
+            Gets or sets the cassette number.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ISettingsData.Enable">
+            <summary>
+            Gets or sets a value indicating whether the settings are enabled.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ISettingsData.EndRangeThickness">
+            <summary>
+            Gets or sets the end range thickness [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ISettingsData.EndRangeWidth">
+            <summary>
+            Gets or sets the end range width [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ISettingsData.LevelingPressure">
+            <summary>
+            Gets or sets the leveling pressure [kN].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ISettingsData.MotorPower">
+            <summary>
+            Gets or sets the motor power [kW].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ISettingsData.MotorTorque">
+            <summary>
+            Gets or sets the motor torque [Nm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ISettingsData.StartRangeThickness">
+            <summary>
+            Gets or sets the start range thickness [mm].
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.ISettingsData.StartRangeWidth">
+            <summary>
+            Gets or sets the start range width [mm].
+            </summary>
+        </member>
+        <member name="M:Level2.PlateLeveler.DataTypes.ISettingsData.SetSettingsData(Level2.PlateLeveler.DataTypes.IPreSetting,Level2.PlateLeveler.DataTypes.IPDI)">
+            <summary>
+            Sets the settings data from pre-setting and PDI.
+            </summary>
+            <param name="ps">Pre-setting data.</param>
+            <param name="pdi">PDI data.</param>
+        </member>
+        <member name="T:Level2.PlateLeveler.DataTypes.LocationDef">
+            <summary>
+            Defines the available locations for a plate in the leveler process.
+            </summary>
+        </member>
+        <member name="F:Level2.PlateLeveler.DataTypes.LocationDef.New_Plate">
+            <summary>
+            New plate location.
+            </summary>
+        </member>
+        <member name="F:Level2.PlateLeveler.DataTypes.LocationDef.Centering_1">
+            <summary>
+            Centering station 1.
+            </summary>
+        </member>
+        <member name="F:Level2.PlateLeveler.DataTypes.LocationDef.Centering_2">
+            <summary>
+            Centering station 2.
+            </summary>
+        </member>
+        <member name="F:Level2.PlateLeveler.DataTypes.LocationDef.Leveler">
+            <summary>
+            Leveler location.
+            </summary>
+        </member>
+        <member name="F:Level2.PlateLeveler.DataTypes.LocationDef.Measuring">
+            <summary>
+            Measuring station.
+            </summary>
+        </member>
+        <member name="F:Level2.PlateLeveler.DataTypes.LocationDef.Out">
+            <summary>
+            Out location.
+            </summary>
+        </member>
+        <member name="T:Level2.PlateLeveler.DataTypes.IPriorityData">
+            <summary>
+            Represents a priority data item.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPriorityData.Priority">
+            <summary>
+            Gets the priority name.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.IPriorityData.PriorityID">
+            <summary>
+            Gets or sets the priority ID.
+            </summary>
+        </member>
+        <member name="T:Level2.PlateLeveler.DataTypes.PrioritiesAttribute">
+            <summary>
+            Attribute for specifying priorities on properties.
+            </summary>
+        </member>
+        <member name="M:Level2.PlateLeveler.DataTypes.PrioritiesAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Level2.PlateLeveler.DataTypes.PrioritiesAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:Level2.PlateLeveler.DataTypes.PrioritiesAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Level2.PlateLeveler.DataTypes.PrioritiesAttribute"/> class with a priority name.
+            </summary>
+            <param name="priority">The priority name.</param>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.PrioritiesAttribute.Priority">
+            <summary>
+            Gets the priority name.
+            </summary>
+        </member>
+        <member name="P:Level2.PlateLeveler.DataTypes.PrioritiesAttribute.PriorityID">
+            <summary>
+            Gets or sets the priority ID.
+            </summary>
+        </member>
+        <member name="T:Level2.PlateLeveler.DataTypes.PriorityList">
+            <summary>
+            Represents a list of priority data items.
+            </summary>
+        </member>
+        <member name="M:Level2.PlateLeveler.DataTypes.PriorityList.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Level2.PlateLeveler.DataTypes.PriorityList"/> class.
+            </summary>
+        </member>
+        <member name="M:Level2.PlateLeveler.DataTypes.PriorityList.SortList">
+            <summary>
+            Sorts the priority list.
+            </summary>
+        </member>
+        <member name="T:Level2.PlateLeveler.DataTypes.PriorityComparer">
+            <summary>
+            Compares two priority data items for sorting.
+            </summary>
+        </member>
+        <member name="M:Level2.PlateLeveler.DataTypes.PriorityComparer.Compare(Level2.PlateLeveler.DataTypes.IPriorityData,Level2.PlateLeveler.DataTypes.IPriorityData)">
+            <summary>
+            Compares two <see cref="T:Level2.PlateLeveler.DataTypes.IPriorityData"/> objects and returns a value indicating whether one is less than, equal to, or greater than the other.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns>A signed integer that indicates the relative values of x and y.</returns>
+        </member>
+        <member name="T:Level2.PlateLeveler.DataTypes.StoodBoltType">
+            <summary>
+            Represents the type of stood bolt used in the leveler.
+            </summary>
+        </member>
+        <member name="F:Level2.PlateLeveler.DataTypes.StoodBoltType.Preleveling">
+            <summary>
+            Preleveling stood bolt type.
+            </summary>
+        </member>
+        <member name="F:Level2.PlateLeveler.DataTypes.StoodBoltType.TR160">
+            <summary>
+            TR160 stood bolt type.
+            </summary>
+        </member>
+        <member name="F:Level2.PlateLeveler.DataTypes.StoodBoltType.TR250">
+            <summary>
+            TR250 stood bolt type.
+            </summary>
+        </member>
+        <member name="F:Level2.PlateLeveler.DataTypes.StoodBoltType.TR180">
+            <summary>
+            TR180 stood bolt type.
+            </summary>
+        </member>
+        <member name="T:Level2.PlateLeveler.Model.IPlateCalc">
+            <summary>
+            Interface for calculating plate properties and leveler data.
+            </summary>
+        </member>
+        <member name="M:Level2.PlateLeveler.Model.IPlateCalc.CalcLevelerData(Level2.PlateLeveler.DataTypes.ISettingsData,Level2.PlateLeveler.DataTypes.ICassette,Level2.PlateLeveler.DataTypes.IPreSettingsOutlet,Level2.PlateLeveler.DataTypes.ILimitationData,Level2.PlateLeveler.DataTypes.StoodBoltType)">
+            <summary>
+            Calculates the leveler data based on the provided settings, cassette, outlet, limitations, and bolt type.
+            </summary>
+            <remarks>The method iteratively adjusts the plastification value and recalculates the leveler
+            data until the constraints defined by the cassette and limitations are satisfied or a maximum iteration
+            count is reached. If the <paramref name="boltType"/> is <see cref="F:Level2.PlateLeveler.DataTypes.StoodBoltType.Preleveling"/>, the method
+            throws a <see cref="T:System.NotImplementedException"/>.</remarks>
+            <param name="dataSetting">The initial settings data used for the calculation.</param>
+            <param name="dataCassette">The cassette data containing maximum motor power and leveling pressure constraints.</param>
+            <param name="dataOutlet">The outlet data used to determine pre-settings for the calculation.</param>
+            <param name="limits">The limitation data specifying minimum plastification and other constraints.</param>
+            <param name="boltType">The type of bolt used, which influences the calculation constants.</param>
+            <returns>An <see cref="T:Level2.PlateLeveler.DataTypes.ISettingsData"/> object containing the calculated leveler data, including updated
+            plastification, leveling pressure, and other relevant properties.</returns>
+            <exception cref="T:System.NotImplementedException">Thrown if <paramref name="boltType"/> is <see cref="F:Level2.PlateLeveler.DataTypes.StoodBoltType.Preleveling"/>, as this bolt type is not
+            supported.</exception>
+        </member>
+        <member name="M:Level2.PlateLeveler.Model.IPlateCalc.CalcPlateComparison(Level2.PlateLeveler.DataTypes.ISettingsData,System.Single)">
+            <summary>
+            Calculates the plastification value for a plate based on its dimensions and range constraints.
+            </summary>
+            <remarks>This method checks whether the plate's thickness and width fall within the specified
+            range constraints.  If the dimensions are outside the ranges, the plastification value is updated to the
+            provided <paramref name="plastification"/> value.</remarks>
+            <param name="data">The settings data containing the plate's dimensions and range constraints.</param>
+            <param name="plastification">The plastification value to apply if the plate's dimensions are outside the specified ranges.</param>
+            <returns>An <see cref="T:Level2.PlateLeveler.DataTypes.ISettingsData"/> object representing the updated settings data. If the plate's dimensions are
+            within the specified ranges,  the original <paramref name="data"/> is returned unchanged; otherwise, the
+            plastification value is updated.</returns>
+        </member>
+        <member name="T:Level2.PlateLeveler.Model.PlateCalcDummy">
+            <inheritdoc/>
+        </member>
+        <member name="M:Level2.PlateLeveler.Model.PlateCalcDummy.CalcPlateComparison(Level2.PlateLeveler.DataTypes.ISettingsData,System.Single)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Level2.PlateLeveler.Model.PlateCalcDummy.CalcLevelerData(Level2.PlateLeveler.DataTypes.ISettingsData,Level2.PlateLeveler.DataTypes.ICassette,Level2.PlateLeveler.DataTypes.IPreSettingsOutlet,Level2.PlateLeveler.DataTypes.ILimitationData,Level2.PlateLeveler.DataTypes.StoodBoltType)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

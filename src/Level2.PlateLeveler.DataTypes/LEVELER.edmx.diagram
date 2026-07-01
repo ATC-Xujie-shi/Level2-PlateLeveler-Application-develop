@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b9258c0df61b4b51a6f3a7121867afae" Name="Diagram1" ZoomLevel="68">
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.ActualValue" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.Cassette" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.FaultCompensation" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.Flatness" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.Limitations" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.LineState" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.PDI" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.PreSetting" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.PreSettingsOutlet" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.ProductionReport" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.Produkt" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.Steelgrade" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.Temp" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.AuxVariable" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.L3_L2_MODEL_PDI" Width="1.5" PointX="15.75" PointY="7.125" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.L2_MODEL_L3_TRACKING" Width="1.5" PointX="11.375" PointY="9.75" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.L2_MODEL_L3_PLATE_REPORT" Width="1.5" PointX="11.375" PointY="12.75" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.ActualValue1" Width="1.5" PointX="13.75" PointY="12.75" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.AuxVariable1" Width="1.5" PointX="13.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.Cassette1" Width="1.5" PointX="15.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.L2_MODEL_L3_PLATE_REPORT1" Width="1.5" PointX="0.75" PointY="15.75" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.L2_MODEL_L3_TRACKING1" Width="1.5" PointX="15.75" PointY="12.75" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.L3_L2_MODEL_PDI1" Width="1.5" PointX="15.75" PointY="15.75" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.PreSetting1" Width="1.5" PointX="17.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.Steelgrade1" Width="1.5" PointX="17.75" PointY="12.75" />
+        <EntityTypeShape EntityType="Level2.PlateLeveler.DataTypes.Limitation" Width="1.5" PointX="19" PointY="3.5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

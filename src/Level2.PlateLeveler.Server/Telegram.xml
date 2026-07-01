@@ -1,0 +1,572 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TelegramList>
+  <TelegramData Name="L3_L2_SignOfLife" Length="150" TelegramID="1" ComIndex="0">
+    <Telegram>
+      <Telegramblock Name="TelegramLength" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramCounter" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramType" Length="2" Format="Int16"/>
+      <Telegramblock Name="Spare" Length="140" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L3_L2_PDI" Length="150" TelegramID="2" ComIndex="0">
+    <Telegram>
+      <Telegramblock Name="TelegramLength" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramCounter" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramType" Length="2" Format="Int16"/>
+      <Telegramblock Name="PlateID" Length="20" Format="String" InObject="true"/>
+      <Telegramblock Name="MaterialID" Length="20" Format="String" InObject="true"/>
+      <Telegramblock Name="SteelGrade" Length="20" Format="String" InObject="true"/>
+      <Telegramblock Name="Length" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Width" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Thickness" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YieldPoint" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="TensileStrength" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="MeasuringCode" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="Ruler1MCrossPDI" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Ruler1MLengthPDI" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Ruler2MLengthPDI" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Leveling" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="GapLengthBow" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="GapCrossBow" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Spare" Length="40" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L2_L3_SignOfLife" Length="150" TelegramID="10" ComIndex="0">
+    <Telegram>
+      <Telegramblock Name="TelegramLength" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramCounter" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramType" Length="2" Format="Int16"/>
+      <Telegramblock Name="Spare" Length="144" Format="String" InObject="true"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L2_L3_Tracking" Length="150" TelegramID="11" ComIndex="0">
+    <Telegram>
+      <Telegramblock Name="TelegramLength" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramCounter" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramType" Length="2" Format="Int16"/>
+      <Telegramblock Name="PlateID" Length="20" Format="String" InObject="true"/>
+      <Telegramblock Name="Location" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="Date" Length="10" Format="String" InObject="true"/>
+      <Telegramblock Name="Time" Length="8" Format="String" InObject="true"/>
+      <Telegramblock Name="Spare" Length="104" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L2_L3_PlateReport" Length="1830" TelegramID="12" ComIndex="0">
+    <Telegram>
+      <Telegramblock Name="TelegramLength" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramCounter" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramType" Length="2" Format="Int16"/>
+      <Telegramblock Name="PlateID" Length="20" Format="String" InObject="true"/>
+      <Telegramblock Name="MaterialID" Length="20" Format="String" InObject="true"/>
+      <Telegramblock Name="Length" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Width" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Thickness" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YieldPoint" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="PlasticalRatio" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="CalcInlet" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="CalcOutlet" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="CalcTiltingLeft" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="CalcTiltingRight" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="CalcMiddleHeight" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="CalcCurveProfile" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="CalcPower" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="CalcTorque" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="CalcLevelerForce" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="TelegramList" Count="20">
+        <TelegramList>
+          <Telegramblock Name="ActHeadPos" Length="4" Format="Int32" InObject="true"/>
+          <Telegramblock Name="ActLevelerInlet" Length="4" Format="Int32" InObject="true"/>
+          <Telegramblock Name="ActLevelerOutlet" Length="4" Format="Int32" InObject="true"/>
+          <Telegramblock Name="ActTiltingLeft" Length="4" Format="Int32" InObject="true"/>
+          <Telegramblock Name="ActTiltingRight" Length="4" Format="Int32" InObject="true"/>
+          <Telegramblock Name="ActMiddleHeight" Length="4" Format="Int32" InObject="true"/>
+          <Telegramblock Name="ActCurveProfile1" Length="4" Format="Int32" InObject="true"/>
+          <Telegramblock Name="ActCurveProfile" Length="4" Format="Int32" InObject="true"/>
+          <Telegramblock Name="TelegramArray" Identity="ActPowerDrive" Count="4">
+            <TelegramArray>
+              <Telegramblock Name="ActPowerDrive" Length="4" Format="Int32" InObject="true"/>
+            </TelegramArray>
+          </Telegramblock>
+          <Telegramblock Name="TelegramArray" Identity="ActTorqueDrive" Count="4">
+            <TelegramArray>
+              <Telegramblock Name="ActTorqueDrive" Length="4" Format="Int32"  InObject="true"/>
+            </TelegramArray>
+          </Telegramblock>
+          <Telegramblock Name="TelegramArray" Identity="ActCurrentDrive" Count="4">
+            <TelegramArray>
+              <Telegramblock Name="ActCurrentDrive" Length="4" Format="Int32" InObject="true"/>
+            </TelegramArray>
+          </Telegramblock>
+          <Telegramblock Name="ActSpeed" Length="4" Format="Int32" InObject="true"/>
+        </TelegramList>
+      </Telegramblock>
+      <Telegramblock Name="ActTemperature" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="ActLengthWave" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="ActDistanceWave" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="ActPosLengthWave" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="ActCrossWave" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="ActPosCrossWave" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="ActWaveMax" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="ActPeakValue" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="ActPosXPeakValue" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="ActPosYPeakValue" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="MachineState" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="TelegramArray" Count="3">
+        <TelegramArray>
+          <Telegramblock Name="FaultCode" Length="2" Format="Int16" InObject="true"/>
+        </TelegramArray>
+      </Telegramblock>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L2_L3_ActiveCassette" Length="150" TelegramID="13" ComIndex="0">
+    <Telegram>
+      <Telegramblock Name="TelegramLength" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramCounter" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramType" Length="2" Format="Int16"/>
+      <Telegramblock Name="CassetteNo" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="Spare" Length="142" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L2_L3_MES" Length="300" TelegramID="14" ComIndex="0">
+    <Telegram>
+      <Telegramblock Name="TelegramLength" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramCounter" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramType" Length="2" Format="Int16"/>
+      <Telegramblock Name="PlateID" Length="20" Format="String" InObject="true"/>
+      <Telegramblock Name="PlateInTol" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="MeasuringCode" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="MeasuringRange" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="MeanAmpWaveLeft" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="MeanAmpWaveCenter" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="MeanAmpRight" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="SkiHead" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="SkiTail" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="HeightWaveLeft" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YPosWaveLeft" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="LengthWaveLeft" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="NumberWaveLeft" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="HeightWaveQuarterLeft" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YPosWaveQuarterLeft" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="LengthWaveQuarterLeft" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="NumberWaveQuarterLeft" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="HeightWaveCenter" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YPosWaveCenter" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="LengthWaveCenter" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="NumberWaveCenter" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="HeightWaveQuarterRight" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YPosWaveQuarterRight" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="LengthWaveQuarterRight" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="NumberWaveQuarterRight" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="HeightWaveRight" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YPosWaveRight" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="LengthWaveRight" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="NumberWaveRight" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="GapLengthBow" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="MaxGapLengthBow" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="XPosLengthBow" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YPosLengthBow" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="GapCrossBow" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="MaxGapCrossBow" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="XPosCrossBow" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YPosCrossBow" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Ruler1MCross" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="ActRuler1MCross" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="XPosRuler1MCross" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YPosRuler1MCross" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Ruler1MLength" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="ActRuler1MLength" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="XPosRuler1MLength" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YPosRuler1MLength" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Ruler2MLength" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="ActRuler2MLength" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="XPosRuler2MLength" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YPosRuler2MLength" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="MaxPlateWidth" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="MinPlateWidth" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="MeanPlateWidth" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="MaxDeviationOfCenterLine" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Spare" Length="82" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L2_L1_SignOfLife" TelegramID="20" Length="258" ComIndex="0">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+      <TelegramValue Name="DB" Length="2" Format="Int16" InObject="true"/>
+      <TelegramValue Name="L1" Length="2" Format="Int16" InObject="true"/>
+      <TelegramValue Name="FM" Length="2" Format="Int16" InObject="true"/>
+      <TelegramValue Name="Spare" Length="246" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L2_L1_PDI" TelegramID="21" Length="258" ComIndex="0">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+      <TelegramValue Name="PlateID" Length="20" Format="String" InObject="true"/>
+      <TelegramValue Name="MaterialID" Length="20" Format="String" InObject="true"/>
+      <TelegramValue Name="SteelGrade" Length="20" Format="String" InObject="true"/>
+      <TelegramValue Name="Length" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="Width" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="Thickness" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="YieldPoint" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="TensileStrength" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="Ruler1MCrossPDI" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="Ruler1MLengthPDI" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="Ruler2MLengthPDI" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="Spare" Length="160" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L2_L1_ADJ" TelegramID="22" Length="258" ComIndex="0">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+      <TelegramValue Name="PlateID" Length="20" Format="String" InObject="true"/>
+      <TelegramValue Name="LevelerInlet" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="LevelerOutlet" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="TiltLeft" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="TiltRight" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="MiddleHeight" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="CurveProfile" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="Plastification" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="Elongation" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="Spare" Length="200" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L2_L1_MES" TelegramID="23" Length="150" ComIndex="0"> <!-- this does not exist -->
+    <Telegram>
+      <Telegramblock Name="TelegramLength" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramCounter" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramType" Length="2" Format="Int16"/>
+      <Telegramblock Name="PlateInTol" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="Spare" Length="142" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L1_L2_SignOfLife" TelegramID="30" Length="258" ComIndex="0">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+      <TelegramValue Name="Spare" Length="252" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L1_L2_RPDI" TelegramID="31" Length="258" ComIndex="0">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+      <TelegramValue Name="PlateID" Length="20" Format="String" InObject="true"/>
+      <TelegramValue Name="Location" Length="2" Format="Int16" InObject="true"/>
+      <TelegramValue Name="Spare" Length="230" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L1_L2_RADJ" TelegramID="32" Length="258" ComIndex="0">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+      <TelegramValue Name="PlateID" Length="20" Format="String" InObject="true"/>
+      <TelegramValue Name="CassetteNo" Length="2" Format="Int16" InObject="true"/>
+      <TelegramValue Name="Temperature" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="Spare" Length="226" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L1_L2_PlateState" TelegramID="33" Length="258" ComIndex="0">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+      <TelegramValue Name="PlateID" Length="20" Format="String" InObject="true"/>
+      <TelegramValue Name="LevelerInlet" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="LevelerOutlet" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="TiltLeft" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="TiltRight" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="MiddleHeight" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="CurveProfile" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="Temperature" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="Leveling" Length="2" Format="Int16" InObject="true"/>
+      <TelegramValue Name="State" Length="2" Format="Int16" InObject="true"/>
+      <TelegramValue Name="MaterialID" Length="20" Format="String" InObject="true"/>
+      <TelegramValue Name="Spare" Length="180" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L1_L2_Tracking" TelegramID="34" Length="258" ComIndex="0">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+      <TelegramValue Name="PlateID" Length="20" Format="String" InObject="true"/>
+      <TelegramValue Name="Location" Length="2" Format="Int16" InObject="true"/>
+      <TelegramValue Name="Spare" Length="230" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L1_L2_ActVal" Length="258" TelegramID="35" ComIndex="0">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+      <TelegramValue Name="PlateID" Length="20" Format="String" InObject="true"/>
+      <TelegramValue Name="SetLevelerInlet" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="SetLevelerOutlet" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="SetTiltLeft" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="SetTiltRight" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="SetMiddleHeight" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="SetCurveProfile" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActLevelerInlet" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActLevelerOutlet" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActTiltingLeft" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActTiltingRight" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActMiddleHeight" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActCurveProfile" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActPowerDrive1" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActPowerDrive2" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActPowerDrive3" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActPowerDrive4" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActPowerDrive5" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActPowerDrive6" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActPowerDrive7" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActPowerDrive8" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActPowerDrive9" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActPowerDrive10" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActPowerDrive11" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActPowerDrive12" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActPowerDrive13" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActTorqueDrive1" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActTorqueDrive2" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActTorqueDrive3" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActTorqueDrive4" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActTorqueDrive5" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActTorqueDrive6" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActTorqueDrive7" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActTorqueDrive8" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActTorqueDrive9" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActTorqueDrive10" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActTorqueDrive11" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActTorqueDrive12" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActTorqueDrive13" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActCurrentDrive1" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActCurrentDrive2" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActCurrentDrive3" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActCurrentDrive4" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActCurrentDrive5" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActCurrentDrive6" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActCurrentDrive7" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActCurrentDrive8" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActCurrentDrive9" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActCurrentDrive10" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActCurrentDrive11" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActCurrentDrive12" Length="4" Format="Single" InObject="true"/>
+      <TelegramValue Name="ActCurrentDrive13" Length="4" Format="Single" InObject="true"/>
+      <!--<TelegramValue Name="TelegramArray" Identity="ActPowerDrive" Count="12" InObject="true">
+        <TelegramArray>
+          <TelegramValue Name="ActPowerDrive" Length="4" Format="Single" InObject="true"/>
+        </TelegramArray>
+      </TelegramValue>
+      <TelegramValue Name="TelegramArray" Identity="ActTorqueDrive" Count="12" InObject="true">
+        <TelegramArray>
+          <TelegramValue Name="ActTorqueDrive" Length="4" Format="Single" InObject="true"/>
+        </TelegramArray>
+      </TelegramValue>
+      <TelegramValue Name="TelegramArray" Identity="ActCurrentDrive" Count="12" InObject="true">
+        <TelegramArray>
+          <TelegramValue Name="ActCurrentDrive" Length="4" Format="Single" InObject="true"/>
+        </TelegramArray>
+      </TelegramValue>-->
+        <TelegramValue Name="ActSpeed" Length="4" Format="Single" InObject="true"/>
+        <TelegramValue Name="MaterialID" Length="20" Format="String" InObject="true"/>
+        <TelegramValue Name="Spare" Length="4" Format="String"/>
+  </Telegram>
+  </TelegramData>
+  <TelegramData Name="L1_L2_Meso" TelegramID="36" Length="150" ComIndex="0"> <!-- does not exist -->
+    <Telegram>
+      <Telegramblock Name="TelegramLength" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramCounter" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramType" Length="2" Format="Int16"/>
+      <Telegramblock Name="PlateID" Length="20" Format="String" InObject="true"/>
+      <Telegramblock Name="Spare" Length="124" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L1_L2_ActiveCassette" TelegramID="37" Length="258" ComIndex="0">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+      <TelegramValue Name="CassetteNo" Length="2" Format="Int16" InObject="true"/>
+      <TelegramValue Name="Spare" Length="250" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L1_L2_LineState" TelegramID="39" Length="258" ComIndex="0">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+      <TelegramValue Name="State" Length="2" Format="Int16" InObject="true"/>
+      <TelegramValue Name="Spare" Length="250" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="HMI_L2_SignOfLife" TelegramID="90" Length="6" ComIndex="0">
+    <Telegram>
+      <Telegramblock Name="TelegramLength" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramCounter" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramType" Length="2" Format="Int16"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="HMI_L2_Request" TelegramID="91" Length="30" ComIndex="0">
+    <Telegram>
+      <Telegramblock Name="TelegramLength" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramCounter" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramType" Length="2" Format="Int16"/>
+      <Telegramblock Name="PlateID" Length="20" Format="String" InObject="true"/>
+      <Telegramblock Name="Location" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="Spare" Length="2" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="HMI_L2_Limitation" TelegramID="92" Length="6" ComIndex="0">
+    <Telegram>
+      <Telegramblock Name="TelegramLength" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramCounter" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramType" Length="2" Format="Int16"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L2_HMI_SignOfLife" TelegramID="95" Length="6" ComIndex="1">
+    <Telegram>
+      <Telegramblock Name="TelegramLength" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramCounter" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramType" Length="2" Format="Int16"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L2_HMI_Tracking" TelegramID="96" Length="30" ComIndex="1">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+      <TelegramValue Name="PlateID" Length="20" Format="String" InObject="true"/>
+      <TelegramValue Name="Location" Length="2" Format="Int16" InObject="true"/>
+      <TelegramValue Name="Spare" Length="2" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L2_HMI_Signal" TelegramID="97" Length="30" ComIndex="1">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+      <TelegramValue Name="Signal" Length="20" Format="String" InObject="true"/>
+      <TelegramValue Name="Flag" Length="4" Format="Int32" InObject="true"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L2_HMI_MissingPDI" TelegramID="98" Length="6" ComIndex="1">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L2_HMI_DatabaseUpdate" TelegramID="99" Length="6" ComIndex="1">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L2_FM_SignOfLife" TelegramID="60" Length="150" ComIndex="3">
+    <Telegram>
+      <Telegramblock Name="TelegramLength" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramCounter" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramType" Length="2" Format="Int16"/>
+      <Telegramblock Name="Spare" Length="144" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L2_FM_Meso" Length="150" TelegramID="61" ComIndex="3">
+    <Telegram>
+      <Telegramblock Name="TelegramLength" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramCounter" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramType" Length="2" Format="Int16"/>
+      <Telegramblock Name="PlateID" Length="20" Format="String" InObject="true"/>
+      <Telegramblock Name="MaterialID" Length="20" Format="String" InObject="true"/>
+      <Telegramblock Name="SteelGrade" Length="20" Format="String" InObject="true"/>
+      <Telegramblock Name="MeasuringCode" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="Length" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Width" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Thickness" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YieldPoint" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="TensileStrength" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Ruler1MCrossPDI" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Ruler1MLengthPDI" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Ruler2MLengthPDI" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="GapLengthBow" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="GapCrossBow" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Spare" Length="42" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="FM_L2_SignOfLife" TelegramID="70" Length="150" ComIndex="3">
+    <Telegram>
+      <Telegramblock Name="TelegramLength" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramCounter" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramType" Length="2" Format="Int16"/>
+      <Telegramblock Name="Spar" Length="144" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="FM_L2_MES" TelegramID="71" Length="300" ComIndex="3">
+    <Telegram>
+      <Telegramblock Name="TelegramLength" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramCounter" Length="2" Format="Int16"/>
+      <Telegramblock Name="TelegramType" Length="2" Format="Int16"/>
+      <Telegramblock Name="PlateID" Length="20" Format="String" InObject="true"/>
+      <Telegramblock Name="PlateInTol" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="MeasuringCode" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="MeasuringRange" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="MeanAmpWaveLeft" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="MeanAmpWaveCenter" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="MeanAmpRight" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="SkiHead" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="SkiTail" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="HeightWaveLeft" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YPosWaveLeft" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="LengthWaveLeft" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="NumberWaveLeft" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="HeightWaveQuarterLeft" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YPosWaveQuarterLeft" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="LengthWaveQuarterLeft" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="NumberWaveQuarterLeft" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="HeightWaveCenter" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YPosWaveCenter" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="LengthWaveCenter" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="NumberWaveCenter" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="HeightWaveQuarterRight" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YPosWaveQuarterRight" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="LengthWaveQuarterRight" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="NumberWaveQuarterRight" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="HeightWaveRight" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YPosWaveRight" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="LengthWaveRight" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="NumberWaveRight" Length="2" Format="Int16" InObject="true"/>
+      <Telegramblock Name="GapLengthBow" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="MaxGapLengthBow" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="XPosLengthBow" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YPosLengthBow" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="GapCrossBow" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="MaxGapCrossBow" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="XPosCrossBow" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YPosCrossBow" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Ruler1MCross" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="ActRuler1MCross" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="XPosRuler1MCross" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YPosRuler1MCross" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Ruler1MLength" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="ActRuler1MLength" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="XPosRuler1MLength" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YPosRuler1MLength" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Ruler2MLength" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="ActRuler2MLength" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="XPosRuler2MLength" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="YPosRuler2MLength" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="MaxPlateWidth" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="MinPlateWidth" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="MeanPlateWidth" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="MaxDeviationOfCenterLine" Length="4" Format="Int32" InObject="true"/>
+      <Telegramblock Name="Spare" Length="82" Format="String"/>
+    </Telegram>
+  </TelegramData>
+</TelegramList>

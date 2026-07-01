@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "src\\Level2.PlateLeveler.Client\\Level2.PlateLeveler.Client.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "src\\Level2.PlateLeveler.Server\\Level2.PlateLeveler.Server.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

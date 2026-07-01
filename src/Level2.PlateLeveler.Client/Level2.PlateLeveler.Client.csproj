@@ -1,0 +1,116 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>True</UseWPF>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Properties\Level2.PlateLeveler.DataSources\**" />
+    <EmbeddedResource Remove="Properties\Level2.PlateLeveler.DataSources\**" />
+    <None Remove="Properties\Level2.PlateLeveler.DataSources\**" />
+  </ItemGroup>
+	<ItemGroup>
+		<Reference Include="combit.ListLabel18">
+		  <HintPath>..\..\lib\CombitListAndLabel\combit.ListLabel18.dll</HintPath>
+		</Reference>
+		<Reference Include="InfragisticsWPF4.Controls.Editors.XamCalendar.v21.2">
+			<HintPath>C:\Program Files (x86)\Infragistics\2021.2\WPF\CLR4.0\Bin\InfragisticsWPF4.Controls.Editors.XamCalendar.v21.2.dll</HintPath>
+		</Reference>
+		<Reference Include="InfragisticsWPF4.Controls.Editors.XamDateTimeInput.v21.2">
+			<HintPath>C:\Program Files (x86)\Infragistics\2021.2\WPF\CLR4.0\Bin\InfragisticsWPF4.Controls.Editors.XamDateTimeInput.v21.2.dll</HintPath>
+		</Reference>
+		<Reference Include="InfragisticsWPF4.Controls.Editors.XamMaskedInput.v21.2">
+			<HintPath>C:\Program Files (x86)\Infragistics\2021.2\WPF\CLR4.0\Bin\InfragisticsWPF4.Controls.Editors.XamMaskedInput.v21.2.dll</HintPath>
+		</Reference>
+		<Reference Include="InfragisticsWPF4.Controls.Grids.XamGrid.v21.2">
+			<HintPath>C:\Program Files (x86)\Infragistics\2021.2\WPF\CLR4.0\Bin\InfragisticsWPF4.Controls.Grids.XamGrid.v21.2.dll</HintPath>
+		</Reference>
+		<Reference Include="InfragisticsWPF4.DataManager.v21.2">
+			<HintPath>C:\Program Files (x86)\Infragistics\2021.2\WPF\CLR4.0\Bin\InfragisticsWPF4.DataManager.v21.2.dll</HintPath>
+		</Reference>
+		<Reference Include="InfragisticsWPF4.DataPresenter.v21.2">
+			<HintPath>C:\Program Files (x86)\Infragistics\2021.2\WPF\CLR4.0\Bin\InfragisticsWPF4.DataPresenter.v21.2.dll</HintPath>
+		</Reference>
+		<Reference Include="InfragisticsWPF4.Editors.v21.2">
+			<HintPath>C:\Program Files (x86)\Infragistics\2021.2\WPF\CLR4.0\Bin\InfragisticsWPF4.Editors.v21.2.dll</HintPath>
+		</Reference>
+		<Reference Include="InfragisticsWPF4.v21.2">
+			<HintPath>C:\Program Files (x86)\Infragistics\2021.2\WPF\CLR4.0\Bin\InfragisticsWPF4.v21.2.dll</HintPath>
+		</Reference>
+		<Reference Include="Level2.PlateLeveler.Model.Interface">
+		  <HintPath>..\..\lib\Level2.PlateLeveler.Model.Interface\Level2.PlateLeveler.Model.Interface.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Windows.Forms" />
+		<Reference Include="System.Xaml" />
+		<Reference Include="WindowsBase" />
+		<Reference Include="PresentationCore" />
+		<Reference Include="PresentationFramework" />
+	</ItemGroup>
+  <PropertyGroup>
+    <ApplicationIcon>A.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Level2.PlateLeveler.DataAccess\Level2.PlateLeveler.DataAccess.csproj" />
+    <ProjectReference Include="..\Level2.PlateLeveler.DataCommunication\Level2.PlateLeveler.DataCommunication.csproj" />
+    <ProjectReference Include="..\Level2.PlateLeveler.DataConverter\Level2.PlateLeveler.DataConverter.csproj" />
+    <ProjectReference Include="..\Level2.PlateLeveler.DataFunction\Level2.PlateLeveler.DataFunction.csproj" />
+    <ProjectReference Include="..\Level2.PlateLeveler.DataTypes\Level2.PlateLeveler.DataTypes.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ANDRITZ_METALS.png" />
+    <Resource Include="Pictures\A.ico" />
+    <Resource Include="Pictures\ANDRITZ.png" />
+    <Resource Include="A.ico" />
+    <Content Include="Telegram.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Init.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Infragistics.WPF.CalculationManager.Trial" Version="26.1.21" />
+    <PackageReference Include="Infragistics.WPF.Calendar.Trial" Version="26.1.21" />
+    <PackageReference Include="Infragistics.WPF.Charts.Trial" Version="26.1.21" />
+    <PackageReference Include="Infragistics.WPF.ColorPicker.Trial" Version="26.1.21" />
+    <PackageReference Include="Infragistics.WPF.Controls.Editors.XamMaskedInput.Trial" Version="26.1.21" />
+    <PackageReference Include="Infragistics.WPF.Controls.Grids.XamGrid.Trial" Version="26.1.21" />
+    <PackageReference Include="Infragistics.WPF.DataGrids.Trial" Version="26.1.21" />
+    <PackageReference Include="Infragistics.WPF.DataManager.Trial" Version="26.1.21" />
+    <PackageReference Include="Infragistics.WPF.DataTree.Trial" Version="26.1.21" />
+    <PackageReference Include="Infragistics.WPF.DataVisualization.Trial" Version="26.1.21" />
+    <PackageReference Include="Infragistics.WPF.DockManager.Trial" Version="26.1.21" />
+    <PackageReference Include="Infragistics.WPF.Documents.Core.Trial" Version="26.1.21" />
+    <PackageReference Include="Infragistics.WPF.DragDrop.Trial" Version="26.1.21" />
+    <PackageReference Include="Infragistics.WPF.Editors.Trial" Version="26.1.21" />
+    <PackageReference Include="Infragistics.WPF.Excel.Trial" Version="26.1.21" />
+    <PackageReference Include="Infragistics.WPF.Menus.Trial" Version="26.1.21" />
+    <PackageReference Include="Infragistics.WPF.Olap.Trial" Version="26.1.21" />
+    <PackageReference Include="Infragistics.WPF.OutlookBar.Trial" Version="26.1.21" />
+    <PackageReference Include="Infragistics.WPF.Ribbon.Trial" Version="26.1.21" />
+    <PackageReference Include="Infragistics.WPF.RichTextDocument.Trial" Version="26.1.21" />
+    <PackageReference Include="Infragistics.WPF.Trial" Version="26.1.21" />
+    <PackageReference Include="Infragistics.WPF.Undo.Trial" Version="26.1.21" />
+    <PackageReference Include="log4net" Version="3.3.2" />
+    <PackageReference Include="PDFsharp" Version="6.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+</Project>

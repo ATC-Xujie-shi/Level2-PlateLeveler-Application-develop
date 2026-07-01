@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xsd:element name="InitData">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="DataBase">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Connection">
+                <xsd:complexType>
+                  <xsd:attribute name="Namespace" use="required" >
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="System.Data.SqlClient" id="sql"/>
+                        <xs:enumeration value="System.Data.OracleClient" id="oracle"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xsd:attribute>
+                  <xsd:attribute name="DataSource" type="xsd:string" use="required" />
+                  <xsd:attribute name="Database" type="xsd:string" use="required" />
+                  <xsd:attribute name="UserId" type="xsd:string" use="required" />
+                  <xsd:attribute name="IntegratedSecurity" >
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="true"/>
+                        <xs:enumeration value="false" />
+                        <xs:enumeration value="SSPI" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xsd:attribute>
+                  <xsd:attribute name="Password" type="xsd:string"  />
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="TCPIP">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Communication">
+                <xsd:complexType>
+                  <xsd:attribute name="Name" type="xsd:string" use="required" />
+                  <xsd:attribute name="Port" type="xsd:int" use="required" />
+                  <xsd:attribute name="IPAddress" type="xsd:string" use="required" />
+                  <xsd:attribute name="Timeout" type="xsd:int" use="required" />
+                  <xsd:attribute name="Active" type="xsd:boolean" use="required" />
+                  <xsd:attribute name="Endian" type="xsd:int" use="required" />
+                  <xsd:attribute name="TelegramLengthSize" type="xsd:int" use="required" />
+                  <xsd:attribute name="TelegramLengthOffset" type="xsd:int" use="required" />
+                  <xsd:attribute name="TypeLengthSize" type="xsd:int" use="required" />
+                  <xsd:attribute name="TypeLengthOffset" type="xsd:int" use="required" />
+                  <xsd:attribute name="Start" type="xsd:boolean" use="required" />
+                  <xsd:attribute name="LogLiveTelegram" type="xsd:boolean" use="optional" default="false"/>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="Constants">
+          <xsd:complexType>
+            <xsd:attribute name="TelegramFile" type="xsd:string" use="required" />
+            <xsd:attribute name="LoggerType" type="xsd:string" use="required" />
+            <xsd:attribute name="Interval" type="xsd:unsignedShort" use="required" />
+            <xsd:attribute name="Reverse" type="xsd:boolean" use="required" />
+            <xsd:attribute name="LiveTelegramID" type="xsd:unsignedByte" use="required" />
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="Report">
+          <xsd:complexType>
+            <xsd:attribute name="ExportPath" type="xsd:string" use="required" />
+            <xsd:attribute name="PdfPath" type="xsd:string" use="required" />
+            <xsd:attribute name="Path" type="xsd:string" use="required" />
+            <xsd:attribute name="License" type="xsd:string" use="required" />
+            <xsd:attribute name="ListType" type="xsd:string" use="required" />
+            <xsd:attribute name="Mode" type="xsd:string" use="required" />
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xs:schema>

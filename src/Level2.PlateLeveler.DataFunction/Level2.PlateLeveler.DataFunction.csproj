@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\Level2.PlateLeveler.DataTypes\Level2.PlateLeveler.DataTypes.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="$(VersionLog4Net)" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="combit.ListLabel18">
+      <HintPath>..\..\lib\CombitListAndLabel\combit.ListLabel18.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+</Project>

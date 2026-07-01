@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<InitData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DataBase>
+    <!--<Connection Namespace="System.Data.SqlClient" DataSource=".\SQLSVRL2" Database="BaoSteel_HotColdLeveller" UserId="sundwig" IntegratedSecurity="true" Password="automation"></Connection>-->
+    <Connection Namespace="System.Data.SqlClient" DataSource=".\SQLEXPRESS" Database="LVL7" UserId="sa" IntegratedSecurity="true" Password="automation"></Connection>
+  </DataBase>
+  <TCPIP>
+    <Communication Name="HMI_L2" Port="3050" IPAddress="127.0.0.1" Timeout="15000" Active="true" Endian="1" TelegramLengthSize="4" TelegramLengthOffset="0" TypeLengthSize="2" TypeLengthOffset="4" Start="true" LogLiveTelegram="true"></Communication>
+  </TCPIP>
+  <Constants LiveTelegramID="95" Reverse="0" TelegramFile=".\Telegram.xml" LoggerType="RollingFileAppender" Interval="10000"></Constants>
+  <Report ExportPath="D:\Sundwig\Export" PdfPath="D:\Sundwig\Reports" Path="D:\Sundwig\Templates" License="727+D" ListType="lst" Mode="Fields"/>
+</InitData>

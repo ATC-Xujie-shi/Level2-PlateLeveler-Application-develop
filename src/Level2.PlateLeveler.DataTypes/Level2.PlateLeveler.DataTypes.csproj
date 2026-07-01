@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="5.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Level2.PlateLeveler.Model.Interface">
+      <HintPath>..\..\lib\Level2.PlateLeveler.Model.Interface\Level2.PlateLeveler.Model.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="LEVELER.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LEVELER.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Level2.PlateLeveler.DataTypes</CustomToolNamespace>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="LEVELER.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LEVELER.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Update="LEVELER.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LEVELER.tt</DependentUpon>
+    </Compile>
+    <Compile Update="LEVELER.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LEVELER.edmx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="LEVELER.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LEVELER.edmx</DependentUpon>
+      <LastGenOutput>LEVELER.Context.cs</LastGenOutput>
+      <CustomToolNamespace>Level2.PlateLeveler.DataTypes</CustomToolNamespace>
+    </None>
+    <None Update="LEVELER.edmx.diagram">
+      <DependentUpon>LEVELER.edmx</DependentUpon>
+    </None>
+    <None Update="LEVELER.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LEVELER.edmx</DependentUpon>
+      <LastGenOutput>LEVELER.cs</LastGenOutput>
+      <CustomToolNamespace>Level2.PlateLeveler.DataTypes</CustomToolNamespace>
+    </None>
+  </ItemGroup>
+</Project>

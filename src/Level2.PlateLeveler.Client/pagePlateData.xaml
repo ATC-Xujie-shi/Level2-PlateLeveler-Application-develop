@@ -1,0 +1,160 @@
+﻿<Page x:Class="Level2.PlateLeveler.Client.pagePlateData"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ig="http://schemas.infragistics.com/xaml"
+    xmlns:Custom="http://infragistics.com/DataPresenter"
+    xmlns:my="clr-namespace:Level2.PlateLeveler.Client"
+    xmlns:type="clr-namespace:Level2.PlateLeveler.DataTypes;assembly=Level2.PlateLeveler.DataTypes"
+    xmlns:igEditors="http://infragistics.com/Editors"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+     x:Name="pgPlate"
+    mc:Ignorable="d"
+    d:DesignHeight="1000" d:DesignWidth="1920" >
+   <Page.Resources>
+      <CollectionViewSource x:Name="PDISource" x:Key="PDIDataViewSource" d:DesignSource="{d:DesignInstance {x:Type type:PDI}, CreateList=True}"/>
+      <CollectionViewSource x:Key="PDIControlDataViewSource" d:DesignSource="{d:DesignInstance {x:Type type:PDI}, CreateList=True}"/>
+      <!-- Settings for xamGrid-Fields -->
+      <Custom:FieldSettings  AllowRecordFiltering="True"  EditorStyle="{DynamicResource XamGridEditorStyle}" AllowEdit="False"  x:Key="TinyColumn"/>
+      <Custom:FieldSettings  AllowRecordFiltering="True"  EditorStyle="{DynamicResource XamGridEditorStyle}" AllowEdit="False" EditorType="{x:Type igEditors:XamNumericEditor}" x:Key="TinyNumericColumn"/>
+      <Custom:FieldSettings AllowRecordFiltering="True"  EditorStyle="{DynamicResource XamGridEditorStyle}" AllowEdit="False" EditorType="{x:Type igEditors:XamCheckEditor}" x:Key="TinyCheckColumn"/>
+   </Page.Resources>
+   <Page.Background>
+      <SolidColorBrush Color="White"/>
+   </Page.Background>
+
+   <Grid Visibility="Visible" ShowGridLines="false" DataContext="{StaticResource PDIControlDataViewSource}">
+      <Grid ShowGridLines="false" Margin="8,8,8,0" >
+         <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="200"/>
+         </Grid.RowDefinitions>
+         <Grid  Margin="10"  Grid.Row="0" ShowGridLines="false" IsEnabled="True" Background="{x:Null}">
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="Auto"/>
+               <ColumnDefinition Width="Auto"/>
+               <ColumnDefinition Width="20"/>
+               <ColumnDefinition Width="Auto"/>
+               <ColumnDefinition Width="Auto"/>
+               <ColumnDefinition Width="20"/>
+               <ColumnDefinition Width="Auto"/>
+               <ColumnDefinition Width="Auto"/>
+               <ColumnDefinition Width="*"/>
+               <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Column="0">
+               <Label x:Name="lblPlateID" VerticalContentAlignment="Center" Content="{Binding Path=lblPlateID, Mode=OneWay, Source={StaticResource Resources}}" Height="30" Margin="1"/>
+               <Label x:Name="lblMaterialID" VerticalContentAlignment="Center" Content="{Binding Path=lblMaterialID, Mode=OneWay, Source={StaticResource Resources}}" Height="30" Margin="1"/>
+               <Label x:Name="lblSteelGrade" VerticalContentAlignment="Center" Content="{Binding Path=lblSteelgrade, Mode=OneWay, Source={StaticResource Resources}}" Height="30" Margin="1"/>
+               <Label x:Name="lblPlateLength" VerticalContentAlignment="Center" Content="{Binding Path=lblPlateLength, Mode=OneWay, Source={StaticResource Resources}}" Height="30" Margin="1"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Column="1">
+               <TextBox Margin="1" Height="30" x:Name="txtPlateID" Style="{DynamicResource AndritzTextBoxStyle}" Text="{Binding PlateID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" IsEnabled="False"/>
+               <TextBox Margin="1" Height="30" x:Name="txtMaterialID" Style="{DynamicResource AndritzTextBoxStyle}" Text="{Binding MaterialID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" IsEnabled="False"/>
+               <TextBox Margin="1" Height="30" x:Name="txtSteelGrade" Style="{DynamicResource AndritzTextBoxStyle}" Text="{Binding SteelGrade, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" IsEnabled="False"/>
+               <TextBox Margin="1" Height="30" x:Name="txtPlateLength" Style="{DynamicResource AndritzTextBoxStyle}" Text="{Binding Length, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" IsEnabled="False"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Column="3">
+               <Label x:Name="lblPlateWidth"  Content="{Binding Path=lblPlateWidth, Mode=OneWay, Source={StaticResource Resources}}" Margin="1" Height="30"/>
+               <Label x:Name="lblPlateThickness"  Content="{Binding Path=lblPlateThickness, Mode=OneWay, Source={StaticResource Resources}}" Margin="1" Height="30"/>
+               <Label x:Name="lblYieldPoint" Content="{Binding Path=lblYieldPoint, Mode=OneWay, Source={StaticResource Resources}}" Margin="1" Height="30"/>
+               <!--<Label x:Name="lblTensileStrength" Content="{Binding Path=lblTensileStrength, Mode=OneWay, Source={StaticResource Resources}}" />
+                  <Label x:Name="lblRuler1MLength" Content="{Binding Path=lblRuler1MLength, Mode=OneWay, Source={StaticResource Resources}}" />
+                  <Label x:Name="lblRuler1MCross" Content="{Binding Path=lblRuler1MCross, Mode=OneWay, Source={StaticResource Resources}}" />
+                  <Label x:Name="lblRuler2MLength" Content="{Binding Path=lblRuler2MLength, Mode=OneWay, Source={StaticResource Resources}}" />-->
+               <Label x:Name="lblLeveling"  Content="{Binding Path=lblLeveling, Mode=OneWay, Source={StaticResource Resources}}" Margin="1" Height="30"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Column="4">
+               <TextBox Margin="1" Height="30" x:Name="txtPlateWidth" Style="{DynamicResource AndritzTextBoxStyle}" Text="{Binding Width, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" IsEnabled="False"/>
+               <TextBox Margin="1" Height="30" x:Name="txtPlateThickness" Style="{DynamicResource AndritzTextBoxStyle}" Text="{Binding Thickness, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" IsEnabled="False"/>
+               <TextBox Margin="1" Height="30" x:Name="txtYieldPoint" Style="{DynamicResource AndritzTextBoxStyle}" Text="{Binding YieldPoint, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" IsEnabled="False"/>
+               <!--<TextBox Margin="10,3,0,0" x:Name="txtTensileStrength" Style="{DynamicResource AndritzTextBoxStyle}" Text="{Binding TensileStrength, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" IsEnabled="False"/>
+                  <TextBox Margin="10,3,0,0" x:Name="txtRuler1MLength" Style="{DynamicResource AndritzTextBoxStyle}" Text="{Binding Ruler1MLengthPDI, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" IsEnabled="False"/>
+                  <TextBox Margin="10,3,0,0" x:Name="txtRuler1MCross" Style="{DynamicResource AndritzTextBoxStyle}" Text="{Binding Ruler1MCrossPDI, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" IsEnabled="False"/>
+                  <TextBox Margin="10,3,0,0" x:Name="txtRuler2MLength" Style="{DynamicResource AndritzTextBoxStyle}" Text="{Binding Ruler2MLengthPDI, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" IsEnabled="False"/>-->
+               <CheckBox Margin="1 10" Height="30" x:Name="chkLeveling" IsChecked="{Binding Leveling, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" IsEnabled="False" />
+            </StackPanel>
+            <!--<StackPanel Orientation="Vertical">
+                  <Label x:Name="lblGapLengthBow" Content="{Binding Path=lblGapLengthBow, Mode=OneWay, Source={StaticResource Resources}}" />
+                  <Label x:Name="lblGapCrossBow" Content="{Binding Path=lblGapCrossBow, Mode=OneWay, Source={StaticResource Resources}}" />
+               </StackPanel>
+               <StackPanel Orientation="Vertical">
+                  <TextBox Margin="10,3,0,0" x:Name="txtGapLengthBow" Style="{DynamicResource AndritzTextBoxStyle}" Text="{Binding GapLengthBow, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" IsEnabled="False"/>
+                  <TextBox Margin="10,3,0,0" x:Name="txtGapCrossBow" Style="{DynamicResource AndritzTextBoxStyle}"  Text="{Binding GapCrossBow, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" IsEnabled="False"/>
+                  <StackPanel Orientation="Horizontal"/>
+               </StackPanel>-->
+            <StackPanel Orientation="Vertical" Grid.Column="6">
+               <Button x:Name="btnCreatePDI" Content="{Binding Path=btnCreate, Mode=OneWay, Source={StaticResource Resources}}"  Click="btnCreatePDI_Click" Margin="5" Height="30"/>
+               <Button x:Name="btnEditPDI" Content="{Binding Path=btnEdit, Mode=OneWay, Source={StaticResource Resources}}"  IsEnabled="False" Click="btnEditPDI_Click" Width="100" Margin="5" Height="30"/>
+               <Button x:Name="btnSavePDI" Content="{Binding Path=btnSave, Mode=OneWay, Source={StaticResource Resources}}"   IsEnabled="False" Click="btnSavePDI_Click" Margin="5" Height="30"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Column="7">
+               <Button x:Name="btnCopy" Content="{Binding Path=btnCopy, Mode=OneWay, Source={StaticResource Resources}}"  IsEnabled="False" Click="btnCopy_Click" Width="100" Margin="5" Height="30"/>
+               <Button x:Name="btnDeletePDI" Content="{Binding Path=btnDelete, Mode=OneWay, Source={StaticResource Resources}}" IsEnabled="False" Click="btnDeletePDI_Click" Margin="5" Height="30"/>
+               <Button x:Name="btnCancelPDI" Content="{Binding Path=btnCancel, Mode=OneWay, Source={StaticResource Resources}}" IsEnabled="False" Click="btnCancelPDI_Click" Margin="5" Height="30"/>
+            </StackPanel>
+
+            <Button Grid.Column="9" x:Name="btnEnableAutomation" FontSize="16" Click="btnEnableAutomation_Click" Margin="5" Height="50" Width="250"/>
+         </Grid>
+         <Grid Grid.Row="1"  Margin="10" ShowGridLines="false" IsEnabled="True" Background="{x:Null}" DataContext="{StaticResource PDIDataViewSource}">
+            <Custom:XamDataGrid x:Name="gridPDI" DataSource="{Binding}" Width="Auto" Background="White" SelectedItemsChanged="gridPDI_SelectedItemsChanged">
+               <Custom:XamDataGrid.FieldLayoutSettings>
+                  <Custom:FieldLayoutSettings AutoGenerateFields="False"   HeaderPrefixAreaDisplayMode="FieldChooserButton"/>
+               </Custom:XamDataGrid.FieldLayoutSettings>
+               <Custom:XamDataGrid.FieldLayouts>
+                  <Custom:FieldLayout >
+                     <Custom:Field Name="PlateID" Settings="{StaticResource TinyColumn}"  Label="{Binding Path=lblPlateID, Mode=OneWay, Source={StaticResource Resources}}" Width="*"/>
+                     <Custom:Field Name="MaterialID" Settings="{StaticResource TinyColumn}" Label="{Binding Path=lblMaterialID, Mode=OneWay, Source={StaticResource Resources}}" Width="*"/>
+                     <Custom:Field Name="SteelGrade" Settings="{StaticResource TinyColumn}" Label="{Binding Path=lblSteelgrade, Mode=OneWay, Source={StaticResource Resources}}" Width="*"/>
+                     <Custom:Field Name="Length" Settings="{StaticResource TinyNumericColumn}" Label="{Binding Path=lblLength, Mode=OneWay, Source={StaticResource Resources}}" Width="*"/>
+                     <Custom:Field Name="Width" Settings="{StaticResource TinyNumericColumn}" Label="{Binding Path=lblWidth, Mode=OneWay, Source={StaticResource Resources}}"  Width="*"/>
+                     <Custom:Field Name="Thickness" Settings="{StaticResource TinyNumericColumn}" Label="{Binding Path=lblThickness, Mode=OneWay, Source={StaticResource Resources}}" Width="*"/>
+                     <Custom:Field Name="YieldPoint" Settings="{StaticResource TinyNumericColumn}" Label="{Binding Path=lblYieldPoint, Mode=OneWay, Source={StaticResource Resources}}" Width="*"/>
+                     <!--<Custom:Field Name="TensileStrength" Settings="{StaticResource TinyNumericColumn}" Label="{Binding Path=lblTensileStrength, Mode=OneWay, Source={StaticResource Resources}}" Width="*"/>-->
+                     <!--<Custom:Field Name="MeasuringCode" Settings="{StaticResource TinyColumn}" Label="{Binding Path=MeasuringCode, Mode=OneWay, Source={StaticResource Resources}}" Width="Auto" />-->
+                     <!--<Custom:Field Name="Ruler1MCrossPDI" Settings="{StaticResource TinyNumericColumn}" Label="{Binding Path=lblRuler1MCross, Mode=OneWay, Source={StaticResource Resources}}" Width="*"/>
+                     <Custom:Field Name="Ruler1MLengthPDI" Settings="{StaticResource TinyNumericColumn}" Label="{Binding Path=lblRuler1MLength, Mode=OneWay, Source={StaticResource Resources}}" Width="*"/>
+                     <Custom:Field Name="Ruler2MLengthPDI" Settings="{StaticResource TinyNumericColumn}" Label="{Binding Path=lblRuler2MLength, Mode=OneWay, Source={StaticResource Resources}}" Width="*"/>-->
+                     <!--<Custom:Field Name="GapLengthBow" Settings="{StaticResource TinyNumericColumn}" Label="{Binding Path=lblGapLengthBow, Mode=OneWay, Source={StaticResource Resources}}" />-->
+                     <!--<Custom:Field Name="GapCrossBow" Settings="{StaticResource TinyNumericColumn}"  Label="{Binding Path=lblGapCrossBow, Mode=OneWay, Source={StaticResource Resources}}" />-->
+                     <Custom:Field Name="Leveling" Settings="{StaticResource TinyCheckColumn}" Label="{Binding Path=lblLeveling, Mode=OneWay, Source={StaticResource Resources}}" Width="*"/>
+                     <!--<Custom:Field Name="Location" Settings="{StaticResource TinyColumn}" Label="{Binding Path=Location, Mode=OneWay, Source={StaticResource Resources}}" Width="*"/>-->
+                     <Custom:Field Name="LocationState" Settings="{StaticResource TinyColumn}" Label="{Binding Path=LocationState, Mode=OneWay, Source={StaticResource Resources}}" Width="*"/>
+                  </Custom:FieldLayout>
+               </Custom:XamDataGrid.FieldLayouts>
+            </Custom:XamDataGrid>
+         </Grid>
+         <Grid  Margin="10"  Grid.Row="2" ShowGridLines="False" IsEnabled="True" Background="{x:Null}" Height="Auto" Width="Auto">
+            <Grid>
+               <Border BorderThickness="2" BorderBrush="#003a70" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="30">
+                  <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                     <StackPanel>
+                        <Label Content="Plate Tracking" HorizontalContentAlignment="Center" FontSize="16" FontWeight="Bold"/>
+                     </StackPanel>
+                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                           <Label  Content="Next Plate" Width="200" HorizontalContentAlignment="Center"/>
+                           <Label x:Name="lblNewTrack" Width="200" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                           <Label  Content="Centering" Width="200" HorizontalContentAlignment="Center"/>
+                           <Label x:Name="lblCenteringTrack" Width="200" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                           <Label Content="Leveling" Width="200" HorizontalContentAlignment="Center"/>
+                           <Label x:Name="lblLevelerTrack" Width="200" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                           <Label  Content="Last Plate Out" Width="200" HorizontalContentAlignment="Center"/>
+                           <Label x:Name="lblOutTrack" Width="200" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+                        </StackPanel>
+                     </StackPanel>
+                  </StackPanel>
+               </Border>
+            </Grid>
+         </Grid>
+      </Grid>
+   </Grid>
+</Page>

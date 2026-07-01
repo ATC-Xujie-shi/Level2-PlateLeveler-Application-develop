@@ -1,0 +1,93 @@
+﻿<Page x:Class="Level2.PlateLeveler.Client.pageLimitation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:ig="http://schemas.infragistics.com/xaml" 
+    xmlns:Custom="http://infragistics.com/DataPresenter"
+    xmlns:my="clr-namespace:Level2.PlateLeveler.Client"
+    xmlns:igEditors="http://infragistics.com/Editors"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:type="clr-namespace:Level2.PlateLeveler.DataTypes;assembly=Level2.PlateLeveler.DataTypes"
+	x:Name="pageLimit"
+    mc:Ignorable="d" 
+    d:DesignHeight="1000" d:DesignWidth="1920" >
+    <Page.Resources>
+        <CollectionViewSource x:Name="LimitSource" x:Key="LimitDataViewSource" d:DesignSource="{d:DesignInstance {x:Type type:Limitation}, CreateList=True}"/>
+        <CollectionViewSource x:Key="LimitControlDataViewSource" d:DesignSource="{d:DesignInstance {x:Type type:Limitation}, CreateList=True}"/>
+    </Page.Resources>
+    <Page.Background>
+        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+            <GradientStop Color="#FF2177BF" Offset="0.007"/>
+            <GradientStop Color="White" Offset="1"/>
+        </LinearGradientBrush>
+    </Page.Background>
+
+    <Grid Visibility="Visible" ShowGridLines="false" >
+        <Grid ShowGridLines="false" Margin="8,8,8,0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid  Margin="10,10,10,0"  Grid.Row="0" ShowGridLines="false" IsEnabled="True" Background="{x:Null}"  DataContext="{StaticResource LimitControlDataViewSource}">
+                <StackPanel Orientation="Horizontal" Background="{x:Null}" Margin="0,10,0,0" >
+                    <StackPanel Orientation="Vertical">
+                        <Label x:Name="lblLimitation" Content="{Binding Path=lblLimitation, Mode=OneWay, Source={StaticResource Resources}}"/>
+                        <Label x:Name="lblValue"  Content="{Binding Path=lblValue, Mode=OneWay, Source={StaticResource Resources}}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <TextBox Margin="10,4,0,0" x:Name="txtLimitation" Style="{DynamicResource AndritzTextBoxStyle}" Text="{Binding Limit, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" IsEnabled="False"/>
+                        <TextBox Margin="10,4,0,0" x:Name="txtValue" Style="{DynamicResource AndritzTextBoxStyle}" Text="{Binding Value, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" IsEnabled="False"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical">
+                        <Label  Content="     " />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical">
+                        <Label  Content="     " />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <Button x:Name="btnCreate" Content="{Binding Path=btnCreate, Mode=OneWay, Source={StaticResource Resources}}" Margin="10,4,0,0" Height="26" Width="107" Click="btnCreate_Click"/>
+                        <Button x:Name="btnSave" Content="{Binding Path=btnSave, Mode=OneWay, Source={StaticResource Resources}}" Margin="10,4,0,0" Height="26" Width="107" IsEnabled="False" Click="btnSave_Click"/>
+                        <Button x:Name="btnEdit" Content="{Binding Path=btnEdit, Mode=OneWay, Source={StaticResource Resources}}" Margin="10,4,0,0" Height="26" Width="107" IsEnabled="False" Click="btnEdit_Click"/>
+                        <Button x:Name="btnDelete" Content="{Binding Path=btnDelete, Mode=OneWay, Source={StaticResource Resources}}" Margin="10,4,0,0" Height="26" Width="107" IsEnabled="False" Click="btnDelete_Click"/>
+                        <Button x:Name="btnCancel" Content="{Binding Path=btnCancel, Mode=OneWay, Source={StaticResource Resources}}" Margin="10,4,0,0" Height="26" Width="107" IsEnabled="False" Click="btnCancel_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1"  Margin="10,10,10,0" ShowGridLines="false" IsEnabled="True" Background="{x:Null}" DataContext="{StaticResource LimitDataViewSource}" >
+                <StackPanel Orientation="Horizontal">
+                    <Custom:XamDataGrid x:Name="gridLimit" DataSource="{Binding}" Background="DeepSkyBlue"  SelectedItemsChanged="gridLimit_SelectedItemsChanged">
+                        <Custom:XamDataGrid.ViewSettings>
+                            <Custom:GridViewSettings/>
+                        </Custom:XamDataGrid.ViewSettings>
+                        <Custom:XamDataGrid.FieldLayoutSettings>
+                            <Custom:FieldLayoutSettings AutoGenerateFields="False" HeaderPrefixAreaDisplayMode="FieldChooserButton"/>
+                        </Custom:XamDataGrid.FieldLayoutSettings>
+                        <Custom:XamDataGrid.FieldLayouts>
+                            <Custom:FieldLayout >
+                                <Custom:FieldLayout.Settings>
+                                    <Custom:FieldLayoutSettings/>
+                                </Custom:FieldLayout.Settings>
+                                <Custom:Field Name="Limit" Label="{Binding Path=lblLimitation, Mode=OneWay, Source={StaticResource Resources}}" Width="Auto">
+                                    <Custom:Field.Settings>
+                                        <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorStyle}" AllowRecordFiltering="True" >
+                                        </Custom:FieldSettings>
+                                    </Custom:Field.Settings>
+                                </Custom:Field>
+                                <Custom:Field Name="Value" Label="{Binding Path=lblValue, Mode=OneWay, Source={StaticResource Resources}}" Width="Auto">
+                                    <Custom:Field.Settings>
+                                        <Custom:FieldSettings AllowEdit="False" EditorStyle="{DynamicResource XamGridEditorDigit2Style}" AllowRecordFiltering="True" EditorType="{x:Type igEditors:XamNumericEditor}" ></Custom:FieldSettings>
+                                    </Custom:Field.Settings>
+                                </Custom:Field>
+                            </Custom:FieldLayout>
+                        </Custom:XamDataGrid.FieldLayouts>
+
+                    </Custom:XamDataGrid>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

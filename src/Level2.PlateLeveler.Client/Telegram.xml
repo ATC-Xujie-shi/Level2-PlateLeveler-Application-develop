@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TelegramList>
+  <TelegramData Name="HMI_L2_SignOfLife" TelegramID="90" Length="6" ComIndex="0">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="HMI_L2_Request" TelegramID="91" Length="30" ComIndex="0">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+      <TelegramValue Name="PlateID" Length="20" Format="String" InObject="true"/>
+      <TelegramValue Name="Location" Length="2" Format="Int32" InObject="true"/>
+      <TelegramValue Name="Spare" Length="2" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="HMI_L2_Limitation" TelegramID="92" Length="6" ComIndex="0">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L2_HMI_SignOfLife" TelegramID="95" Length="6" ComIndex="0">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L2_HMI_Tracking" TelegramID="96" Length="30" ComIndex="0">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+      <TelegramValue Name="PlateID" Length="20" Format="String" InObject="true"/>
+      <TelegramValue Name="Location" Length="2" Format="Int16" InObject="true"/>
+      <TelegramValue Name="Spare" Length="2" Format="String"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L2_HMI_Signal" TelegramID="97" Length="30" ComIndex="0">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+      <TelegramValue Name="Signal" Length="20" Format="String" InObject="true"/>
+      <TelegramValue Name="Flag" Length="4" Format="Int32" InObject="true"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L2_HMI_MissingPDI" TelegramID="98" Length="6" ComIndex="0">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+    </Telegram>
+  </TelegramData>
+  <TelegramData Name="L2_HMI_DatabaseUpdate" TelegramID="99" Length="6" ComIndex="0">
+    <Telegram>
+      <TelegramValue Name="TelegramLength" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramCounter" Length="2" Format="Int16"/>
+      <TelegramValue Name="TelegramType" Length="2" Format="Int16"/>
+    </Telegram>
+  </TelegramData>
+</TelegramList>

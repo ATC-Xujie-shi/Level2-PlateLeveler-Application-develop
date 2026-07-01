@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<InitData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DataBase>
+    <!--<Connection Name="PD" Namespace="System.Data.SqlClient" DataSource="WIN10-DEV-GEO\SQLSVRL2" Database="LVL7" IntegratedSecurity="SSPI" UserId="sundwig" Password="automation"></Connection>-->
+    <!--<Connection Name="PDI" Namespace="System.Data.SqlClient" DataSource="WIN10-DEV-GEO\SQLSVRL2" Database="LEV_L2L3_841216_GSM" IntegratedSecurity="SSPI" UserId="sundwig" Password="automation"></Connection>-->
+    <Connection Name="PDI" Namespace="System.Data.SqlClient" DataSource=".\SQLEXPRESS" Database="LVL7" IntegratedSecurity="SSPI" UserId="sa" Password="automation"></Connection>
+  </DataBase>
+  <TCPIP>
+    <Communication Index="0" Name="L1_L2" Port="3020" IPAddress="0.0.0.0" Timeout="2000000" Active="false" Endian="0" TelegramLengthSize="2" TelegramLengthOffset="0" TypeLengthSize="2" TypeLengthOffset="4" Start="true"></Communication>
+    <Communication Index="1" Name="HMI_L2" Port="3050" IPAddress="127.0.0.1" Timeout="20000" Active="false" Endian="1" TelegramLengthSize="4" TelegramLengthOffset="0" TypeLengthSize="2" TypeLengthOffset="4" Start="true"></Communication>
+    <!--<Communication Index="1" Name="L1_L2" Port="3060" IPAddress="172.16.0.1" Timeout="20000" Active="true" Endian="0" TelegramLengthSize="4" TelegramLengthOffset="0" TypeLengthSize="2" TypeLengthOffset="4" Start="false"></Communication>-->
+    <!--<Communication Name="L3_L2" Port="3000" IPAddress="0.0.0.0" Timeout="45000" Active="false" Endian="1" TelegramLengthSize="2" TelegramLengthOffset="0" TypeLengthSize="2" TypeLengthOffset="4" Start="false" LogLiveTelegram="true"></Communication>
+    <Communication Name="L2_L3" Port="3010" IPAddress="168.100.1.7" Timeout="-1" Active="false" Endian="1" TelegramLengthSize="2" TelegramLengthOffset="0" TypeLengthSize="2" TypeLengthOffset="4" Start="false"></Communication>
+    <Communication Name="L1_L2" Port="3020" IPAddress="0.0.0.0" Timeout="24000" Active="false" Endian="0" TelegramLengthSize="2" TelegramLengthOffset="0" TypeLengthSize="2" TypeLengthOffset="4" Start="false" LogLiveTelegram="true"></Communication>
+    <Communication Name="FM_L2" Port="3030" IPAddress="0.0.0.0" Timeout="30000" Active="false" Endian="0" TelegramLengthSize="2" TelegramLengthOffset="0" TypeLengthSize="2" TypeLengthOffset="4" Start="false"></Communication>
+    <Communication Name="HMI_L2" Port="3060" IPAddress="0.0.0.0" Timeout="15000" Active="true" Endian="1" TelegramLengthSize="2" TelegramLengthOffset="0" TypeLengthSize="2" TypeLengthOffset="4" Start="true" LogLiveTelegram="true"></Communication>-->
+  </TCPIP>
+  <Constants TelegramFile=".\Telegram.xml" LoggerType="RollingFileAppender" Interval="10000" LogNetworkCommunication="true" StoodBolt="TR160" Order="C26841216"></Constants>
+  <Interval S7="1000" Life="10000" L3L2="3000" WatchDogErrorOffset="30000" WatchDogRefresh="30000" PredictionError ="2" PredictModel="1"/>
+</InitData>
