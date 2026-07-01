@@ -8,5 +8,5 @@
     <Communication Name="HMI_L2" Port="3050" IPAddress="127.0.0.1" Timeout="15000" Active="true" Endian="1" TelegramLengthSize="4" TelegramLengthOffset="0" TypeLengthSize="2" TypeLengthOffset="4" Start="true" LogLiveTelegram="true"></Communication>
   </TCPIP>
   <Constants LiveTelegramID="95" Reverse="0" TelegramFile=".\Telegram.xml" LoggerType="RollingFileAppender" Interval="10000"></Constants>
-  <Report ExportPath="D:\Sundwig\Export" PdfPath="D:\Sundwig\Reports" Path="D:\Sundwig\Templates" License="727+D" ListType="lst" Mode="Fields"/>
+  <Report ExportPath="C:\Sundwig\Export" PdfPath="C:\Sundwig\Reports" Path="C:\Sundwig\Templates" License="727+D" ListType="lst" Mode="Fields"/>
 </InitData>
